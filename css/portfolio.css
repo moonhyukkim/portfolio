@@ -1,0 +1,537 @@
+
+
+
+
+/* 헤더 스타일 */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+/****************************************
+  1) 슬라이더 섹션 공통 스타일
+****************************************/
+.slider-section {
+  max-width: 1500px;
+  /* 슬라이더 영역 너비 제한 */
+  margin: 0px auto;
+  /* 수직 여백 + 중앙 정렬 */
+  padding: 0px 20px;
+  box-sizing: border-box;
+  position: relative;
+  /* 필요한 경우 배치를 위해 */
+}
+
+
+
+/****************************************
+    2) Owl Carousel 내부 이미지 스타일
+  ****************************************/
+.owl-carousel .owl-item img {
+  width: 300px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* 이미지가 카드 안에 꽉 차되 비율 유지 */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.owl-carousel .owl-item img:hover {
+  transform: scale(1.07);
+}
+
+/****************************************
+    3) 내비게이션(화살표) 스타일
+  ****************************************/
+/* 기본적으로 Owl Carousel는 .owl-nav > button.owl-prev, .owl-nav > button.owl-next 를 사용 */
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  position: absolute;
+  width:20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+  z-index: 10;
+}
+
+/* 왼쪽(Prev), 오른쪽(Next) 위치 */
+.owl-nav button.owl-prev {
+  left: -20px;
+
+}
+
+.owl-nav button.owl-next {
+  right: -20px;
+
+}
+
+/* 호버 시 색 변경 */
+.owl-nav button.owl-prev:hover,
+.owl-nav button.owl-next:hover {
+  color: #777;
+}
+
+/****************************************
+    4) 도트(.owl-dots) 스타일
+  ****************************************/
+/*.owl-dots {
+    text-align: center; 
+    margin-top: 15px; 
+  }
+  
+  .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: #bbb;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  .owl-dots .owl-dot.active span,
+  .owl-dots .owl-dot:hover span {
+    background: #333; 
+  }*/
+
+/****************************************
+    5) 제조과정 섹션(예시)
+  ****************************************/
+.manufacture-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fdfdfd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manufacture-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.manufacture-section p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/****************************************
+    6) 기타 필요하다면 .reveal, .show 등
+       애니메이션 보조 클래스 추가 가능
+  ****************************************/
+/* 예시로 .reveal과 .show가 profile.css에 없다면 넣어도 됨 */
+/* profile.css와 중복되지 않도록 필요한 부분만 조정 */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 히어로 컨텐츠 */
+.portfolio-content {
+  z-index: 2;
+  position: relative;
+  max-width: 100%;
+  color: #222;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.portfolio-image img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.flex-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0px;
+  /* 요소 사이 간격 */
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 90%;
+  padding-bottom: 50px; 
+  padding-top: 50px; 
+}
+
+.flex-left {
+  position: relative;
+  width: 800px;
+  /* 이미지 크기 조정 */
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.flex-right {
+  position: relative;
+  max-width:700px;
+  background-color: #959d85;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+background-blend-mode: multiply;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 2;
+  margin-left: -50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.flex-another-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0px;
+  /* 요소 사이 간격 */
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 90%;
+  padding-bottom: 50px; 
+  padding-top: 50px; 
+}
+
+
+.flex-another-right {
+  position: relative;
+  width: 800px;
+  /* 이미지 크기 조정 */
+  height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.flex-another-left {
+  position: relative;
+  max-width:700px;
+  background-color: #959d85;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+background-blend-mode: multiply;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 2;
+  margin-right: -50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.slider-1, .slider-2, .slider-3, .slider-4 {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+}
+
+.slider-1 img, .slider-2 img, .slider-3 img, .slider-4 img {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-1 img.active, .slider-2 img.active, .slider-3 img.active, .slider-4 img.active {
+  opacity: 1;
+}
+
+.slider-extra {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-extra img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-extra img.active {
+  opacity: 1;
+}
+
+.story {
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+.design-background {
+  background-image: url("../assets/images/quartzheather/products/detail11.jpg");
+  background-size: cover; /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken; /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+}
+.sampling-background {
+  background-image: url("../assets/images/quartzheather/products/detail5.jpg");
+  background-size: cover; /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken; /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
+}
+.production-background {
+  background-image: url("../assets/images/quartzheather/products/detail15.jpg");
+  background-size: cover; /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken; /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+}
+.photography-background {
+  background-image: url("../assets/images/quartzheather/products/detail16.jpg");
+  background-size: cover; /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken; /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+}
+/* 기본 스타일 */
+.align-center {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding-bottom: 150px;
+  /* 점 크기 조정 */
+  color: #333;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.progress-title {
+  text-align: center;
+  padding-top: 100px;
+}
+.progress-title h1{
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #fff;
+  text-transform: uppercase;
+}
+.progress-container {
+  margin-top:10px;
+  width: 80%;
+  max-width: 1000px;
+  position: relative;
+  padding: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #000, #18bd4f);
+  border-radius: 5px;
+  transition: width 2.5s ease-in-out;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  position: relative;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  transition: background 1s;
+}
+
+.step.active .step-circle {
+  background: #000000;
+  color: white;
+  animation: pulse 1s infinite;
+}
+
+.step.completed .step-circle {
+  background: #000000;
+  color: white;
+}
+
+.step-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.failure {
+  padding:150px 0;
+  background-color: #959d85;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+background-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+  .portfolio-content {
+    padding-bottom: 50px;
+  }
+  .portfolio-image img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  .portfolio-image h1 {
+    font-size: 20px;
+  }
+  .story {
+    margin: 0 auto;
+    width:95vw;
+    padding-top: 0px;
+    padding-bottom: 200px;
+    text-align: center;
+  }
+  .story p {
+    font-size:16px;
+  }
+  .progress-title h1{
+    font-size: 3rem;
+  }
+  .flex-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+    /* 요소 사이 간격 */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 50px; 
+    padding-top: 50px; 
+  }
+  .flex-left {
+    width: 440px;
+    /* 이미지 크기 조정 */
+    height: 330px;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .flex-right {
+    max-width:400px;
+    padding: 20px;
+    margin-left: 0px;
+    text-align: left;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .flex-another-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+    /* 요소 사이 간격 */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 50px; 
+    padding-top: 50px; 
+  }
+  
+  
+  .flex-another-right {
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    width: 440px;
+    /* 이미지 크기 조정 */
+    height: 330px;
+    overflow: hidden;
+  }
+  
+  .flex-another-left {
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    max-width:400px;
+    padding: 20px;
+    margin-right: 0px;
+    text-align: left;
+  }
+  .failure {
+    padding:150px 0;
+text-align: center;
+  }
+  .failure .reveal{
+    width:90vw;
+    font-size: 16px;
+  }
+}

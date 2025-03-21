@@ -1,0 +1,293 @@
+.main-section {
+    background-color: #f08400;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.main {
+    display:flex;
+    flex-direction: row;
+}
+.main-image {
+    height:1000px;
+    width:100vw;
+    position: relative;
+    display: inline-block;
+}
+.main-page {
+    max-width:848px;
+    top: 455px;
+    left: 18%;
+    transform: translate(-9.2%, -50%);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.main-page.active {
+    opacity: 1;
+  }
+
+.main-monitor {
+    max-width:1150px;
+    position: absolute;
+    top: 530px;
+    left: 18%;
+    transform: translate(-20%, -50%);
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+.main-right {
+    position:relative;
+}
+
+.main-title {
+    position: absolute;
+    top: 460px;
+    left: 30%;
+    margin-left:850px;
+    transform: translate(-30%, -50%);
+    height: auto;
+}
+
+.main-h1 {
+    position: absolute;
+    white-space: nowrap;
+    top: 560px;
+    left: 30%;
+    margin-left:830px;
+    transform: translate(-30%, -50%);
+    font-family: 'Anton', sans-serif;
+    font-size: 6rem;         /* 글자 크기 크게 */
+    font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+    letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+    line-height: 0.9;        /* 세로 간격도 축소 */
+    color: #000;
+    text-transform: uppercase;
+}
+.detail-flex {
+    display:flex;
+    flex-direction: column;
+}
+.detail-first {
+    background-color: #000000;
+background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.flex-row {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height:1000px;
+    gap:50px;
+}
+
+.flex-img {
+    max-width:600px;
+    height: auto; /* 비율 유지 */
+}
+.flex-row img{
+    max-width: 100%;
+    height: auto; /* 비율 유지 */
+border-radius: 50px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.first-flex {
+    display:flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.first-h1 {
+    color:#fff;
+}
+
+.detail-second {
+    background-color: #00c2c9;
+    background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    height:1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.detail-title {
+    margin-top:150px;
+    margin-bottom:70px;
+}
+.detail-title h1 {
+    font-family: "Noto Sans KR", sans-serif;
+color:#fff;
+font-size:45px;
+}
+
+.detail-title p {
+    font-family: "Noto Sans KR", sans-serif;
+color:#fff;
+font-size:18px;
+}
+
+
+.swiper {
+    width: 100% !important; /* 부모 요소에 맞춰 자동 조정 */
+    max-width: 800px;
+    height:auto;
+    margin-bottom: 50px;
+  }
+  .swiper2 {
+    width: 100% !important; /* 부모 요소에 맞춰 자동 조정 */
+    max-width: 1400px; /* 최대 너비 제한 */
+    height: auto;
+    margin-bottom: 200px;
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    width: 100% !important; /* 슬라이드 크기가 부모 크기를 따르도록 설정 */
+    max-width: 100%;
+  }
+  
+
+  .banner {
+    width: 100%; /* 부모 요소에 맞춰 자동 조정 */
+    max-width: 100%; /* 넘치지 않도록 설정 */
+    height: auto; /* 비율 유지 */
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
+  .topbanner {
+    width: 100%; /* 부모 요소에 맞춰 자동 조정 */
+    max-width: 100%; /* 넘치지 않도록 설정 */
+    height: auto; /* 비율 유지 */
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  .detail-third {
+    background-color: #9000f0;
+    background-image: url("https://www.transparenttextures.com/patterns/checkered-pattern.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+  .align-center {
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .main-image {
+        height:700px;
+        max-width:900px;
+        position: relative;
+        display: inline-block;
+    }
+    .main-page {
+        width:350px;
+        height:auto;
+        top: 448px;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .main-monitor {
+        max-width:470px;
+        position: absolute;
+        top: 480px;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    .main {
+        display:flex;
+        flex-direction: column;
+    }
+    .main-title {
+        position: absolute;
+        top: 210px;
+        width:350px;
+        left: 50%;
+        margin-left:0px;
+        transform: translate(-50%, -50%);
+        height: auto;
+    }
+    .main-h1 {
+        position: absolute;
+        top: 200px;
+        left: 21%;
+        margin-left:0px;
+        transform: translate(-20%, -50%);
+        font-family: 'Anton', sans-serif;
+        font-size: 3rem;         /* 글자 크기 크게 */
+        font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+        letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+        line-height: 0.9;        /* 세로 간격도 축소 */
+        color: #000;
+        text-transform: uppercase;
+    }
+    .detail-title {
+        margin-top:0px;
+        margin-bottom:70px;
+    }
+    .detail-title h1 {
+        font-family: "Noto Sans KR", sans-serif;
+    color:#fff;
+    font-size:30px;
+    }
+    
+    .detail-title p {
+        font-family: "Noto Sans KR", sans-serif;
+    color:#fff;
+    font-size:15px;
+    }
+    .detail-second {
+        background-color: #00c2c9;
+        background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        height:800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .swiper2 {
+        width: 100% !important; /* 부모 요소에 맞춰 자동 조정 */
+        max-width: 1400px; /* 최대 너비 제한 */
+        height: auto;
+        margin-bottom: 100px;
+      }
+      .flex-row {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height:100%;
+        gap:30px;
+    }
+    .detail-third {
+        padding-top:100px;
+        padding-bottom: 100px;
+    }
+    .detail-flex {
+        display:flex;
+        flex-direction: column;
+        gap:100px;
+        margin: 0 20px;
+    }
+    .align-center {
+        margin: 0 20px;
+      }
+      .detail-first {
+        padding-top:100px;
+        padding-bottom: 100px;
+      }
+    
+}

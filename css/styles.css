@@ -1,0 +1,1460 @@
+html {
+  scroll-behavior: smooth;
+  /* 부드러운 스크롤 효과 */
+}
+
+/* 기본 스타일 */
+.light-theme {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 5px 5px;
+  /* 점 크기 조정 */
+  color: #333;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 전체 배경을 위한 캔버스 설정 */
+#animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.background-brown {
+  background-color: #959d85;
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-blend-mode: multiply;
+}
+
+.background-khaki {
+  background-color: #959d85;
+  background: linear-gradient(rgba(149, 157, 133, 1), rgba(149, 157, 133, 1)),
+    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-blend-mode: multiply;
+}
+
+.background-lightkhaki {
+  padding-bottom: 250px;
+  background-color: #959d85;
+  background: linear-gradient(rgb(230, 230, 230), rgb(250, 250, 250)),
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-blend-mode: multiply;
+}
+
+/* (A) 초기 상태: 살짝 아래로 내려가 있고 불투명도 0 */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* (B) show 클래스가 붙으면 완전 보이도록 */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-letters span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.reveal-letters.show span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 헤더 스타일 */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+
+}
+
+/* 전체 네비게이션 바 스타일 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  background-color: #f5f5f5;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 5px 5px;
+  /* 점 크기 조정 */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+
+/* 기본 메뉴 (1차 메뉴) */
+.primary-menu {
+  list-style: none;
+  display: flex;
+  gap: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-menu>li {
+  position: relative;
+  /* 자식(서브메뉴) 배치를 위해 */
+}
+
+.primary-menu a {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding: 15px 0;
+  display: inline-block;
+  /* 클릭 영역을 확보하기 위해 */
+}
+
+/* --- 서브메뉴 (2차 메뉴) --- */
+.subnav {
+  /* 기본적으로 접힌 상태 */
+  max-height: 0;
+  /* 높이를 0으로 */
+  opacity: 0;
+  /* 투명도 0 */
+  overflow: hidden;
+  /* 넘치는 부분 숨김 */
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* 서브 메뉴를 수직 나열할지, 가로나 열 형태로 할지 결정 */
+  display: flex;
+  flex-direction: column;
+
+  /* 만약 “같은 박스”를 확장만 하고 배경은 그대로 두려면
+     background: none; 으로 두면 됩니다.
+     하지만 약간 구분을 주고 싶다면 색상 지정 가능. */
+  background: none;
+}
+
+/* 서브메뉴 항목 스타일 */
+.subnav li a {
+  padding: 10px 0;
+  font-weight: 700;
+  color: #555;
+  /* 수직 정렬 시 구분선 등 줄 수도 있음
+  border-top: 1px solid #eee; */
+}
+
+/* --- 트리거 : 마우스 올리면 서브메뉴 펼치기 --- */
+.has-subnav:hover .subnav {
+  max-height: 500px;
+  /* 서브메뉴 전체 높이보다 충분히 큰 값 */
+  opacity: 1;
+}
+
+/* 히어로 컨텐츠 */
+.hero-wrapper {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /* 이미지 가로 중앙 정렬 */
+
+}
+
+.hero-content {
+  position: relative;
+  right: -150px;
+  top: -50px;
+
+}
+
+.hero-container {
+  z-index: 2;
+  position: relative;
+  color: #222;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 230px;
+  /* 추가된 공간 */
+  padding-bottom: 300px;
+}
+
+.hero-content img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.letters-right {
+  position: absolute;
+  top: 80px;
+  text-align: left;
+  left: 100%;
+  /* 이미지 오른쪽에 배치 */
+  transform: translateY(-50%);
+  /* 세로 중앙 정렬 */
+  white-space: nowrap;
+  /* 텍스트 줄바꿈 방지 */
+  margin-left: 20px;
+  /* 이미지와 텍스트 사이 여백 */
+  font-size: 16px;
+}
+
+.letters-row {
+  display: flex;
+  align-items: center;
+  /* 세로 중앙 정렬 */
+  gap: 10px;
+  /* 요소 간 간격 */
+}
+
+.letters-row p {
+  margin: 0;
+  /* 기본 마진 제거 */
+  display: flex;
+  /* 텍스트가 중앙 정렬되도록 설정 */
+  align-items: center;
+}
+
+.cta-link {
+  margin-top: 40px;
+  text-decoration: underline;
+  color: #000;
+  /* 원하는 색상으로 변경 가능 */
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* 화살표와 텍스트 간격 */
+}
+
+.cta-link:hover {
+  color: #555;
+  /* 호버 시 색상 변경 */
+}
+
+.absolute-image {
+  position: absolute;
+  /* 부모(.image-container)를 기준으로 위치 설정 */
+  right: 300px;
+  top: 100px;
+}
+
+.letter-absolute {
+  position: absolute;
+  /* 부모(.image-container)를 기준으로 위치 설정 */
+}
+
+.hero-container h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 8rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.hero-container h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.hero-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+
+/* 포트폴리오 섹션 */
+.portfolio-section {
+  text-align: center;
+  padding: 15px 0px 150px;
+  /* 상단 패딩 추가로 간격 확보 */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.portfolio-section h2 {
+  padding-bottom: 20px;
+}
+
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+}
+
+.portfolio-item h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 5px 5px;
+  /* 점 크기 조정 */
+  width: 100%;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #555;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff6b6b;
+}
+
+.fixed {
+  position: sticky;
+  background-color: transparent;
+  bottom: 1%;
+  margin-top: -250px;
+  padding-bottom: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.projects {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.projects-name {
+  align-items: center;
+  text-align: center;
+  color: #000;
+  /* 빨간 계열 강조 색상 */
+}
+
+.project-text {
+  line-height: 0;
+  text-decoration: none;
+  pointer-events: auto;
+  color: #000;
+  /* 빨간 계열 강조 색상 */
+}
+
+.info-title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 100px;
+  margin-bottom: -50px;
+}
+
+.info-title::after {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-left: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.info-title h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+  margin-left: 20%;
+}
+
+/* 헤더 스타일 */
+.info-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100vw;
+  padding-bottom: 0px;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.info-right {
+  text-align: left;
+}
+
+.info-right h1 {
+  font-size: 3rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 1.2;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.info-left img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+/* 헤더 스타일 */
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  gap: 70px;
+  color: #000;
+  padding-bottom: 150px;
+  margin-bottom: 100px;
+}
+
+/* 헤더 스타일 */
+.profile-content-pc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  gap: 70px;
+  color: #000;
+  padding-bottom: 150px;
+}
+
+.profile-middle {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-right {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin-bottom: -150px;
+}
+
+.profile-right img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+.profile-left {
+  position: relative;
+  text-align: right;
+  width: 100%;
+}
+
+.profile-left-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 100px;
+  margin-bottom: -50px;
+}
+
+.profile-left-line::before {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-right: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.profile-right-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 100px;
+  margin-bottom: -50px;
+}
+
+.profile-right-line::after {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-left: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.profile-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.profile-right h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+/*************************************
+  (A) 타임라인 컨테이너 기본 설정
+*************************************/
+.career-timeline {
+  position: relative;
+  width: 100%;
+  /* 전체 너비 조정 */
+  max-width: 1500px;
+  margin: 50px auto;
+  padding: 20px 0;
+}
+
+.career-timeline::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.career-timeline h2 {
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.career-title {
+  text-align: center;
+  margin-bottom: -50px;
+}
+
+.career-title h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/*************************************
+      (B) 중앙 세로선
+         - 기본 height: 100%; 
+           대신 "scaleY(0)"로 감추었다가
+           .active 시 "scaleY(1)"로 늘림.
+    *************************************/
+/* 초기 상태: 보이지 않도록 설정 */
+/* (1) 초기 상태: 위에서 아래로 길어질 준비 */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  background: #fff;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  /* 🔥 중앙이 아니라 '위'에서 아래로 커지도록 설정 */
+  transition: transform 1.6s ease-in-out;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  /* 세로 위치는 .timeline-content의 중앙쯤 혹은 윗부분에 맞출 수도 있음 */
+  top: 10px;
+  /* 예시: 타임라인 아이템 상단에서 20px 아래 */
+  left: 50%;
+  /* 중앙선이 left: 50% 위치임 */
+  transform: translateX(-50%);
+
+  /* 원(점) 크기, 색상 */
+  width: 16px;
+  height: 16px;
+  background: #333;
+  /* 원 색상 */
+  border-radius: 50%;
+  z-index: 2;
+  /* 내용물보다 위에 보여주려면 조정 */
+
+  /* 원하는 경우 테두리나 박스셰도 추가 */
+  box-shadow: 0 0 0 3px #fff;
+  /* 바깥쪽에 흰색 테두리 */
+}
+
+/* (2) 스크롤 감지 후, 아래로 길어짐 */
+.career-timeline.active .timeline-line {
+  transform: translateX(-50%) scaleY(1);
+}
+
+/*************************************
+      (C) 아이템 (좌/우 교차 배치)
+         - 처음엔 opacity 0 / 아래로 이동
+           -> .show 붙으면  나타나는 애니메이션
+    *************************************/
+/* 타임라인 항목 */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  gap:30px;
+  opacity: 0;
+  transform: translateY(50px);
+  border-radius: 50%;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item.right {
+  float: right;
+  text-align: left;
+}
+
+/* 아이템 보이기 (Intersection Observer로 .show 붙음) */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*************************************
+      (D) 아이템 내용 박스
+    *************************************/
+/* 공통 타임라인 콘텐츠 스타일 */
+.timeline-content {
+  background-color: #959d85;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-blend-mode: multiply;
+  /* 살짝 반투명 흰색 */
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-title-left {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.timeline-title-left::before {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-right: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.timeline-title-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.timeline-title-right::after {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-left: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.timeline-title-left h3,
+.timeline-title-right h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+/*************************************
+      (E) 중앙선과 연결되는 ‘점(dot)’
+    *************************************/
+/* 왼쪽 항목 (중앙선에 붙이기) */
+.timeline-item.left {
+  justify-content: center;
+  text-align: right;
+}
+
+.timeline-detail-left {
+  text-align: left;
+  color:#fff;
+  font-size:20px;
+  width:50%;
+  margin-left: 10%;
+}
+.timeline-detail-right {
+    text-align: right;
+    color:#fff;
+    font-size:20px;
+    margin-right: 10%;
+    width:50%;
+  }
+/* 오른쪽 항목 (중앙선에 붙이기) */
+.timeline-item.right {
+  justify-content: center;
+  text-align: left;
+}
+
+/* === 타임라인 이미지 추가 스타일 === */
+.timeline-img-wrapper {
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto 1rem;
+  /* 중앙 정렬을 위해 margin: 0 auto */
+  overflow: hidden;
+  /*border: 4px solid black;*/
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+/* === .show 상태에서 이미지에 슬쩍 올라오는 모션이나 스케일 애니메이션 주기 예시 === */
+.timeline-item.show .timeline-img-wrapper {
+  animation: popIn 0.8s ease forwards;
+  /* popIn은 아래 @keyframes에서 정의할 예정 */
+}
+
+/* === 박스(컨텐츠) 자체에도 hover 시 살짝 효과 === */
+.timeline-item .timeline-content {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item .timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === 팝인 애니메이션 keyframes 예시 === */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.align-center {
+  margin-top: 40px;
+}
+
+.skill-container {
+  min-width: 400px;
+  max-width: 600px;
+  margin: 10px 0;
+}
+
+.skill-title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #000000, #8bc34a);
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+  position: relative;
+}
+
+.skill-percentage {
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.contact-title {
+  padding-top: 60px;
+  text-align: center;
+  margin-bottom: -50px;
+}
+
+.contact-title h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  gap: 80px;
+  padding-top: 100px;
+}
+
+.contact-container h2 {
+  text-align: center;
+}
+
+.contact-container label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.contact-imgcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contact-imgcontainer img {
+  border-radius: 5px;
+  max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+.gform {
+  max-width: 600px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #414141;
+}
+
+.thankyou_message {
+  display: none;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 80px auto;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+
+}
+
+ul.boxes {
+  position: absolute;
+  display: flex;
+  gap: 0 20px;
+  width: max-content;
+  animation: aniScroll 20s linear infinite;
+
+  li {
+    list-style: none;
+    width: 180px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+  }
+
+  li img {
+    height: 50px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+}
+
+ul.list2 {
+  animation: aniScroll-2 20s linear infinite;
+}
+
+@keyframes aniScroll {
+  0% {
+    transform: translateX(0%)
+  }
+
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+/* 100%에서 0%으로 이동하는 애니메이션 */
+@keyframes aniScroll-2 {
+  0% {
+    transform: translateX(100%)
+  }
+
+  100% {
+    transform: translateX(0%)
+  }
+}
+
+.fake-cursor {
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: top 0.5s ease-in-out, left 2s ease-in-out, opacity 2.0s ease-in-out;
+}
+
+.fake-cursor img {
+  width: 40px;
+  height: 40px;
+}
+.mobile-br {
+  display: none; /* 기본적으로 숨김 */
+}
+.onlypc {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .onlypc {
+    display: none;
+  }
+  .mobile-br {
+    display: block; /* 모바일에서만 줄 바꿈 적용 */
+}
+  .primary-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+  }
+  .hero-content {
+    right: 10px;
+    top: -50px;
+  
+  }
+  .hero-content img {
+    width: 200px;
+    height: 250px;
+  }
+  .absolute-image {
+    right: 100px;
+    top: 100px;
+  }
+  .hero-container h1 {
+    font-size: 4rem;
+    /* 글자 크기 크게 */
+  }
+  .letters-right {
+    top: 310px;
+    text-align: left;
+    left: 50%;
+    /* 이미지 오른쪽에 배치 */
+    transform: translateY(-50%);
+    /* 세로 중앙 정렬 */
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
+    margin-left: 10px;
+    /* 이미지와 텍스트 사이 여백 */
+    font-size: 14px;
+  }
+  .hero-container {
+    padding-top: 200px;
+    /* 추가된 공간 */
+    padding-bottom: 200px;
+  }
+  .cta-link {
+    margin-left:-110px;
+    margin-top: 60px;
+    text-decoration: underline;
+    color: #000;
+    /* 원하는 색상으로 변경 가능 */
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* 화살표와 텍스트 간격 */
+  }
+  .info-title {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .info-title h1 {
+    font-size: 3rem;
+    margin-left:10%;
+  }
+  
+/* 헤더 스타일 */
+.info-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 95vw;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.info-right {
+  text-align: right;
+}
+
+.info-right h1 {
+  font-size: 2rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 1.2;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.info-left img {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+.info-left h1 {
+  font-size:17px;
+}
+/* 헤더 스타일 */
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  overflow: hidden;
+  width: 100vw;
+  gap: 20px;
+  color: #000;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+/* 헤더 스타일 */
+.profile-content-pc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  overflow: hidden;
+  width: 95vw;
+  gap: 20px;
+  color: #000;
+  padding-bottom: 0px;
+}
+
+.profile-middle {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-right {
+  position: relative;
+  text-align: left;
+
+  margin-bottom: 0px;
+}
+
+
+.profile-left {
+  position: relative;
+  text-align: right;
+
+}
+
+.profile-left-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 100px;
+  margin-bottom: -50px;
+}
+
+.profile-left-line::before {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-right: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.profile-right-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 100px;
+  margin-bottom: -50px;
+}
+
+.profile-right-line::after {
+  content: "";
+  flex-grow: 1;
+  /* 선이 남은 공간을 채우도록 설정 */
+  height: 4px;
+  /* 선 두께 */
+  background-color: black;
+  /* 선 색상 */
+  margin-left: 10px;
+  /* 텍스트와 선 사이 간격 */
+}
+
+.profile-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.profile-right h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+/* 공통 타임라인 콘텐츠 스타일 */
+.timeline-content {
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+.timeline-detail-left {
+  margin-left: 0%;
+    text-align: left;
+    color:#fff;
+    font-size:14px;
+    width: 50%;
+  }
+  .timeline-detail-right {
+    margin-right: 0%;
+      text-align: right;
+      color:#fff;
+      font-size:14px;
+      width: 50%;
+    }
+    .timeline-item.left {
+      justify-content: center;
+      text-align: right;
+    }
+    /* 오른쪽 항목 (중앙선에 붙이기) */
+    .timeline-item.right {
+      justify-content: center;
+      text-align: left;
+    }
+    .timeline-title-left h3,
+    .timeline-title-right h3 {
+      font-size: 2rem;
+    }
+    .career-title h1 {
+      font-size: 3rem;
+      padding-bottom: 30px;
+    }
+    .timeline-content h1 {
+      font-size: 1rem;
+    }
+    .contact-title h1{
+      font-size: 3rem;
+    }
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 90vw;
+      gap: 60px;
+      padding-top: 50px;
+      margin:0 auto;
+    }
+    .contact-imgcontainer img {
+      border-radius: 5px;
+      max-width: 300px;
+      height: 100%;
+      object-fit: cover;
+      /* 가로세로 비율 맞춰 잘림 */
+      display: block;
+    }
+    footer {
+      padding: 20px 0;
+    }
+    footer p {
+      font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1350px) {
+}

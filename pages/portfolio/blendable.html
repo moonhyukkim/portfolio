@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>블렌더블 | 포트폴리오</title>
+
+    <!-- (1) 메인 CSS : profile.css -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/blendable.css" />
+    <!-- (2) Owl Carousel CSS (CDN 예시) -->
+    <!-- 버전은 예시이며, 원하는 버전을 사용하거나 로컬 파일을 사용해도 됨 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- (3) JS 파일 (profile.js, main.js) - defer 로딩 -->
+    <script defer src="../../js/profile.js"></script>
+    <script defer src="../../js/main.js"></script>
+    <script defer src="../../js/portfolio.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- (4) jQuery & Owl Carousel JS (CDN 예시) - jQuery 먼저, Owl 다음 -->
+    <!-- Owl Carousel은 jQuery 의존적이라서 반드시 jQuery가 먼저 로드되어야 함 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- (5) Owl Carousel 초기화 스크립트 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Owl Carousel 초기화
+            $('.owl-carousel').owlCarousel({
+                loop: true,             // 계속 순환
+                margin: 10,            // 슬라이드 사이 간격
+                nav: true,             // 네비게이션 화살표
+                dots: true,            // 하단 도트 표시
+                autoplay: true,        // 자동 재생
+                autoplayTimeout: 3000, // 3초 간격
+                autoplayHoverPause: true,
+                slideTransition: "linear", // 선형 이동 적용
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="light-theme">
+    <!-- ========== 헤더(네비게이션) ========== -->
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="primary-menu">
+                <li><a href="../../index.html">홈</a></li>
+                <li><a href="../../index.html#section1">프로필</a></li>
+                <li class="has-subnav">
+                    <a href="#">포트폴리오</a>
+                    <ul class="subnav">
+                        <li><a href="quartzheather.html" class="active">쿼츠헤더</a></li>
+                        <li><a href="blendable.html">블렌더블</a></li>
+                        <li><a href="urbanvape.html">어반베이프</a></li>
+                        <li><a href="webdesign.html">웹디자인</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../index.html#section2">문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== 메인 컨테이너 ========== -->
+    <main>
+        <section class="background-section">
+        <div class="main-image">
+            <img class="main-relative" src="../../assets/images/blendable/gallery.png" alt="urbanvape" />
+            <div class="main-absolute">
+            <img src="../../assets/images/blendable/logo-white.png" alt="urbanvape" />
+            <h1>블렌더블</h1>
+            <a href="https://nochic.cafe24.com/" target="_blank" rel="noopener noreferrer">웹사이트 바로가기→</a>
+        </div>
+        </div>
+        <!-- (A) Owl Carousel 슬라이더 -->
+
+        <div class="slider-section">
+            <div class="owl-carousel">
+                <!-- 각 슬라이드 항목 -->
+                <div>
+                    <!-- 예시 이미지. 실제 경로로 교체해주세요. -->
+                    <img src="../../assets/images/blendable/1.png" alt="Quartz Heather Image 1" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/2.png" alt="Quartz Heather Image 2" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/3.png" alt="Quartz Heather Image 3" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/4.png" alt="Quartz Heather Image 4" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/5.png" alt="Quartz Heather Image 4" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/6.png" alt="Quartz Heather Image 4" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/7.png" alt="Quartz Heather Image 4" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/8.png" alt="Quartz Heather Image 4" />
+                </div>
+                <div>
+                    <img src="../../assets/images/blendable/9.png" alt="Quartz Heather Image 4" />
+                </div>
+                <!-- 필요한 만큼 div 추가 -->
+            </div>
+        </div>
+
+        <!-- (B) 제조과정 설명 섹션 -->
+        <div class="story reveal">
+            <h2>브랜드 철학</h2>
+            <p>
+                블렌더블(Blendable)은 '어디든 섞일 수 있는'이라는 뜻으로 기획된 홈 패브릭 브랜드입니다. 뜻에 따라 전체적인 브랜드 컨셉을
+                전시회로 설정했으며, 여러 신진 디자이너들과 아티스트와의 협업을 염두에 두고 브랜딩 했습니다. 
+            </p>
+            <p>
+                메인 라벨을 전시회 혹은 미술관에서 볼 수 있는 작품 캡션에서 영감을 받아 심플하게 구상했고
+                패브릭 포스터 위주로 초기 아이템을 구성했으며 3D 모델링을 통해 만들어진 작품을 프린팅하여 예술성을 강조했습니다.
+            </p>
+            <p>
+                이러한 과정을 통해 만들어진 블렌더블은 인테리어와 홈 무드에 대한 관심이 늘어난 모든 세대를 타겟으로 설정한 브랜드입니다.
+            </p>
+            <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+        </div>
+        </section>
+    </main>
+
+        <section class="design-background">
+            <div class="align-center">
+            <div class="progress-title">
+                <h1>DESIGN</h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-1"></div>
+                </div>
+                <div class="steps">
+                    <div class="step active">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">디자인</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">샘플링</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">생산</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">촬영</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">판매</div>
+                    </div>
+                </div>
+            </div>
+        <div class="flex-content reveal">
+            <div class="flex-left">
+                <div class="slider-1">
+                    <img src="../../assets/images/blendable/design1.png" alt="Quartz Heather Image 1">
+                    <img src="../../assets/images/blendable/design3.png" alt="Quartz Heather Image 2">
+                    <img src="../../assets/images/blendable/design2.png" alt="Quartz Heather Image 3">
+                </div>
+            </div>
+            <div class="flex-right">
+                <h2>디자인</h2>
+                <p>
+                    초기 70 X 110cm, 150 X 130cm 두 가지 크기의 패브릭 포스터를 출시할 계획으로 해당 제품에 프린팅될 작품을 디자인 했습니다.<br><br>
+                    3D 모델링 프로그램(C4D)의 시뮬레이션 기능을 통해서 자연스러운 물을 연출해 작품의 형태를 디자인 했습니다.<br><br>
+                    연출된 물을 여러 색상의 조명으로 비추며 가장 심미적인 모먼트를 찾아 작품을 픽스하고 색감을 조정했습니다.<br><br>
+                </p>
+                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sampling-background">
+    <div class="align-center">
+        <div class="progress-title">
+            <h1>Sampling</h1>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill-2"></div>
+            </div>
+            <div class="steps">
+                <div class="step completed">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">디자인</div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">샘플링</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">생산</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">4</div>
+                    <div class="step-text">촬영</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">5</div>
+                    <div class="step-text">판매</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-another-content reveal">
+            <div class="flex-another-left">
+                <h2>샘플링</h2>
+                <p>
+                    장기간 걸어놔도 벽지나 제품에 손상이 없는, 최대한 가볍지만 비치지 않는 소재를 찾기 위해 쉬폰, 캔버스, 옥스포드 원단 등의 원단을 테스트 하였습니다.<br><br>
+                    그 과정을 통해 폴리에스터 소재의 듀스포 원단을 선택했으며 해당 원단에서의 인쇄 퀄리티를 보기 위해 승화 전사, 직분사 방식의 다양한 인쇄 방식을 테스트 하였습니다.
+                </p>
+                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+            </div>
+            <div class="flex-another-right">
+                <div class="slider-2">
+                    <img src="../../assets/images/blendable/sampling3.jpg" alt="Quartz Heather Image 1">
+                    <img src="../../assets/images/blendable/sampling1.jpg" alt="Quartz Heather Image 2">
+                    <img src="../../assets/images/blendable/sampling2.jpg" alt="Quartz Heather Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="production-background">
+    <div class="align-center">
+        <div class="progress-title">
+            <h1>Production</h1>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill-3"></div>
+            </div>
+            <div class="steps">
+                <div class="step completed">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">디자인</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">샘플링</div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">생산</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">4</div>
+                    <div class="step-text">촬영</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">5</div>
+                    <div class="step-text">판매</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-content reveal">
+            <div class="flex-left">
+                <div class="slider-3">
+                    <img src="../../assets/images/blendable/production2.jpg" alt="Quartz Heather Image 1">
+                    <img src="../../assets/images/blendable/production3.jpg" alt="Quartz Heather Image 2">
+                    <img src="../../assets/images/blendable/production1.jpg" alt="Quartz Heather Image 3">
+                </div>
+            </div>
+            <div class="flex-right">
+                <h2>생산</h2>
+                <p>
+                    선정된 프린팅 업체 측으로 듀스포 원단을 발주해 최대한 빠르게 프린팅을 진행했습니다.<br>
+                    프린팅된 원단을 받아 재단과 봉제 작업을 직접 진행 했습니다. 봉제는 사면 말아박기 방식으로 진행했습니다.
+                </p>
+                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="photography-background">
+    <div class="align-center">
+        <div class="progress-title">
+            <h1>Photography</h1>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill-4"></div>
+            </div>
+            <div class="steps">
+                <div class="step completed">
+                    <div class="step-circle">1</div>
+                    <div class="step-text">디자인</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-circle">2</div>
+                    <div class="step-text">샘플링</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-circle">3</div>
+                    <div class="step-text">생산</div>
+                </div>
+                <div class="step active">
+                    <div class="step-circle">4</div>
+                    <div class="step-text">촬영</div>
+                </div>
+                <div class="step">
+                    <div class="step-circle">5</div>
+                    <div class="step-text">판매</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-another-content reveal">
+            <div class="flex-another-left">
+                <h2>촬영</h2>
+                <p>
+                    전시회 느낌의 컨셉 사진을 촬영하기 위한 조건을 알아보던 중 직접 촬영에 대한 여건이 부족해 3D 프로그램을 통한 촬영을 진행했습니다.<br><br>
+                    상업적 이용이 가능한 3D 모델을 삽입해 배치하고 시뮬레이션 기능을 통해 패브릭 포스터를 위에서 떨어뜨려 실제 같은 자연스러운 촬영을 지향했습니다.<br><br>
+                    최종적으로 제품 판매까지는 이루어지지 않았으며 제품 사진 촬영까지만 완료했습니다.
+                </p>
+                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+            </div>
+            <div class="flex-another-right">
+                <div class="slider-4">
+                    <img src="../../assets/images/blendable/lookbook2.jpg" alt="Quartz Heather Image 1">
+                    <img src="../../assets/images/blendable/lookbook3.jpg" alt="Quartz Heather Image 2">
+                    <img src="../../assets/images/blendable/lookbook4.jpg" alt="Quartz Heather Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="failure">
+        <div class="reveal" style="max-width: 800px;margin:0 auto;">
+        <h2>중단 요인 및 얻은 교훈</h2>
+        <p>
+            해당 브랜드는 제품 생산과 촬영은 마쳤으나 '패브릭 포스터'라는 품목에 대한 기대 수요가 많지 않을 것으로 판단되어 더 이상 진행하지 않았습니다.
+        </p>
+        <p>
+            커튼, 식탁보, 침구류, 파자마 등의 아이템을 추가해 라이프 스타일 브랜드로 포지셔닝을 한다면 더 나은 기대 수요가 있을 것이라고 생각됩니다.
+        </p>
+        <p>
+            비록 미완성된 프로젝트이지만 좋은 경험이었으며 저에게는 여러 다양한 시도들을 했던 도전의 시간이었습니다.
+        </p>
+        <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
+    </div>
+    </section>
+    </main>
+    <section class="fixed onlypc">
+        <div class="projects">
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="quartzheather.html"><img src="../../assets/images/quartzheather/main.png" alt="Project 1"></a>
+                    <div class="overlay">
+                        <h3>쿼츠헤더</h3>
+                    </div>
+                </div>
+                <a class="project-text" href="quartzheather.html">Quartz Heather</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="blendable.html"><img src="../../assets/images/blendable/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>블렌더블</h3>
+                    </div>
+                </div>
+                <a class="project-text" href="blendable.html">Blendable</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="urbanvape.html"><img src="../../assets/images/urbanvape/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>어반베이프</h3>
+                    </div>
+                </div>
+                <a class="project-text" href="urbanvape.html">Urbanvape</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="webdesign.html"><img src="../../assets/images/webdesign/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>웹디자인</h3>
+                    </div>
+                </div>
+                <a class="project-text" href="webdesign.html">Web Design</a>
+            </div>
+        </div>
+    </section>
+    <!-- ========== 푸터 ========== -->
+    <footer>
+        <p>&copy; 2025 Designed by Moonhyuk Kim</p>
+    </footer>
+</body>
+
+</html>

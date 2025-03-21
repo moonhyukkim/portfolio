@@ -1,0 +1,422 @@
+/* 기본 스타일 */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 5px 5px; /* 점 크기 조정 */
+  color: #333;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 전체 배경을 위한 캔버스 설정 */
+#animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* (A) 초기 상태: 살짝 아래로 내려가 있고 불투명도 0 */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* (B) show 클래스가 붙으면 완전 보이도록 */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-letters span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.reveal-letters.show span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-title {
+  text-align: center;
+  padding-top: 140px;
+  margin-bottom: -50px;
+  margin-right: 0%;
+}
+
+.hero-title h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+/* 헤더 스타일 */
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100vw;
+  padding-bottom: 80px;
+}
+.thin {
+  font-weight: 300;
+}
+.hero-right {
+  text-align: left;
+}
+.hero-right h1{
+  font-size: 3rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 1.2;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.hero-left img{
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+/* 헤더 스타일 */
+.profile-content {
+ display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 10px;
+  gap:100px;
+}
+.profile-middle {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.thin {
+  font-weight: 300;
+}
+.profile-right {
+  position: relative;
+  text-align: left;
+
+}
+.profile-right img{
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+.profile-left {
+  position: relative;
+  text-align: right;
+}
+.profile-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.profile-right h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+.introduce-right {
+  text-align: right;
+  margin-right: 15%;
+}
+
+.introduce-left {
+  text-align: left;
+  margin-left: 15%;
+}
+.introduce-right h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+
+}
+.introduce-left h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;         /* 글자 크기 크게 */
+  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;        /* 세로 간격도 축소 */
+  color: #000;
+  text-transform: uppercase;
+}
+
+/*************************************
+  (A) 타임라인 컨테이너 기본 설정
+*************************************/
+.career-timeline {
+  position: relative;
+  width: 100%;
+  /* 전체 너비 조정 */
+  max-width: 1500px;
+  margin: 50px auto;
+  padding: 20px 0;
+}
+
+.career-timeline::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.career-timeline h2 {
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.career-title {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*************************************
+    (B) 중앙 세로선
+       - 기본 height: 100%; 
+         대신 "scaleY(0)"로 감추었다가
+         .active 시 "scaleY(1)"로 늘림.
+  *************************************/
+/* 초기 상태: 보이지 않도록 설정 */
+/* (1) 초기 상태: 위에서 아래로 길어질 준비 */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  background: #333;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  /* 🔥 중앙이 아니라 '위'에서 아래로 커지도록 설정 */
+  transition: transform 1.6s ease-in-out;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  /* 세로 위치는 .timeline-content의 중앙쯤 혹은 윗부분에 맞출 수도 있음 */
+  top: 10px;
+  /* 예시: 타임라인 아이템 상단에서 20px 아래 */
+  left: 50%;
+  /* 중앙선이 left: 50% 위치임 */
+  transform: translateX(-50%);
+
+  /* 원(점) 크기, 색상 */
+  width: 16px;
+  height: 16px;
+  background: #333;
+  /* 원 색상 */
+  border-radius: 50%;
+  z-index: 2;
+  /* 내용물보다 위에 보여주려면 조정 */
+
+  /* 원하는 경우 테두리나 박스셰도 추가 */
+  box-shadow: 0 0 0 3px #fff;
+  /* 바깥쪽에 흰색 테두리 */
+}
+
+/* (2) 스크롤 감지 후, 아래로 길어짐 */
+.career-timeline.active .timeline-line {
+  transform: translateX(-50%) scaleY(1);
+}
+
+/*************************************
+    (C) 아이템 (좌/우 교차 배치)
+       - 처음엔 opacity 0 / 아래로 이동
+         -> .show 붙으면  나타나는 애니메이션
+  *************************************/
+/* 타임라인 항목 */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  border-radius: 50%;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item.right {
+  float: right;
+  text-align: left;
+}
+
+/* 아이템 보이기 (Intersection Observer로 .show 붙음) */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*************************************
+    (D) 아이템 내용 박스
+  *************************************/
+/* 공통 타임라인 콘텐츠 스타일 */
+.timeline-content {
+  background-color: #f9f9f9;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 5px 5px; /* 점 크기 조정 */
+  /* 살짝 반투명 흰색 */
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  transition: background 0.3s;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+/*************************************
+    (E) 중앙선과 연결되는 ‘점(dot)’
+  *************************************/
+/* 왼쪽 항목 (중앙선에 붙이기) */
+.timeline-item.left {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+/* 오른쪽 항목 (중앙선에 붙이기) */
+.timeline-item.right {
+  justify-content: flex-end;
+  text-align: left;
+}
+
+/* === 타임라인 이미지 추가 스타일 === */
+.timeline-img-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  /* 중앙 정렬을 위해 margin: 0 auto */
+  border-radius: 50%;
+  overflow: hidden;
+  /*border: 4px solid black;*/
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 가로세로 비율 맞춰 잘림 */
+  display: block;
+}
+
+/* === .show 상태에서 이미지에 슬쩍 올라오는 모션이나 스케일 애니메이션 주기 예시 === */
+.timeline-item.show .timeline-img-wrapper {
+  animation: popIn 0.8s ease forwards;
+  /* popIn은 아래 @keyframes에서 정의할 예정 */
+}
+
+/* === 박스(컨텐츠) 자체에도 hover 시 살짝 효과 === */
+.timeline-item .timeline-content {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item .timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === 팝인 애니메이션 keyframes 예시 === */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*************************************
+    (F) 반응형 (간단 예시)
+  *************************************/
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    float: none;
+    text-align: center !important;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  .timeline-content {
+    text-align: center;
+  }
+}
