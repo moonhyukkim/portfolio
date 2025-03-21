@@ -1,6 +1,8 @@
 html {
   scroll-behavior: smooth;
-  /* 부드러운 스크롤 효과 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* 기본 스타일 */
