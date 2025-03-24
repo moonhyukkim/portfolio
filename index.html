@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김문혁 | 보드람 입사 포트폴리오</title>
+    <title>김문혁 | 입사 포트폴리오</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,22 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
         rel="stylesheet">
     <script defer src="js/main.js"></script>
+
 </head>
 
 <body class="light-theme">
     <header class="hero">
-        <!--<canvas id="animated-bg"></canvas>-->
-        <nav class="navbar">
+        <nav class="navbar-pc">
             <ul class="primary-menu">
                 <li><a href="index.html">홈</a></li>
                 <li><a href="#section1">프로필</a></li>
                 <li class="has-subnav">
                     <a href="#">포트폴리오</a>
-                    <!-- 
-                  서브메뉴를 이 li 안쪽에 두면, 
-                  네비게이션 바의 height(혹은 max-height)가 확장되면서
-                  “같은 박스” 안에 표시됩니다.
-                 -->
                     <ul class="subnav">
                         <li><a href="pages/portfolio/quartzheather.html">쿼츠헤더</a></li>
                         <li><a href="pages/portfolio/blendable.html">블렌더블</a></li>
@@ -38,6 +33,57 @@
                 <li><a href="#section2">문의</a></li>
             </ul>
         </nav>
+        <nav class="mobile-navbar">
+            <!-- 햄버거 버튼 (왼쪽) -->
+            <button class="hamburger-button" id="hamburgerBtn">
+                <!-- Heroicons Bars 3 (Outline) 아이콘 인라인 예시 -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5" />
+                </svg>
+            </button>
+
+            <!-- 홈 버튼 (오른쪽) -->
+            <a class="mobile-home-button" href="index.html">
+                <!-- Heroicons Home (Outline) 아이콘 인라인 예시 -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
+                     1.518-.58 2.098 0L22.25 12M4.5 
+                     10.5v9.75a.75.75 0 00.75.75h4.5a.75.75 
+                     0 00.75-.75v-6h3v6a.75.75 
+                     0 00.75.75h4.5a.75.75 
+                     0 00.75-.75V10.5" />
+                </svg>
+            </a>
+        </nav>
+
+        <!-- 
+            2) 배경 딤(dark overlay) 
+               메뉴 열릴 때 함께 활성화
+          -->
+        <div class="dim-overlay" id="dimOverlay"></div>
+
+        <!--
+            3) 모바일 메뉴(슬라이드 아웃)
+          -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="#section1">프로필</a></li>
+                <li class="has-subnav">
+                    <a href="#">포트폴리오</a>
+                    <ul class="subnav">
+                        <li><a href="pages/portfolio/quartzheather.html">쿼츠헤더</a></li>
+                        <li><a href="pages/portfolio/blendable.html">블렌더블</a></li>
+                        <li><a href="pages/portfolio/urbanvape.html">어반베이프</a></li>
+                        <li><a href="pages/portfolio/webdesign.html">웹디자인</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section2">문의</a></li>
+            </ul>
+        </div>
     </header>
 
     <section>
@@ -75,8 +121,8 @@
                     <h1>디자이너 김문혁</h1>
                 </div>
                 <div class="info-right">
-                    <h1 class="reveal-letters">반갑습니다<br><span class="thin">상업과 예술의 경계를 <br
-                        class="mobile-br">디자인하는 <strong>김문혁</strong>입니다</span></h1>
+                    <h1 class="reveal-letters">반갑습니다<br><span class="thin">상업과 예술의 경계를 <br class="mobile-br">디자인하는
+                            <strong>김문혁</strong>입니다</span></h1>
                     <p>상업성과 예술성의 타협점을 찾아 감각적인 디자인의 사용자 중심 UI를 제공하고자 노력합니다.</p>
                     <p>그 간의 개인 브랜드 준비와 매장 운영 경험을 바탕으로 팀원은 물론 다양한 직군과의 원활한 협업을 꿈꾸고 있습니다.</p>
                     <p>배움에 대한 열정으로 만족할 수 있는 결과물을 위해 끊임 없이 노력하고 발전하겠습니다.</p>
@@ -205,7 +251,6 @@
             </div>
         </div>
         <div class="container">
-            <!--왼쪽으로 -100%까지 이동-->
             <ul class="boxes">
                 <li class="red"><img src="assets/icons/html.png" alt="HTML"></li>
                 <li class="orange"><img src="assets/icons/css.png" alt="CSS"></li>
@@ -217,7 +262,6 @@
                 <li class="violet"><img src="assets/icons/flutter.png" alt="Flutter"></li>
                 <li class="violet"><img src="assets/icons/reactnative.png" alt="React Native"></li>
             </ul>
-            <!--왼쪽으로 100%에서 0%까지 이동-->
             <ul class="boxes list2">
                 <li class="red"><img src="assets/icons/html.png" alt="HTML"></li>
                 <li class="orange"><img src="assets/icons/css.png" alt="CSS"></li>
@@ -239,13 +283,11 @@
             <h1>CAREER</h1>
         </div>
         <div class="career-timeline" id="career-timeline">
-            <!-- (A) 중앙 세로선 (스크롤 시 scaleY로 늘어남) -->
             <div class="timeline-line"></div>
 
 
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <!-- 새로 추가한 이미지 -->
                     <div class="timeline-img-wrapper">
                         <img src="assets/images/quartzheather/products/detail10.jpg" alt="Quartz Header Sample" />
                     </div>
@@ -343,41 +385,13 @@
         </div>
         <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
     </section>
-    <!--<section id="portfolio" class="portfolio-section reveal">
-        <h2>Projects</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="assets/images/quartzheather/main.png" alt="Project 1">
-                <div class="overlay">
-                    <h3>쿼츠헤더</h3>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="assets/images/blendable/main.png" alt="Project 2">
-                <div class="overlay">
-                    <h3>블렌더블</h3>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="assets/images/urbanvape/main.png" alt="Project 2">
-                <div class="overlay">
-                    <h3>어반베이프</h3>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <a href="#"><img src="assets/images/webdesign/main.png" alt="Project 2"></a>
-                <div class="overlay">
-                    <h3>웹디자인</h3>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <section class="fixed onlypc">
         <div class="projects">
             <div class="projects-name">
                 <div class="portfolio-item">
-                    <a href="pages/portfolio/quartzheather.html"><img src="assets/images/quartzheather/main.png" alt="Project 1"></a>
+                    <a href="pages/portfolio/quartzheather.html"><img src="assets/images/quartzheather/main.png"
+                            alt="Project 1"></a>
                     <div class="overlay">
                         <h3>쿼츠헤더</h3>
                     </div>
@@ -387,7 +401,8 @@
             </div>
             <div class="projects-name">
                 <div class="portfolio-item">
-                    <a href="pages/portfolio/blendable.html"><img src="assets/images/blendable/main.png" alt="Project 2"></a>
+                    <a href="pages/portfolio/blendable.html"><img src="assets/images/blendable/main.png"
+                            alt="Project 2"></a>
                     <div class="overlay">
                         <h3>블렌더블</h3>
                     </div>
@@ -396,7 +411,8 @@
             </div>
             <div class="projects-name">
                 <div class="portfolio-item">
-                    <a href="pages/portfolio/urbanvape.html"><img src="assets/images/urbanvape/main.png" alt="Project 2"></a>
+                    <a href="pages/portfolio/urbanvape.html"><img src="assets/images/urbanvape/main.png"
+                            alt="Project 2"></a>
                     <div class="overlay">
                         <h3>어반베이프</h3>
                     </div>
@@ -405,7 +421,8 @@
             </div>
             <div class="projects-name">
                 <div class="portfolio-item">
-                    <a href="pages/portfolio/webdesign.html"><img src="assets/images/webdesign/main.png" alt="Project 2"></a>
+                    <a href="pages/portfolio/webdesign.html"><img src="assets/images/webdesign/main.png"
+                            alt="Project 2"></a>
                     <div class="overlay">
                         <h3>웹디자인</h3>
                     </div>
@@ -417,12 +434,9 @@
     <footer>
         <p>&copy; 2025 Designed by Moonhyuk Kim</p>
         <p>본 사이트는 상업적 목적이 아닌 포트폴리오용으로 만들어진 사이트입니다</p>
-        <div class="social-links">
-            <!--<a href="#">Instagram</a>
-            <a href="#">Dribbble</a>
-            <a href="#">LinkedIn</a>-->
-        </div>
-    </footer>
+        <div class=" social-links">
+            </div>
+            </footer>
 </body>
 
 </html>

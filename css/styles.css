@@ -24,7 +24,12 @@ section {
   box-sizing: border-box;
 }
 
-
+.dim-overlay {
+  display:none;
+}
+.mobile-menu-overlay {
+  display:none;
+}
 .background-brown {
   background-color: #959d85;
   background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
@@ -108,8 +113,11 @@ section {
 
 }
 
+.mobile-navbar {
+  display:none;
+}
 /* 전체 네비게이션 바 스타일 */
-.navbar {
+.navbar-pc {
   position: fixed;
   top: 0;
   left: 0;
@@ -1150,6 +1158,127 @@ ul.list2 {
 }
 
 @media (max-width: 768px) {
+  .navbar-pc {
+    display:none;
+  }
+  /* 모바일 내비게이션 기본 스타일 */
+  .mobile-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 5px 5px;
+    /* 점 크기 조정 */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    z-index: 998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+  }
+
+  .hamburger-button,
+  .mobile-home-button {
+    color:#000;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger-button:hover,
+  .hamburger-button:active,
+  .hamburger-button:focus {
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  /* =========================
+     3. 어두운 배경(딤) 오버레이
+     ========================= */
+  .dim-overlay {
+    display:block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none; /* 클릭 등 이벤트 막기 */
+    transition: opacity 0.3s ease;
+    z-index: 998; /* 메뉴보다 한 단계 아래 */
+  }
+  .dim-overlay.open {
+    opacity: 1;
+    pointer-events: auto; /* 오버레이가 열렸을 때 클릭 가능(메뉴 닫기 등 구현 시) */
+  }
+
+  /* =========================
+     4. 왼쪽 슬라이드 메뉴
+     ========================= */
+  .mobile-menu-overlay {
+    display:block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;   /* 메뉴 너비 조절 */
+    max-width: 300px;
+    height: 100%;
+    background-color: #f5f5f5;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 5px 5px;
+    /* 점 크기 조정 */
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+    transform: translateX(-100%); /* 처음에 화면 밖 */
+    transition: transform 0.3s ease;
+    z-index: 999; /* dim-overlay보다 위에 배치 */
+  }
+  .mobile-menu-overlay.open {
+    transform: translateX(0); /* 화면 안으로 슬라이드 */
+  }
+
+  /* 메뉴 목록 */
+  .mobile-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 30px 20px 20px; /* 햄버거 버튼과 겹치지 않도록 상단 여백 */
+  }
+  .mobile-menu-list li {
+    margin-bottom: 16px;
+  }
+  /* 왼쪽 정렬 */
+  .mobile-menu-list li a {
+    display: block;  /* 폭 전체를 클릭 영역으로 */
+    text-align: left; /* 왼쪽 정렬 */
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+  .mobile-menu-list li a:hover {
+    color: #555;
+  }
+
+  /* (옵션) 서브메뉴 */
+  .mobile-menu-list li.has-subnav .subnav {
+    list-style: none;
+    margin-top: 8px;
+    padding-left: 16px;
+  }
+  .mobile-menu-list li.has-subnav .subnav li {
+    margin: 4px 0;
+  }
   .onlypc {
     display: none;
   }

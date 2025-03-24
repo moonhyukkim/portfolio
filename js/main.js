@@ -27,78 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 배경 애니메이션 설정
-    const canvas = document.getElementById("animated-bg");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let linesArray = [];
-
-    class Line {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.length = Math.random() * 80 + 50;
-            this.angle = Math.random() * Math.PI * 2;
-            this.speed = Math.random() * 0.5 + 0.2;
-        }
-        update() {
-            this.x += Math.cos(this.angle) * this.speed;
-            this.y += Math.sin(this.angle) * this.speed;
-            if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-            }
-        }
-        draw() {
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(this.x, this.y);
-            ctx.lineTo(this.x + Math.cos(this.angle) * this.length, this.y + Math.sin(this.angle) * this.length);
-            ctx.stroke();
-        }
-    }
-
-    function init() {
-        linesArray = [];
-        for (let i = 0; i < 40; i++) { // 선 개수를 조절해서 깔끔한 느낌 유지
-            linesArray.push(new Line());
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let line of linesArray) {
-            line.update();
-            line.draw();
-        }
-        requestAnimationFrame(animate);
-    }
-
-    init();
-    animate();
-
-    // 메뉴 토글
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-
-    // 윈도우 리사이징 시 캔버스 크기 조정
-    window.addEventListener("resize", () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        init();
-    });
-});
 
 let lastScrollTop = 0;
-const navbar = document.querySelector(".navbar");
+const navbar = document.querySelector(".navbar-pc");
 
 // 네비게이션 바의 애니메이션 설정
 navbar.style.transition = "transform 0.4s ease-in-out";
@@ -114,6 +45,25 @@ window.addEventListener("scroll", () => {
     }
     lastScrollTop = scrollTop;
 });
+
+let mobileLastScrollTop = 0;
+const mobilenavbar = document.querySelector(".mobile-navbar");
+
+// 네비게이션 바의 애니메이션 설정
+mobilenavbar.style.transition = "transform 0.4s ease-in-out";
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+    if (scrollTop > mobileLastScrollTop) {
+        // 아래로 스크롤 시 네비게이션 숨김 (부드러운 애니메이션 적용)
+        mobilenavbar.style.transform = "translateY(-100%)";
+    } else {
+        // 위로 스크롤 시 네비게이션 보이기
+        mobilenavbar.style.transform = "translateY(0)";
+    }
+    mobileLastScrollTop = scrollTop;
+});
+
 
 function wrapLettersInSpan(node, delayIncrement = 0.05, indexObj = { val: 0 }) {
     // node.childNodes는 유사배열이고, 한 번에 변할 수 있으므로 Array.from으로 복사
@@ -425,4 +375,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   images[currentIndex].classList.add("active"); // 첫 번째 이미지 활성화
   setInterval(showNextImage, 3000); // 3초마다 이미지 변경
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mobileMenu   = document.getElementById("mobileMenu");
+  const dimOverlay   = document.getElementById("dimOverlay");
+
+  // 1) 햄버거 버튼 클릭 -> 메뉴와 딤 토글
+  hamburgerBtn.addEventListener("click", function() {
+    mobileMenu.classList.toggle("open");
+    dimOverlay.classList.toggle("open");
+  });
+
+  // 2) 메뉴 링크 클릭 -> 메뉴와 딤 닫기
+  const menuLinks = document.querySelectorAll(".mobile-menu-list a");
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      mobileMenu.classList.remove("open");
+      dimOverlay.classList.remove("open");
+    });
+  });
+
+  // 3) 오버레이 자체를 클릭해도 닫게 하고 싶으면 (옵션)
+  dimOverlay.addEventListener("click", function() {
+    mobileMenu.classList.remove("open");
+    dimOverlay.classList.remove("open");
+  });
 });
