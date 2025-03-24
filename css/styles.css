@@ -1170,10 +1170,13 @@ ul.list2 {
   }
   .letter-absolute {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     /* 부모(.image-container)를 기준으로 위치 설정 */
   }
   .hero-container h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    white-space: nowrap;
     /* 글자 크기 크게 */
   }
   .letters-right {
