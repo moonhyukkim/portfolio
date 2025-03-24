@@ -3,7 +3,7 @@ html {
 
 }
 section {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 /* 기본 스타일 */
 .light-theme {
@@ -1180,7 +1180,7 @@ ul.list2 {
     /* 글자 크기 크게 */
   }
   .letters-right {
-    top: 310px;
+    top: 300px;
     text-align: left;
     left: 50%;
     /* 이미지 오른쪽에 배치 */
@@ -1262,6 +1262,7 @@ ul.list2 {
   /* 세로 간격도 축소 */
   color: #000;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .info-left img {
