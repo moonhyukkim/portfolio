@@ -1156,7 +1156,7 @@ ul.list2 {
     padding: 0;
   }
   .hero-content {
-    right: 10px;
+    right: 0px;
     top: -50px;
   
   }
@@ -1165,11 +1165,11 @@ ul.list2 {
     height: 225px;
   }
   .absolute-image {
-    right: 100px;
+    right: 90px;
     top: 100px;
   }
   .hero-container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     /* 글자 크기 크게 */
   }
   .letters-right {
