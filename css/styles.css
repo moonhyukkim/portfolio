@@ -1245,7 +1245,7 @@ ul.list2 {
   overflow: hidden;
   max-width: 95vw;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 50px;
 }
 
 .thin {
@@ -1267,7 +1267,6 @@ ul.list2 {
   /* 세로 간격도 축소 */
   color: #000;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .info-left img {
