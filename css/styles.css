@@ -1199,6 +1199,7 @@ ul.list2 {
     font-size: 15px;
   }
   .hero-container {
+    width:100%;
     padding-top: 200px;
     /* 추가된 공간 */
     padding-bottom: 200px;
