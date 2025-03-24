@@ -2,7 +2,9 @@ html {
   scroll-behavior: smooth;
 
 }
-
+section {
+  overflow-x: hidden;
+}
 /* 기본 스타일 */
 .light-theme {
   font-family: "Noto Sans KR", sans-serif;
