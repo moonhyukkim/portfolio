@@ -1253,9 +1253,12 @@ ul.list2 {
 }
 
 .info-right {
+  width:100%;
   text-align: left;
 }
-
+.info-left {
+  width:100%;
+}
 .info-right h1 {
   font-size: 2rem;
   /* 글자 크기 크게 */
