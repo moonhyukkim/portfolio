@@ -1171,9 +1171,6 @@ ul.list2 {
   .letter-absolute {
     position: absolute;
     /* 부모(.image-container)를 기준으로 위치 설정 */
-    right: 50%;
-    /* 이미지 오른쪽에 배치 */
-    transform: translateY(50%);
   }
   .hero-container h1 {
     font-size: 3rem;
