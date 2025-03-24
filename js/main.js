@@ -53,21 +53,20 @@ const mobilenavbar = document.querySelector(".mobile-navbar");
 mobilenavbar.style.transition = "transform 0.4s ease-in-out";
 
 window.addEventListener("scroll", () => {
-    let scrollTop = window.scrollY;
+  // 음수 스크롤값 보정
+  let scrollTop = Math.max(window.scrollY, 0);
 
-    if (scrollTop === 0) {
-        // 스크롤이 최상단일 때는 항상 네비게이션 바 노출
-        mobilenavbar.style.transform = "translateY(0)";
-    } else if (scrollTop > mobileLastScrollTop) {
-        // 아래로 스크롤 시 네비게이션 숨김
-        mobilenavbar.style.transform = "translateY(-100%)";
-    } else {
-        // 위로 스크롤 시 네비게이션 보이기
-        mobilenavbar.style.transform = "translateY(0)";
-    }
-
-    mobileLastScrollTop = scrollTop;
+  if (scrollTop === 0) {
+      mobilenavbar.style.transform = "translateY(0)";
+  } else if (scrollTop > mobileLastScrollTop) {
+      mobilenavbar.style.transform = "translateY(-100%)";
+  } else {
+      mobilenavbar.style.transform = "translateY(0)";
+  }
+  
+  mobileLastScrollTop = scrollTop;
 });
+
 
 
 function wrapLettersInSpan(node, delayIncrement = 0.05, indexObj = { val: 0 }) {
