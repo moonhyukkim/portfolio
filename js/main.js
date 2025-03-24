@@ -54,13 +54,18 @@ mobilenavbar.style.transition = "transform 0.4s ease-in-out";
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.scrollY;
-    if (scrollTop > mobileLastScrollTop) {
-        // 아래로 스크롤 시 네비게이션 숨김 (부드러운 애니메이션 적용)
+
+    if (scrollTop === 0) {
+        // 스크롤이 최상단일 때는 항상 네비게이션 바 노출
+        mobilenavbar.style.transform = "translateY(0)";
+    } else if (scrollTop > mobileLastScrollTop) {
+        // 아래로 스크롤 시 네비게이션 숨김
         mobilenavbar.style.transform = "translateY(-100%)";
     } else {
         // 위로 스크롤 시 네비게이션 보이기
         mobilenavbar.style.transform = "translateY(0)";
     }
+
     mobileLastScrollTop = scrollTop;
 });
 
