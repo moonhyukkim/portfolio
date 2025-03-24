@@ -556,6 +556,12 @@ footer {
   justify-content: center;
   text-align: center;
 }
+.profile-right-pc {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin-bottom: -150px;
+}
 
 .profile-right {
   position: relative;
@@ -1319,8 +1325,11 @@ ul.list2 {
   margin-bottom: 0px;
   padding-left:20px;
 }
-.skill {
-  padding-right:20px;
+.profile-right-pc {
+  position: relative;
+  text-align: left;
+  margin-bottom: 0px;
+  padding:0 20px;
 }
 
 .profile-left {
