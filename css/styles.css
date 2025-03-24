@@ -1304,7 +1304,7 @@ ul.list2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   text-align: center;
   overflow: hidden;
   width: 100%;
@@ -1329,14 +1329,10 @@ ul.list2 {
 .profile-right-pc {
   position: relative;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 80px;
   margin-bottom: 0px;
   width:100%;
-  padding:0 20px;
+  padding-right:100px;
 }
 
 .profile-left {
