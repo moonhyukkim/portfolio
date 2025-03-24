@@ -1325,10 +1325,12 @@ ul.list2 {
   margin-bottom: 0px;
   padding-left:20px;
 }
+
 .profile-right-pc {
   position: relative;
   text-align: left;
   margin-bottom: 0px;
+  width:100%;
   padding:0 20px;
 }
 
