@@ -938,7 +938,7 @@ footer {
 }
 
 .skill-container {
-  min-width: 400px;
+  min-width: 300px;
   max-width: 600px;
   margin: 10px 0;
 }
@@ -1332,10 +1332,9 @@ ul.list2 {
   margin-top: 80px;
   margin-bottom: 0px;
   width:100%;
+  padding:0 20px;
 }
-.skill {
-  padding:0 200px;
-}
+
 .profile-left {
   position: relative;
   text-align: right;
