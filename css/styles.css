@@ -1240,7 +1240,7 @@ ul.list2 {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  width: 95%;
+  margin:0 20px;
 }
 
 .thin {
