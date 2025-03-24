@@ -1161,8 +1161,8 @@ ul.list2 {
   
   }
   .hero-content img {
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 225px;
   }
   .absolute-image {
     right: 100px;
@@ -1440,7 +1440,7 @@ ul.list2 {
     }
     .contact-imgcontainer img {
       border-radius: 5px;
-      max-width: 300px;
+      width: 300px;
       height: auto;
       object-fit: cover;
       /* 가로세로 비율 맞춰 잘림 */
