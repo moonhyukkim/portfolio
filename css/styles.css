@@ -1168,6 +1168,10 @@ ul.list2 {
     right: 90px;
     top: 100px;
   }
+  .letter-absolute {
+    position: absolute;
+    /* 부모(.image-container)를 기준으로 위치 설정 */
+  }
   .hero-container h1 {
     font-size: 3rem;
     /* 글자 크기 크게 */
