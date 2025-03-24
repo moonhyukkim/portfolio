@@ -1332,9 +1332,10 @@ ul.list2 {
   margin-top: 80px;
   margin-bottom: 0px;
   width:100%;
-  padding-right:100px;
 }
-
+.skill {
+  padding:0 200px;
+}
 .profile-left {
   position: relative;
   text-align: right;
