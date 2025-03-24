@@ -20,6 +20,9 @@ section {
   flex-direction: column;
   position: relative;
 }
+* {
+  box-sizing: border-box;
+}
 
 
 .background-brown {
@@ -1235,12 +1238,14 @@ ul.list2 {
 .info-content {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
-  width: 95vw;
+  max-width: 95vw;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .thin {
@@ -1248,7 +1253,7 @@ ul.list2 {
 }
 
 .info-right {
-  text-align: right;
+  text-align: left;
 }
 
 .info-right h1 {
@@ -1462,7 +1467,7 @@ ul.list2 {
       font-size: 14px;
     }
     .background-brown {
-width:100vw;
+width:100%;
     }
 }
 
