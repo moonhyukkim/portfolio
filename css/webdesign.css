@@ -299,4 +299,12 @@ font-size: 19px;
     .flex-row a {
         font-size: 14px;
     }
+    
+  .banner {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  .topbanner {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
 }
