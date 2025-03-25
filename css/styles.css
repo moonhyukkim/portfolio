@@ -1168,7 +1168,6 @@ ul.list2 {
   }
   /* 모바일 내비게이션 기본 스타일 */
   .mobile-navbar {
-    padding-top: env(safe-area-inset-top);
     position: fixed;
     top: 0;
     left: 0;
@@ -1185,19 +1184,6 @@ ul.list2 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 16px;
-  }
-
-  .mobile-navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: env(safe-area-inset-top);
-    background-color: #000;
-    /* 점 크기 조정 */
-    backdrop-filter: blur(10px);
-    z-index: 999;
   }
 
   .hamburger-button,
