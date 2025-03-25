@@ -188,20 +188,20 @@ font-size:18px;
         display: inline-block;
     }
     .main-page {
-        width:350px;
+        width:260px;
         height:auto;
-        top: 448px;
-        left: 48%;
+        top: 457px;
+        left: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
         opacity: 0;
         transition: opacity 1s ease-in-out;
     }
     .main-monitor {
-        max-width:470px;
+        max-width:350px;
         position: absolute;
         top: 480px;
-        left: 48%;
+        left: 50%;
         transform: translate(-50%, -50%);
         height: auto;
         filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
@@ -212,7 +212,7 @@ font-size:18px;
     }
     .main-title {
         position: absolute;
-        top: 210px;
+        top: 200px;
         width:350px;
         left: 50%;
         margin-left:0px;
@@ -221,8 +221,8 @@ font-size:18px;
     }
     .main-h1 {
         position: absolute;
-        top: 200px;
-        left: 21%;
+        top: 190px;
+        left: 15%;
         margin-left:0px;
         transform: translate(-20%, -50%);
         font-family: 'Anton', sans-serif;
