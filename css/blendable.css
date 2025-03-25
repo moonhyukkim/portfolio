@@ -339,24 +339,28 @@ font-size: 3rem;
     background-size: cover; /* 요소를 꽉 채우도록 조정 */
     background-blend-mode: darken; /* 배경과 색상을 섞음 */
     background-color: rgba(0, 0, 0, 0.4); /* 어둡게 만들 색상 */
+    background-position: center center; /* 가로세로 모두 중앙 정렬 */
   }
   .sampling-background {
     background-image: url("../assets/images/blendable/lookbook7.jpg");
     background-size: cover; /* 요소를 꽉 채우도록 조정 */
     background-blend-mode: darken; /* 배경과 색상을 섞음 */
     background-color: rgba(0, 0, 0, 0.4); /* 어둡게 만들 색상 */
+    background-position: center center; /* 가로세로 모두 중앙 정렬 */
   }
   .production-background {
     background-image: url("../assets/images/blendable/lookbook8.jpg");
     background-size: cover; /* 요소를 꽉 채우도록 조정 */
     background-blend-mode: darken; /* 배경과 색상을 섞음 */
     background-color: rgba(0, 0, 0, 0.4); /* 어둡게 만들 색상 */
+    background-position: center center; /* 가로세로 모두 중앙 정렬 */
   }
   .photography-background {
     background-image: url("../assets/images/blendable/lookbook9.jpg");
     background-size: cover; /* 요소를 꽉 채우도록 조정 */
     background-blend-mode: darken; /* 배경과 색상을 섞음 */
     background-color: rgba(0, 0, 0, 0.4); /* 어둡게 만들 색상 */
+    background-position: center center; /* 가로세로 모두 중앙 정렬 */
   }
   /* 기본 스타일 */
   .align-center {
@@ -476,12 +480,27 @@ font-size: 3rem;
   }
 
   @media (max-width: 768px) {
+    .slider-section {
+      padding-top:100px;
+    }
+    .slider-section a {
+      text-align: center;
+      font-family: "Noto Sans KR", sans-serif;
+      color:#000;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
   .story {
     max-width: 1500px;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 0px;
     padding-bottom: 150px;
+  }
+  .story h2 {
+font-size: 20px;
   }
   .progress-title h1{
     font-size: 3rem;         /* 글자 크기 크게 */
