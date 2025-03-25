@@ -440,16 +440,17 @@ background-blend-mode: multiply;
 
 @media (max-width: 768px) {
   .portfolio-content {
+    padding-top: 130px;
     padding-bottom: 50px;
   }
   .portfolio-image img {
-    width: 200px;
+    width: 220px;
     height: auto;
     object-fit: cover;
     display: block;
   }
   .portfolio-image h1 {
-    font-size: 20px;
+    font-size: 25px;
   }
   .story {
     margin: 0 auto;
@@ -458,8 +459,13 @@ background-blend-mode: multiply;
     padding-bottom: 200px;
     text-align: center;
   }
+  .story h2 {
+    font-size: 20px;
+    color:#000;
+  }
   .story p {
     font-size:16px;
+    color:#000;
   }
   .progress-title h1{
     font-size: 3rem;
@@ -479,12 +485,19 @@ background-blend-mode: multiply;
     padding-top: 50px; 
   }
   .flex-left {
-    width: 440px;
+    max-width: 400px;
     /* 이미지 크기 조정 */
-    height: 330px;
+    max-height: 330px;
     border-radius: 20px 20px 0 0;
   }
-  
+  .slider-1 {
+    width:100%;
+    height:auto;
+  }
+  .slider-1 img {
+    width:100%;
+    height:auto;
+  }
   .flex-right {
     max-width:400px;
     padding: 20px;
