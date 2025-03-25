@@ -1187,6 +1187,21 @@ ul.list2 {
     padding: 10px 16px;
   }
 
+  .mobile-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background-color: #f5f5f5;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 5px 5px;
+    /* 점 크기 조정 */
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+
   .hamburger-button,
   .mobile-home-button {
     color:#000;
