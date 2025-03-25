@@ -188,9 +188,9 @@ font-size:18px;
         display: inline-block;
     }
     .main-page {
-        width:260px;
+        width:270px;
         height:auto;
-        top: 457px;
+        top: 427px;
         left: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
@@ -198,9 +198,9 @@ font-size:18px;
         transition: opacity 1s ease-in-out;
     }
     .main-monitor {
-        max-width:350px;
+        max-width:360px;
         position: absolute;
-        top: 480px;
+        top: 450px;
         left: 50%;
         transform: translate(-50%, -50%);
         height: auto;
@@ -213,7 +213,7 @@ font-size:18px;
     .main-title {
         position: absolute;
         top: 200px;
-        width:350px;
+        width:330px;
         left: 50%;
         margin-left:0px;
         transform: translate(-50%, -50%);
@@ -221,10 +221,10 @@ font-size:18px;
     }
     .main-h1 {
         position: absolute;
-        top: 190px;
-        left: 15%;
-        margin-left:0px;
-        transform: translate(-20%, -50%);
+        top: 180px;
+        left: 50%;
+        margin-left:-90px;
+        transform: translate(-50%, -50%);
         font-family: 'Anton', sans-serif;
         font-size: 3rem;         /* 글자 크기 크게 */
         font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
