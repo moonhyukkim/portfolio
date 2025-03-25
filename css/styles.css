@@ -1435,6 +1435,7 @@ ul.list2 {
   /* 세로 간격도 축소 */
   color: #000;
   text-transform: uppercase;
+  padding-bottom: 30px;
 }
 
 .info-left img {
@@ -1509,7 +1510,7 @@ ul.list2 {
   font-size: 20px;
   font-weight: bold;
   padding-top: 100px;
-  margin-bottom: -50px;
+  margin-bottom: 0px;
 }
 
 .profile-left-line::before {
@@ -1530,7 +1531,7 @@ ul.list2 {
   font-size: 20px;
   font-weight: bold;
   padding-top: 100px;
-  margin-bottom: -50px;
+  margin-bottom: 0px;
 }
 
 .profile-right-line::after {
