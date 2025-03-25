@@ -1166,6 +1166,12 @@ ul.list2 {
   .navbar-pc {
     display:none;
   }
+  body {
+    margin: 0;
+    background-color: black; /* 전체 배경 검정 */
+    padding-top: env(safe-area-inset-top); /* 노치 영역 고려 */
+    color: white;
+  }
   /* 모바일 내비게이션 기본 스타일 */
   .mobile-navbar {
     position: fixed;
