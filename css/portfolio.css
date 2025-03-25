@@ -485,7 +485,7 @@ background-blend-mode: multiply;
   }
   .flex-left {
     margin: 0 20px;
-    max-width: 400px;
+    max-width: 360px;
     /* 이미지 크기 조정 */
     max-height: 330px;
     border-radius: 20px 20px 0 0;
