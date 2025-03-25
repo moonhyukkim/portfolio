@@ -1195,11 +1195,9 @@ ul.list2 {
     right: 0;
     height: env(safe-area-inset-top);
     background-color: #000;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 5px 5px;
     /* 점 크기 조정 */
     backdrop-filter: blur(10px);
-    z-index: -1;
+    z-index: 999;
   }
 
   .hamburger-button,
