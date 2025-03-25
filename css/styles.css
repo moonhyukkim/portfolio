@@ -6,6 +6,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
+
 section {
   overflow: hidden;
 }
@@ -14,8 +15,9 @@ section {
   font-family: "Noto Sans KR", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000;
-
+  background-color: #f5f5f5;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 5px 5px;
   /* 점 크기 조정 */
   color: #333;
   overflow-x: hidden;
@@ -32,14 +34,6 @@ section {
 }
 .mobile-menu-overlay {
   display:none;
-}
-
-.hero-section {
-  background-color: #f5f5f5;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 5px 5px;
-  /* 점 크기 조정 */
-  backdrop-filter: blur(10px);
 }
 .background-brown {
   background-color: #959d85;
