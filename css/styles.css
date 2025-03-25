@@ -1166,7 +1166,7 @@ ul.list2 {
   .navbar-pc {
     display:none;
   }
-  body {
+  .light-theme {
     margin: 0;
     background-color: black; /* 전체 배경 검정 */
     padding-top: env(safe-area-inset-top); /* 노치 영역 고려 */
