@@ -182,7 +182,7 @@ font-size:18px;
 
   @media (max-width: 768px) {
     .main-image {
-        height:700px;
+        height:680px;
         max-width:900px;
         position: relative;
         display: inline-block;
