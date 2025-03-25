@@ -130,7 +130,7 @@
 <body class="light-theme">
     <header class="hero">
         <!--<canvas id="animated-bg"></canvas>-->
-        <nav class="navbar">
+        <nav class="navbar-pc">
             <ul class="primary-menu">
                 <li><a href="../../index.html">홈</a></li>
                 <li><a href="../../index.html#section1">프로필</a></li>
@@ -146,6 +146,57 @@
                 <li><a href="../../index.html#section2">문의</a></li>
             </ul>
         </nav>
+        <nav class="mobile-navbar">
+            <!-- 햄버거 버튼 (왼쪽) -->
+            <button class="hamburger-button" id="hamburgerBtn">
+                <!-- Heroicons Bars 3 (Outline) 아이콘 인라인 예시 -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5" />
+                </svg>
+            </button>
+
+            <!-- 홈 버튼 (오른쪽) -->
+            <a class="mobile-home-button" href="index.html">
+                <!-- Heroicons Home (Outline) 아이콘 인라인 예시 -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
+                     1.518-.58 2.098 0L22.25 12M4.5 
+                     10.5v9.75a.75.75 0 00.75.75h4.5a.75.75 
+                     0 00.75-.75v-6h3v6a.75.75 
+                     0 00.75.75h4.5a.75.75 
+                     0 00.75-.75V10.5" />
+                </svg>
+            </a>
+        </nav>
+
+        <!-- 
+            2) 배경 딤(dark overlay) 
+               메뉴 열릴 때 함께 활성화
+          -->
+        <div class="dim-overlay" id="dimOverlay"></div>
+
+        <!--
+            3) 모바일 메뉴(슬라이드 아웃)
+          -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="#section1">프로필</a></li>
+                <li class="has-subnav">
+                    <a href="#">포트폴리오</a>
+                    <ul class="subnav">
+                        <li><a href="quartzheather.html">쿼츠헤더</a></li>
+                        <li><a href="blendable.html">블렌더블</a></li>
+                        <li><a href="urbanvape.html">어반베이프</a></li>
+                        <li><a href="webdesign.html">웹디자인</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section2">문의</a></li>
+            </ul>
+        </div>
     </header>
     <div class="main-image">
         <img class="main-relative" src="../../assets/images/urbanvape/urbanvape1.jpg" alt="urbanvape" />

@@ -368,20 +368,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  let images = document.querySelectorAll(".main-page");
-  let currentIndex = 0;
-
-  function showNextImage() {
-      images[currentIndex].classList.remove("active"); // 현재 이미지 숨기기
-      currentIndex = (currentIndex + 1) % images.length; // 다음 이미지로 변경
-      images[currentIndex].classList.add("active"); // 새 이미지 표시
-  }
-
-  images[currentIndex].classList.add("active"); // 첫 번째 이미지 활성화
-  setInterval(showNextImage, 3000); // 3초마다 이미지 변경
-});
-
-document.addEventListener("DOMContentLoaded", function () {
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const mobileMenu   = document.getElementById("mobileMenu");
   const dimOverlay   = document.getElementById("dimOverlay");
