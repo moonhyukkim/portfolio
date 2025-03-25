@@ -381,7 +381,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2) 메뉴 링크 클릭 -> 메뉴와 딤 닫기
   const menuLinks = document.querySelectorAll(".mobile-menu-list a");
   menuLinks.forEach(link => {
-    link.addEventListener("click", function() {
+    link.addEventListener("click", function(e) {
+      if (link.classList.contains('subnav-toggle')) {
+        // '포트폴리오' 클릭이면 전체 메뉴 닫기 로직을 실행하지 않는다
+        e.preventDefault();
+        return;
+      }
+      // 나머지 a 태그는 메뉴 닫기
       mobileMenu.classList.remove("open");
       dimOverlay.classList.remove("open");
     });
@@ -391,5 +397,70 @@ document.addEventListener("DOMContentLoaded", function () {
   dimOverlay.addEventListener("click", function() {
     mobileMenu.classList.remove("open");
     dimOverlay.classList.remove("open");
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const subnavToggles = document.querySelectorAll(".subnav-toggle");
+
+  subnavToggles.forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault(); // '#' 링크 이동 막기
+      
+      const parentLi = this.parentElement; // <li class="has-subnav">
+      const subnav   = parentLi.querySelector(".mobile-subnav");
+      
+      // 이미 .open인가?
+      const isOpen = parentLi.classList.contains("open");
+
+      if (!isOpen) {
+        // [열려있지 않을 때: "열기" 애니메이션]
+        
+        // 1) 먼저 display를 block으로 바꿔야 높이 측정 가능
+        subnav.style.display = "block";
+        // 2) 트랜지션 설정
+        subnav.style.transition = "height 0.3s ease"; 
+        // 3) 처음 height: 0 → 강제로 0으로 만들고 reflow
+        subnav.style.height = "0";
+        subnav.offsetHeight; // 강제 리플로우(forced reflow)
+        // 4) 실제 높이(px)로 변경
+        const targetHeight = subnav.scrollHeight + "px";
+        subnav.style.height = targetHeight;
+        
+        // 5) .open 클래스 부여 (화살표 회전 등)
+        parentLi.classList.add("open");
+
+        // 6) transition 끝난 뒤에 height:auto로 고정
+        subnav.addEventListener("transitionend", function onEnd() {
+          // transition 이벤트가 여러 번 일어나지 않도록 remove
+          subnav.removeEventListener("transitionend", onEnd);
+          // 최종적으로 auto로 설정하면 내용 변경에도 자연스럽게 대응
+          subnav.style.height = "auto";
+        });
+
+      } else {
+        // [열려 있을 때: "닫기" 애니메이션]
+        
+        // 1) 현재 높이를 가져와서 고정
+        const currentHeight = subnav.scrollHeight + "px";
+        subnav.style.height = currentHeight;
+        // display가 block 상태일 것이므로 그대로 둔다
+        
+        // 2) reflow 후 height=0으로 트랜지션
+        subnav.offsetHeight; // 강제 리플로우
+        subnav.style.transition = "height 0.3s ease";
+        subnav.style.height = "0";
+
+        // 3) .open 클래스 제거
+        parentLi.classList.remove("open");
+
+        // 4) transition 끝난 뒤에 display:none으로 완전히 숨김
+        subnav.addEventListener("transitionend", function onEnd() {
+          subnav.removeEventListener("transitionend", onEnd);
+          subnav.style.display = "none";
+          // height도 0으로 초기화해두면 다음 열림 때 다시 0 → scrollHeight
+          subnav.style.height = "0";
+        });
+      }
+    });
   });
 });

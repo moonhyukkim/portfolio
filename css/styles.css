@@ -1271,14 +1271,41 @@ ul.list2 {
   }
 
   /* (옵션) 서브메뉴 */
-  .mobile-menu-list li.has-subnav .subnav {
+  .mobile-menu-list li.has-subnav .mobile-subnav {
     list-style: none;
-    margin-top: 8px;
+    margin-top: 10px;
     padding-left: 16px;
   }
-  .mobile-menu-list li.has-subnav .subnav li {
-    margin: 4px 0;
+  .mobile-menu-list li.has-subnav .mobile-subnav li {
+    margin: 10px 0;
+    font-weight: 700;
   }
+/* 서브메뉴 기본 상태 (완전히 숨김) */
+.mobile-subnav {
+  display: none;    /* 우선 숨김 */
+  height: 0;        /* 트랜지션할 수 있도록 초기값 0 */
+  overflow: hidden; /* 내용 넘칠 때 감추기 */
+}
+
+
+/* 열렸을 때( .open )는 화살표를 180도 회전 → 위(↑)를 가리킴 */
+.has-subnav.open .arrow {
+  transform: rotate(0deg);
+}
+.arrow {
+  display: inline-block;      /* 삼각형을 보이게 하려면 inline-block */
+  vertical-align: middle;     /* 텍스트와 세로로 맞추기 */
+  width: 0;
+  height: 0;
+  margin-left: 10px;          /* 텍스트와 화살표 사이 여백 */
+  margin-bottom: 2px;
+  /* Border Trick으로 작은 삼각형 만들기 */
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #333; /* ↓ 방향의 삼각형(아래가 채워짐) */
+  transform: rotate(180deg);
+  transition: transform 0.3s ease; /* 회전 애니메이션 */
+}
   .onlypc {
     display: none;
   }
