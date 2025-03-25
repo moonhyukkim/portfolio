@@ -481,10 +481,10 @@ background-blend-mode: multiply;
     text-align: center;
     overflow: hidden;
     width: 100%;
-padding: 50px 20px;
+    padding: 50px 20px;
   }
   .flex-left {
-    max-width: 400px;
+    max-width: 360px;
     /* 이미지 크기 조정 */
     max-height: 330px;
     border-radius: 20px 20px 0 0;
