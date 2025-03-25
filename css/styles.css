@@ -1420,6 +1420,7 @@ ul.list2 {
 
 .info-right {
   width:100%;
+  padding-top: 50px;
   text-align: left;
 }
 
@@ -1582,14 +1583,14 @@ ul.list2 {
   margin-left: 0%;
     text-align: left;
     color:#fff;
-    font-size:14px;
+    font-size:12px;
     width: 50%;
   }
   .timeline-detail-right {
     margin-right: 0%;
       text-align: right;
       color:#fff;
-      font-size:14px;
+      font-size:12px;
       width: 50%;
     }
     .timeline-item.left {
@@ -1610,7 +1611,7 @@ ul.list2 {
       padding-bottom: 30px;
     }
     .timeline-content h1 {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     .contact-title h1{
       font-size: 3rem;
