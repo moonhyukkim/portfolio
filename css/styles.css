@@ -1168,6 +1168,7 @@ ul.list2 {
   }
   /* 모바일 내비게이션 기본 스타일 */
   .mobile-navbar {
+    padding-top: env(safe-area-inset-top);
     position: fixed;
     top: 0;
     left: 0;
