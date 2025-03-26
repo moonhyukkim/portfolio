@@ -201,7 +201,7 @@
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
   url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-background-blend-mode: multiply;
+
   border: 1px solid black;
   padding: 20px;
   border-radius: 20px;
@@ -246,7 +246,6 @@ background-blend-mode: multiply;
   border: 1px solid black;
   border-radius: 20px;
   padding: 20px;
-  z-index: 10;
   margin-right: -50px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
