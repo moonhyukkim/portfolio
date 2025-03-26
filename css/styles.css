@@ -463,7 +463,7 @@ footer {
   font-size: 20px;
   font-weight: bold;
   padding-top: 100px;
-  margin-bottom: -50px;
+  margin-bottom: 40px;
 }
 
 .info-title::after {
@@ -525,6 +525,7 @@ footer {
   /* 세로 간격도 축소 */
   color: #000;
   text-transform: uppercase;
+  padding-bottom: 40px;
 }
 
 .info-left img {
@@ -883,6 +884,8 @@ footer {
   font-size:20px;
   width:50%;
   margin-left: 10%;
+  line-height: 0.6;
+  font-weight: 300;
 }
 .timeline-detail-right {
     text-align: right;
@@ -890,6 +893,8 @@ footer {
     font-size:20px;
     margin-right: 10%;
     width:50%;
+    line-height: 0.6;
+    font-weight: 300;
   }
 /* 오른쪽 항목 (중앙선에 붙이기) */
 .timeline-item.right {
@@ -1586,6 +1591,7 @@ ul.list2 {
     color:#fff;
     font-size:14px;
     width: 50%;
+    line-height: 1.4;
   }
   .timeline-detail-right {
     margin-right: 0%;
@@ -1593,6 +1599,7 @@ ul.list2 {
       color:#fff;
       font-size:14px;
       width: 50%;
+      line-height: 1.4;
     }
     .timeline-item.left {
       justify-content: center;
