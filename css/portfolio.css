@@ -298,7 +298,11 @@ background-blend-mode: multiply;
   padding-bottom: 200px;
 }
 .design-background {
-
+  background-image: url("../assets/images/quartzheather/products/detail11.jpg");
+  background-size: cover; /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken; /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+  background-position: center center; /* 가로세로 모두 중앙 정렬 */
 }
 
 .sampling-background {
@@ -529,14 +533,7 @@ background-blend-mode: multiply;
     border-radius: 0 0 20px 20px;
   }
   
-  .flex-another-left {
-    border-radius: 20px 20px 0 0;
-    position: relative;
-    max-width:350px;
-    padding: 20px;
-    margin-right: 0px;
-    text-align: left;
-  }
+
   .failure {
     padding:150px 0;
 text-align: center;
