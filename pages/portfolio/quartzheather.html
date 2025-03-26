@@ -4,33 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>쿼츠헤더 | 포트폴리오</title>
-
-    <!-- (1) 메인 CSS : profile.css -->
+    <title>쿼츠헤더 | 김문혁 포트폴리오</title>
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="stylesheet" href="../../css/portfolio.css" />
-    <!-- (2) Owl Carousel CSS (CDN 예시) -->
-    <!-- 버전은 예시이며, 원하는 버전을 사용하거나 로컬 파일을 사용해도 됨 -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
-    <!-- (3) JS 파일 (profile.js, main.js) - defer 로딩 -->
     <script defer src="../../js/profile.js"></script>
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/portfolio.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
         rel="stylesheet">
-    <!-- (4) jQuery & Owl Carousel JS (CDN 예시) - jQuery 먼저, Owl 다음 -->
-    <!-- Owl Carousel은 jQuery 의존적이라서 반드시 jQuery가 먼저 로드되어야 함 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <!-- (5) Owl Carousel 초기화 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Owl Carousel 초기화
             $('.owl-carousel').owlCarousel({
                 loop: true,             // 계속 순환
                 margin: 10,            // 슬라이드 사이 간격
@@ -78,7 +68,6 @@
         <nav class="mobile-navbar">
             <!-- 햄버거 버튼 (왼쪽) -->
             <button class="hamburger-button" id="hamburgerBtn">
-                <!-- Heroicons Bars 3 (Outline) 아이콘 인라인 예시 -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,8 +76,7 @@
             </button>
 
             <!-- 홈 버튼 (오른쪽) -->
-                        <a class="mobile-home-button" href="../../index.html">
-                <!-- Heroicons Home (Outline) 아이콘 인라인 예시 -->
+            <a class="mobile-home-button" href="../../index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
@@ -101,15 +89,9 @@
             </a>
         </nav>
 
-        <!-- 
-            2) 배경 딤(dark overlay) 
-               메뉴 열릴 때 함께 활성화
-          -->
+
         <div class="dim-overlay" id="dimOverlay"></div>
 
-        <!--
-            3) 모바일 메뉴(슬라이드 아웃)
-          -->
         <div class="mobile-menu-overlay" id="mobileMenu">
             <ul class="mobile-menu-list">
                 <li><a href="../../index.html">홈</a></li>
@@ -118,7 +100,7 @@
                     <a href="#" class="subnav-toggle">
                         포트폴리오
                         <span class="arrow"></span>
-                      </a>
+                    </a>
                     <ul class="mobile-subnav">
                         <li><a href="quartzheather.html">쿼츠헤더</a></li>
                         <li><a href="blendable.html">블렌더블</a></li>
@@ -130,7 +112,6 @@
             </ul>
         </div>
 
-        <!-- 페이지 타이틀이나 배너 이미지가 있다면 추가 -->
         <div class="portfolio-content reveal">
             <div class="portfolio-image">
                 <img src="../../assets/images/quartzheather/label.png" alt="Quartz Heather Image 4" />
@@ -139,14 +120,10 @@
         </div>
     </header>
 
-    <!-- ========== 메인 컨테이너 ========== -->
     <main>
-        <!-- (A) Owl Carousel 슬라이더 -->
         <section class="slider-section">
             <div class="owl-carousel">
-                <!-- 각 슬라이드 항목 -->
                 <div>
-                    <!-- 예시 이미지. 실제 경로로 교체해주세요. -->
                     <img src="../../assets/images/quartzheather/products/2.png" alt="Quartz Heather Image 1" />
                 </div>
                 <div>
@@ -173,11 +150,9 @@
                 <div>
                     <img src="../../assets/images/quartzheather/products/15.png" alt="Quartz Heather Image 4" />
                 </div>
-                <!-- 필요한 만큼 div 추가 -->
             </div>
         </section>
 
-        <!-- (B) 제조과정 설명 섹션 -->
         <section class="story reveal" style="max-width: 800px;">
             <h2>브랜드 철학</h2>
             <p>
@@ -190,12 +165,11 @@
             <p>
                 이러한 과정을 통해 만들어진 쿼츠헤더는 아웃도어에 관심이 늘어난 젊은 세대 남성들을 타겟으로 설정한 브랜드입니다.
             </p>
-            <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
         </section>
     </main>
 
-        <section class="design-background">
-            <div class="align-center">
+    <section class="design-background">
+        <div class="align-center">
             <div class="progress-title">
                 <h1>DESIGN</h1>
             </div>
@@ -226,207 +200,203 @@
                     </div>
                 </div>
             </div>
-        <div class="flex-content reveal">
-            <div class="flex-left">
-                <div class="slider-1">
-                    <img src="../../assets/images/quartzheather/process/1.jpg" alt="Quartz Heather Image 1">
-                    <img src="../../assets/images/quartzheather/process/2.jpg" alt="Quartz Heather Image 2">
-                    <img src="../../assets/images/quartzheather/process/3.jpg" alt="Quartz Heather Image 3">
+            <div class="flex-content reveal">
+                <div class="flex-left">
+                    <div class="slider-1">
+                        <img src="../../assets/images/quartzheather/process/1.jpg" alt="Quartz Heather Image 1">
+                        <img src="../../assets/images/quartzheather/process/2.jpg" alt="Quartz Heather Image 2">
+                        <img src="../../assets/images/quartzheather/process/3.jpg" alt="Quartz Heather Image 3">
+                    </div>
                 </div>
-            </div>
-            <div class="flex-right">
-                <h2>디자인</h2>
-                <p>
-                    최초 투명한 속성을 가진 석영(Quartz)과 들판에 핀 야생화(Heather)를 소재로 브랜드 컨셉을 기획했습니다. 이후 왼쪽 가슴에 로고를 배치할 계획으로 심장을 야생화로
-                    형상화한 로고를 구상했으며
-                    꽃잎들이 겹쳐져 있을 때 틈새의 모양에서 영감을 받아 팔꿈치, 무릎 등의 관절 부분에 기하학적인 디테일을 추가하기로 계획했습니다.<br><br>
-                    심미적인 요소 뿐만 아니라 기능성 또한 고려하기 위해 관절을 굽혔을 때 꽃이 피어나는 모양이 되도록 디테일을 입체적으로 구현했습니다.<br><br>
-                    SS시즌 런칭을 목적으로 바람막이, 아노락, 팬츠 생산을 기획했으며 구현된 디테일을 적절히 배치해 각각의 스타일을 디자인했습니다.
+                <div class="flex-right">
+                    <h2>디자인</h2>
+                    <p>
+                        최초 투명한 속성을 가진 석영(Quartz)과 들판에 핀 야생화(Heather)를 소재로 브랜드 컨셉을 기획했습니다. 이후 왼쪽 가슴에 로고를 배치할 계획으로 심장을
+                        야생화로
+                        형상화한 로고를 구상했으며
+                        꽃잎들이 겹쳐져 있을 때 틈새의 모양에서 영감을 받아 팔꿈치, 무릎 등의 관절 부분에 기하학적인 디테일을 추가하기로 계획했습니다.<br><br>
+                        심미적인 요소 뿐만 아니라 기능성 또한 고려하기 위해 관절을 굽혔을 때 꽃이 피어나는 모양이 되도록 디테일을 입체적으로 구현했습니다.<br><br>
+                        SS시즌 런칭을 목적으로 바람막이, 아노락, 팬츠 생산을 기획했으며 구현된 디테일을 적절히 배치해 각각의 스타일을 디자인했습니다.
 
-                </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
-            </div>
-        </div>
-    </div>
-</section>
-<section class="sampling-background">
-    <div class="align-center">
-        <div class="progress-title">
-            <h1>Sampling</h1>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill-2"></div>
-            </div>
-            <div class="steps">
-                <div class="step completed">
-                    <div class="step-circle">1</div>
-                    <div class="step-text">디자인</div>
-                </div>
-                <div class="step active">
-                    <div class="step-circle">2</div>
-                    <div class="step-text">샘플링</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">3</div>
-                    <div class="step-text">생산</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">4</div>
-                    <div class="step-text">촬영</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">5</div>
-                    <div class="step-text">판매</div>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="flex-another-content reveal">
-            <div class="flex-another-left">
-                <h2>샘플링</h2>
-                <p>
-                    완성된 디자인을 토대로 아웃 소싱을 통해 패턴을 제작했으며 직접 가봉을 통해 샘플을 제작했습니다.
-                    또한 샘플 피팅 후 문제점을 파악해 지속적인 패턴 개선에 힘썼습니다.<br><br>
-                    의류에 들어갈 프린팅 업체를 선정하기 위해 몇몇개의 프린팅 업체를 선정하고 프린팅 샘플링을 진행했습니다.<br><br>
-                    최종적으로 다수의 공장과 컨택 후 개발된 패턴을 토대로 QC용 샘플을 제작했으며 생산 과정 및 제작된 샘플을 비교 분석 해 생산 공장을 선정했습니다.
-                </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
-            </div>
-            <div class="flex-another-right">
-                <div class="slider-2">
-                    <img src="../../assets/images/quartzheather/process/4.jpg" alt="Quartz Heather Image 1">
-                    <img src="../../assets/images/quartzheather/process/5.jpg" alt="Quartz Heather Image 2">
-                    <img src="../../assets/images/quartzheather/process/6.jpg" alt="Quartz Heather Image 3">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="production-background">
-    <div class="align-center">
-        <div class="progress-title">
-            <h1>Production</h1>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill-3"></div>
-            </div>
-            <div class="steps">
-                <div class="step completed">
-                    <div class="step-circle">1</div>
-                    <div class="step-text">디자인</div>
-                </div>
-                <div class="step completed">
-                    <div class="step-circle">2</div>
-                    <div class="step-text">샘플링</div>
-                </div>
-                <div class="step active">
-                    <div class="step-circle">3</div>
-                    <div class="step-text">생산</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">4</div>
-                    <div class="step-text">촬영</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">5</div>
-                    <div class="step-text">판매</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex-content reveal">
-            <div class="flex-left">
-                <div class="slider-3">
-                    <img src="../../assets/images/quartzheather/process/7.jpg" alt="Quartz Heather Image 1">
-                    <img src="../../assets/images/quartzheather/process/8.jpg" alt="Quartz Heather Image 2">
-                    <img src="../../assets/images/quartzheather/process/9.jpg" alt="Quartz Heather Image 3">
-                </div>
-            </div>
-            <div class="flex-right">
-                <h2>생산</h2>
-                <p>
-                    선정된 공장과의 공임비 협상을 통해 적절한 단가를 설정한 후 메인 원단 및 부자재 발주 및 본 생산을 진행했습니다.<br>
-                    지속적인 방문 및 생산 관리로 사고를 최대한으로 방지했으며 그 결과 로스 없이 120여벌의 의류를 생산했습니다.
-                </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
-            </div>
-        </div>
-    </div>
-</section>
-<section class="photography-background">
-    <div class="align-center">
-        <div class="progress-title">
-            <h1>Photography</h1>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill-4"></div>
-            </div>
-            <div class="steps">
-                <div class="step completed">
-                    <div class="step-circle">1</div>
-                    <div class="step-text">디자인</div>
-                </div>
-                <div class="step completed">
-                    <div class="step-circle">2</div>
-                    <div class="step-text">샘플링</div>
-                </div>
-                <div class="step completed">
-                    <div class="step-circle">3</div>
-                    <div class="step-text">생산</div>
-                </div>
-                <div class="step active">
-                    <div class="step-circle">4</div>
-                    <div class="step-text">촬영</div>
-                </div>
-                <div class="step">
-                    <div class="step-circle">5</div>
-                    <div class="step-text">판매</div>
-                </div>
-            </div>
-        </div>
-        <div class="flex-another-content reveal">
-            <div class="flex-another-left">
-                <h2>촬영</h2>
-                <p>
-                    디자이너 브랜드 컨셉에 맞게 고스트컷 위주로 촬영하는 아웃 소싱 업체를 선정했습니다.<br><br>
-                    27장의 고스트컷, 48장의 디테일컷 총 75장의 제품 사진 촬영을 진행했습니다.<br><br>
-                </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
-            </div>
-            <div class="flex-another-right">
-                <div class="slider-4">
-                    <img src="../../assets/images/quartzheather/products/detail1.jpg" alt="Quartz Heather Image 1">
-                    <img src="../../assets/images/quartzheather/products/detail2.jpg" alt="Quartz Heather Image 2">
-                    <img src="../../assets/images/quartzheather/products/detail3.jpg" alt="Quartz Heather Image 3">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    <section class="failure">
-        <div class="reveal" style="max-width: 800px;margin:0 auto;">
-        <h2>개선할 점</h2>
-        <p>
-            브랜드의 주요 실패 요인은 자본금 부족이었습니다.
-            투자 유치 실패 및 자금 조달 실패로 인해 다음 시즌을 진행할 자본금을 마련하지 못했기 때문입니다.
-        </p>
-        <p>
-            의류 브랜드 특성 상 한 시즌 생산이 완료되면 바로 다음 시즌 디자인 및 생산을 진행해야 하는데 위와 같은 이유로 더 이상 일을 진행할 수 없었습니다.
-        </p>
-        <p>
-            이는 제 좁은 식견으로 인해 예상했던 비용을 훨씬 웃도는 비용이 브랜드 준비에 들어갔고 낙관적으로 일을 진행했기 때문입니다.<br><br>
-            이러한 과정을 통해 앞으로는 보다 현실적으로 여러 경우의 수를 생각하고 사업을 진행 해야겠다는 교훈을 얻었습니다.
-        </p>
-        <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
-    </div>
     </section>
+    <section class="sampling-background">
+        <div class="align-center">
+            <div class="progress-title">
+                <h1>Sampling</h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-2"></div>
+                </div>
+                <div class="steps">
+                    <div class="step completed">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">디자인</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">샘플링</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">생산</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">촬영</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">판매</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-another-content reveal">
+                <div class="flex-another-left">
+                    <h2>샘플링</h2>
+                    <p>
+                        완성된 디자인을 토대로 아웃 소싱을 통해 패턴을 제작했으며 직접 가봉을 통해 샘플을 제작했습니다.
+                        또한 샘플 피팅 후 문제점을 파악해 지속적인 패턴 개선에 힘썼습니다.<br><br>
+                        의류에 들어갈 프린팅 업체를 선정하기 위해 몇몇개의 프린팅 업체를 선정하고 프린팅 샘플링을 진행했습니다.<br><br>
+                        최종적으로 다수의 공장과 컨택 후 개발된 패턴을 토대로 QC용 샘플을 제작했으며 생산 과정 및 제작된 샘플을 비교 분석 해 생산 공장을 선정했습니다.
+                    </p>
+                </div>
+                <div class="flex-another-right">
+                    <div class="slider-2">
+                        <img src="../../assets/images/quartzheather/process/4.jpg" alt="Quartz Heather Image 1">
+                        <img src="../../assets/images/quartzheather/process/5.jpg" alt="Quartz Heather Image 2">
+                        <img src="../../assets/images/quartzheather/process/6.jpg" alt="Quartz Heather Image 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="production-background">
+        <div class="align-center">
+            <div class="progress-title">
+                <h1>Production</h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-3"></div>
+                </div>
+                <div class="steps">
+                    <div class="step completed">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">디자인</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">샘플링</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">생산</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">촬영</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">판매</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-content reveal">
+                <div class="flex-left">
+                    <div class="slider-3">
+                        <img src="../../assets/images/quartzheather/process/7.jpg" alt="Quartz Heather Image 1">
+                        <img src="../../assets/images/quartzheather/process/8.jpg" alt="Quartz Heather Image 2">
+                        <img src="../../assets/images/quartzheather/process/9.jpg" alt="Quartz Heather Image 3">
+                    </div>
+                </div>
+                <div class="flex-right">
+                    <h2>생산</h2>
+                    <p>
+                        선정된 공장과의 공임비 협상을 통해 적절한 단가를 설정한 후 메인 원단 및 부자재 발주 및 본 생산을 진행했습니다.<br>
+                        지속적인 방문 및 생산 관리로 사고를 최대한으로 방지했으며 그 결과 로스 없이 120여벌의 의류를 생산했습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="photography-background">
+        <div class="align-center">
+            <div class="progress-title">
+                <h1>Photography</h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill-4"></div>
+                </div>
+                <div class="steps">
+                    <div class="step completed">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">디자인</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">샘플링</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">생산</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">촬영</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">판매</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-another-content reveal">
+                <div class="flex-another-left">
+                    <h2>촬영</h2>
+                    <p>
+                        디자이너 브랜드 컨셉에 맞게 고스트컷 위주로 촬영하는 아웃 소싱 업체를 선정했습니다.<br><br>
+                        27장의 고스트컷, 48장의 디테일컷 총 75장의 제품 사진 촬영을 진행했습니다.
+                    </p>
+                </div>
+                <div class="flex-another-right">
+                    <div class="slider-4">
+                        <img src="../../assets/images/quartzheather/products/detail1.jpg" alt="Quartz Heather Image 1">
+                        <img src="../../assets/images/quartzheather/products/detail2.jpg" alt="Quartz Heather Image 2">
+                        <img src="../../assets/images/quartzheather/products/detail3.jpg" alt="Quartz Heather Image 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- <section class="failure">
+        <div class="reveal" style="max-width: 800px;margin:0 auto;">
+            <h2>발견한 문제점 및 개선방법</h2>
+            <p>
+                높은 공임비 | 의류에 들어간 구조적 디테일로 인해 발생한 높은 공임비는 오더 수량을 늘리면 자연스럽게 낮아집니다.
+            </p>
+            <p>
+                의류 브랜드 특성 상 한 시즌 생산이 완료되면 바로 다음 시즌 디자인 및 생산을 진행해야 하는데 위와 같은 이유로 더 이상 일을 진행할 수 없었습니다.
+            </p>
+            <p>
+                이는 제 좁은 식견으로 인해 예상했던 비용을 훨씬 웃도는 비용이 브랜드 준비에 들어갔고 낙관적으로 일을 진행했기 때문입니다.<br><br>
+                이러한 과정을 통해 앞으로는 보다 현실적으로 여러 경우의 수를 생각하고 사업을 진행 해야겠다는 교훈을 얻었습니다.
+            </p>
+        </div>
+    </section>-->
     </main>
     <section class="fixed onlypc">
         <div class="projects">
             <div class="projects-name">
                 <div class="portfolio-item">
-                    <a href="quartzheather.html"><img src="../../assets/images/quartzheather/main.png" alt="Project 1"></a>
+                    <a href="quartzheather.html"><img src="../../assets/images/quartzheather/main.png"
+                            alt="Project 1"></a>
                     <div class="overlay">
                         <h3>쿼츠헤더</h3>
                     </div>
@@ -462,7 +432,6 @@
             </div>
         </div>
     </section>
-    <!-- ========== 푸터 ========== -->
     <footer>
         <p>&copy; 2025 Designed by Moonhyuk Kim</p>
     </footer>

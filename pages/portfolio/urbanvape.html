@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>어반베이프 | 포트폴리오</title>
+    <title>어반베이프 | 김문혁 포트폴리오</title>
 
-    <!-- (1) 메인 CSS : profile.css -->
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="stylesheet" href="../../css/urbanvape.css" />
-    <!-- (3) JS 파일 (profile.js, main.js) - defer 로딩 -->
     <script defer src="../../js/profile.js"></script>
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/portfolio.js"></script>
@@ -17,8 +15,8 @@
         rel="stylesheet">
     <script>
         function initMap() {
-            const placeId = "ChIJhz8eqIOZfDURFwGBXSV1mSI"; // 여기에 원하는 매장의 Place ID 입력
-            const apiKey = "AIzaSyBVPmCjr-C1qjS_PxtUXNT_xemWr-wdFZI"; // 여기에 본인의 API 키 입력
+            const placeId = "ChIJhz8eqIOZfDURFwGBXSV1mSI"; 
+            const apiKey = "AIzaSyBVPmCjr-C1qjS_PxtUXNT_xemWr-wdFZI"; 
 
             const map = new google.maps.Map(document.getElementById("map"), {
                 center: { lat: -33.867, lng: 151.195 },
@@ -61,7 +59,7 @@
 
     <script>
         const accessToken = "IGAAQqDA2xe71BZAE1nWnBSQmYxMzdUVWZATeGdldXY2M2lvdFgwZAy1DVVpJUHlMTG1lY3ZAlWTlyNVJyU0lMRUNCUEpzcmRXX0lBeW11a3ZALd3otZA1Q1Tk1aQlhCcjVhd1pyR2tGUG84dmt3WENhZAjBzQnJoLUh2VFVCbG45SlViWQZDZD";  // 👉 여기에 실제 액세스 토큰 입력
-        const userId = "17841464227200009"; // urbanvape_official Instagram 계정 ID
+        const userId = "17841464227200009"; 
 
         async function fetchInstagramUser() {
             try {
@@ -70,7 +68,6 @@
                 document.getElementById("username").textContent = userData.username;
                 document.getElementById("profile-pic").src = userData.profile_picture_url || "https://via.placeholder.com/40";
 
-                // 인스타그램 방문 링크 설정
                 document.getElementById("visit-instagram").addEventListener("click", function () {
                     window.open(`https://www.instagram.com/${userData.username}`, "_blank");
                 });
@@ -111,7 +108,6 @@
 
                 document.getElementById("instagram-feed").innerHTML += htmlContent;
 
-                // 1초 후 밝기 필터 제거
                 setTimeout(() => {
                     document.querySelector('.screen').style.filter = "brightness(100%)";
                 }, 1000);
@@ -129,7 +125,6 @@
 
 <body class="light-theme">
     <header class="hero">
-        <!--<canvas id="animated-bg"></canvas>-->
         <nav class="navbar-pc">
             <ul class="primary-menu">
                 <li><a href="../../index.html">홈</a></li>
@@ -149,7 +144,6 @@
         <nav class="mobile-navbar">
             <!-- 햄버거 버튼 (왼쪽) -->
             <button class="hamburger-button" id="hamburgerBtn">
-                <!-- Heroicons Bars 3 (Outline) 아이콘 인라인 예시 -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -159,7 +153,6 @@
 
             <!-- 홈 버튼 (오른쪽) -->
             <a class="mobile-home-button" href="../../index.html">
-                <!-- Heroicons Home (Outline) 아이콘 인라인 예시 -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
@@ -172,15 +165,10 @@
             </a>
         </nav>
 
-        <!-- 
-            2) 배경 딤(dark overlay) 
-               메뉴 열릴 때 함께 활성화
-          -->
+
         <div class="dim-overlay" id="dimOverlay"></div>
 
-        <!--
-            3) 모바일 메뉴(슬라이드 아웃)
-          -->
+
         <div class="mobile-menu-overlay" id="mobileMenu">
             <ul class="mobile-menu-list">
                 <li><a href="../../index.html">홈</a></li>
@@ -232,19 +220,15 @@
                 <div class="insta">
                     <div class="insta-and-page">
                         <div class="smartphone">
-                            <!-- 스크롤 안내 문구 (화면 바깥) -->
                             <div class="scroll-hint">아래로 스크롤 ⬇</div>
     
-                            <!-- 프로필 바 -->
                             <div class="insta-header">
                                 <img id="profile-pic" src="" alt="Profile Picture">
                                 <h3 id="username"></h3>
                             </div>
     
-                            <!-- 스크롤 가능한 피드 -->
                             <div class="screen" id="instagram-feed"></div>
     
-                            <!-- 하단 푸터 (인스타그램 방문하기 버튼) -->
                             <div class="footer" id="visit-instagram">📷 인스타그램 방문하기</div>
                         </div>
                         <!--<div class="smartphone">
@@ -274,12 +258,6 @@
                 </div>
             </div>
         </div>
-        <!--<div class="smartphone">
-        <div class="header">urbanvape 블로그</div>
-        <div class="screen">
-            <div id="blog-list">로딩 중...</div>
-        </div>
-    </div>-->
     </section>
     <section class="fixed onlypc">
         <div class="projects">

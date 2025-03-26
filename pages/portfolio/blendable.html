@@ -4,33 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>블렌더블 | 포트폴리오</title>
+    <title>블렌더블 | 김문혁 포트폴리오</title>
 
-    <!-- (1) 메인 CSS : profile.css -->
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="stylesheet" href="../../css/blendable.css" />
-    <!-- (2) Owl Carousel CSS (CDN 예시) -->
-    <!-- 버전은 예시이며, 원하는 버전을 사용하거나 로컬 파일을 사용해도 됨 -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-
-    <!-- (3) JS 파일 (profile.js, main.js) - defer 로딩 -->
     <script defer src="../../js/profile.js"></script>
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/portfolio.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
         rel="stylesheet">
-    <!-- (4) jQuery & Owl Carousel JS (CDN 예시) - jQuery 먼저, Owl 다음 -->
-    <!-- Owl Carousel은 jQuery 의존적이라서 반드시 jQuery가 먼저 로드되어야 함 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <!-- (5) Owl Carousel 초기화 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Owl Carousel 초기화
             $('.owl-carousel').owlCarousel({
                 loop: true,             // 계속 순환
                 margin: 10,            // 슬라이드 사이 간격
@@ -78,7 +68,6 @@
         <nav class="mobile-navbar">
             <!-- 햄버거 버튼 (왼쪽) -->
             <button class="hamburger-button" id="hamburgerBtn">
-                <!-- Heroicons Bars 3 (Outline) 아이콘 인라인 예시 -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -88,7 +77,6 @@
 
             <!-- 홈 버튼 (오른쪽) -->
                         <a class="mobile-home-button" href="../../index.html">
-                <!-- Heroicons Home (Outline) 아이콘 인라인 예시 -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" width="24" height="24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
@@ -101,15 +89,9 @@
             </a>
         </nav>
 
-        <!-- 
-            2) 배경 딤(dark overlay) 
-               메뉴 열릴 때 함께 활성화
-          -->
         <div class="dim-overlay" id="dimOverlay"></div>
 
-        <!--
-            3) 모바일 메뉴(슬라이드 아웃)
-          -->
+
         <div class="mobile-menu-overlay" id="mobileMenu">
             <ul class="mobile-menu-list">
                 <li><a href="../../index.html">홈</a></li>
@@ -131,7 +113,6 @@
         </div>
     </header>
 
-    <!-- ========== 메인 컨테이너 ========== -->
     <main>
         <section class="background-section">
         <div class="main-image">
@@ -142,13 +123,10 @@
             <a class="onlypc" href="https://nochic.cafe24.com/" target="_blank" rel="noopener noreferrer">웹사이트 바로가기→</a>
         </div>
         </div>
-        <!-- (A) Owl Carousel 슬라이더 -->
 
         <div class="slider-section">
             <div class="owl-carousel">
-                <!-- 각 슬라이드 항목 -->
                 <div>
-                    <!-- 예시 이미지. 실제 경로로 교체해주세요. -->
                     <img src="../../assets/images/blendable/1.png" alt="Quartz Heather Image 1" />
                 </div>
                 <div>
@@ -175,12 +153,10 @@
                 <div>
                     <img src="../../assets/images/blendable/9.png" alt="Quartz Heather Image 4" />
                 </div>
-                <!-- 필요한 만큼 div 추가 -->
             </div>
         </div>
         
 
-        <!-- (B) 제조과정 설명 섹션 -->
         <div class="story reveal">
             <h2>브랜드 철학</h2>
             <p>
@@ -194,7 +170,6 @@
             <p>
                 이러한 과정을 통해 만들어진 블렌더블은 인테리어와 홈 무드에 대한 관심이 늘어난 모든 세대를 타겟으로 설정한 브랜드입니다.
             </p>
-            <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
             <a class="mobile-br" href="https://nochic.cafe24.com/" target="_blank" rel="noopener noreferrer">블렌더블 바로가기</a>
         </div>
         </section>
@@ -247,7 +222,6 @@
                     3D 모델링 프로그램(C4D)의 시뮬레이션 기능을 통해서 자연스러운 물을 연출해 작품의 형태를 디자인 했습니다.<br><br>
                     연출된 물을 여러 색상의 조명으로 비추며 가장 심미적인 모먼트를 찾아 작품을 픽스하고 색감을 조정했습니다.<br><br>
                 </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
             </div>
         </div>
     </div>
@@ -291,7 +265,6 @@
                     장기간 걸어놔도 벽지나 제품에 손상이 없는, 최대한 가볍지만 비치지 않는 소재를 찾기 위해 쉬폰, 캔버스, 옥스포드 원단 등의 원단을 테스트 하였습니다.<br><br>
                     그 과정을 통해 폴리에스터 소재의 듀스포 원단을 선택했으며 해당 원단에서의 인쇄 퀄리티를 보기 위해 승화 전사, 직분사 방식의 다양한 인쇄 방식을 테스트 하였습니다.
                 </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
             </div>
             <div class="flex-another-right">
                 <div class="slider-2">
@@ -349,7 +322,6 @@
                     선정된 프린팅 업체 측으로 듀스포 원단을 발주해 최대한 빠르게 프린팅을 진행했습니다.<br>
                     프린팅된 원단을 받아 재단과 봉제 작업을 직접 진행 했습니다. 봉제는 사면 말아박기 방식으로 진행했습니다.
                 </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
             </div>
         </div>
     </div>
@@ -390,11 +362,10 @@
             <div class="flex-another-left">
                 <h2>촬영</h2>
                 <p>
-                    전시회 느낌의 컨셉 사진을 촬영하기 위한 조건을 알아보던 중 직접 촬영에 대한 여건이 부족해 3D 프로그램을 통한 촬영을 진행했습니다.<br><br>
-                    상업적 이용이 가능한 3D 모델을 삽입해 배치하고 시뮬레이션 기능을 통해 패브릭 포스터를 위에서 떨어뜨려 실제 같은 자연스러운 촬영을 지향했습니다.<br><br>
-                    최종적으로 제품 판매까지는 이루어지지 않았으며 제품 사진 촬영까지만 완료했습니다.
+                    직접 촬영 환경을 조성해 제품 사진 촬영 및 보정을 진행했습니다.<br><br>
+                    또한 다소 도전적이지만 지속가능성이 뛰어난 3D 렌더링을 통해 컨셉 사진을 제작하기로 하였고 C4D(Cinema 4D) 프로그램을 이용해 컨셉 사진을 제작했습니다.<br><br>
+                    상업적 이용이 가능한 3D 모델을 삽입해 배치하고 시뮬레이션 기능을 통해 패브릭 포스터를 위에서 떨어뜨려 실제 같은 자연스러운 연출을 지향했습니다.<br><br>
                 </p>
-                <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
             </div>
             <div class="flex-another-right">
                 <div class="slider-4">
@@ -406,7 +377,7 @@
         </div>
     </div>
 </section>
-    <section class="failure">
+   <!-- <section class="failure">
         <div class="reveal" style="max-width: 800px;margin:0 auto;">
         <h2>중단 요인 및 얻은 교훈</h2>
         <p>
@@ -418,9 +389,8 @@
         <p>
             비록 미완성된 프로젝트이지만 좋은 경험이었으며 저에게는 여러 다양한 시도들을 했던 도전의 시간이었습니다.
         </p>
-        <!-- 필요하다면 이미지, 추가 상세 설명 등을 더 삽입 -->
     </div>
-    </section>
+    </section>-->
     </main>
     <section class="fixed onlypc">
         <div class="projects">
@@ -462,7 +432,6 @@
             </div>
         </div>
     </section>
-    <!-- ========== 푸터 ========== -->
     <footer>
         <p>&copy; 2025 Designed by Moonhyuk Kim</p>
     </footer>

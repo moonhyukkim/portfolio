@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // 짧은 지연 후 애니메이션으로 현재 단계까지 채움
                 setTimeout(() => {
-                    progressFill.style.transition = "width 2.5s ease-in-out";
+                    progressFill.style.transition = "width 1.0s ease-in-out";
                     progressFill.style.width = currPercent + "%";
                 }, 100);
 
