@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         // 옵션: threshold나 rootMargin 등 필요에 맞게 조정
         {
-            threshold: 0.1
+            threshold: 0.3
         }
     );
 
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.classList.remove('show');
             }
         });
-    }, { threshold: 0.1 });*/
+    }, { threshold: 0.3 });*/
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
               observer.unobserve(entry.target);  // 한 번 감지되면 더 이상 관찰하지 않음
           }
       });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.3 });
   
 
     letterElements.forEach(el => observer.observe(el));
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       // 옵션: threshold나 rootMargin 등 필요에 맞게 조정
       {
-        threshold: 0.1
+        threshold: 0.3
       }
     );
   
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       // 옵션: threshold나 rootMargin 등 필요에 맞게 조정
       {
-        threshold: 0.1
+        threshold: 0.3
       }
     );
   
