@@ -160,7 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.2 }
+      {
+         threshold: 0.3
+        }
     );
     timelineObserver.observe(timeline);
   
@@ -177,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.3, rootMargin: "150px 0px 0px 0px" }
     );
   
     items.forEach((item) => {
