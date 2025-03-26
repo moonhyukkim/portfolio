@@ -1565,6 +1565,9 @@ ul.list2 {
   text-transform: uppercase;
 }
 
+.profile-left p {
+text-decoration: none;
+}
 .profile-right h1 {
   font-family: 'Anton', sans-serif;
   font-size: 3rem;
