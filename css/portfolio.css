@@ -458,10 +458,10 @@ background-blend-mode: multiply;
     font-size: 25px;
   }
   .story {
-    margin: 0 auto;
+    margin: 100px auto;
     width:95vw;
     padding-top: 0px;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
     text-align: center;
   }
   .story h2 {
