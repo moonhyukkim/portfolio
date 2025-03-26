@@ -1,7 +1,3 @@
-
-
-
-
 /* 헤더 스타일 */
 .hero {
   position: relative;
@@ -54,7 +50,7 @@
 .owl-nav button.owl-prev,
 .owl-nav button.owl-next {
   position: absolute;
-  width:20px;
+  width: 20px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -182,8 +178,8 @@
   text-align: center;
   overflow: hidden;
   width: 90%;
-  padding-bottom: 50px; 
-  padding-top: 50px; 
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .flex-left {
@@ -197,11 +193,11 @@
 
 .flex-right {
   position: relative;
-  max-width:700px;
+  max-width: 700px;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
-  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-background-blend-mode: multiply;
+    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-blend-mode: multiply;
   border: 1px solid black;
   padding: 20px;
   border-radius: 20px;
@@ -222,8 +218,8 @@ background-blend-mode: multiply;
   text-align: center;
   overflow: hidden;
   width: 90%;
-  padding-bottom: 50px; 
-  padding-top: 50px; 
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 
@@ -238,11 +234,11 @@ background-blend-mode: multiply;
 
 .flex-another-left {
   position: relative;
-  max-width:700px;
+  max-width: 700px;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
-  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-background-blend-mode: multiply;
+    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-blend-mode: multiply;
   border: 1px solid black;
   border-radius: 20px;
   padding: 20px;
@@ -252,14 +248,20 @@ background-blend-mode: multiply;
   text-align: left;
 }
 
-.slider-1, .slider-2, .slider-3, .slider-4 {
+.slider-1,
+.slider-2,
+.slider-3,
+.slider-4 {
   display: flex;
   width: 100%;
   max-width: 800px;
   height: 100%;
 }
 
-.slider-1 img, .slider-2 img, .slider-3 img, .slider-4 img {
+.slider-1 img,
+.slider-2 img,
+.slider-3 img,
+.slider-4 img {
   width: 100%;
   max-width: 800px;
   height: 100%;
@@ -269,7 +271,10 @@ background-blend-mode: multiply;
   transition: opacity 1s ease-in-out;
 }
 
-.slider-1 img.active, .slider-2 img.active, .slider-3 img.active, .slider-4 img.active {
+.slider-1 img.active,
+.slider-2 img.active,
+.slider-3 img.active,
+.slider-4 img.active {
   opacity: 1;
 }
 
@@ -297,35 +302,55 @@ background-blend-mode: multiply;
   padding-top: 100px;
   padding-bottom: 200px;
 }
+
 .design-background {
   background-image: url("../assets/images/quartzheather/products/detail11.jpg");
-  background-size: cover; /* 요소를 꽉 채우도록 조정 */
-  background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
-  background-position: center center; /* 가로세로 모두 중앙 정렬 */
+  background-size: cover;
+  /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken;
+  /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 어둡게 만들 색상 */
+  background-position: center center;
+  /* 가로세로 모두 중앙 정렬 */
 }
 
 .sampling-background {
   background-image: url("../assets/images/quartzheather/products/detail5.jpg");
-  background-size: cover; /* 요소를 꽉 채우도록 조정 */
-  background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
-  background-position: center center; /* 가로세로 모두 중앙 정렬 */
+  background-size: cover;
+  /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken;
+  /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 어둡게 만들 색상 */
+  background-position: center center;
+  /* 가로세로 모두 중앙 정렬 */
 }
+
 .production-background {
   background-image: url("../assets/images/quartzheather/products/detail15.jpg");
-  background-size: cover; /* 요소를 꽉 채우도록 조정 */
-  background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
-  background-position: center center; /* 가로세로 모두 중앙 정렬 */
+  background-size: cover;
+  /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken;
+  /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 어둡게 만들 색상 */
+  background-position: center center;
+  /* 가로세로 모두 중앙 정렬 */
 }
+
 .photography-background {
   background-image: url("../assets/images/quartzheather/products/detail16.jpg");
-  background-size: cover; /* 요소를 꽉 채우도록 조정 */
-  background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
-  background-position: center center; /* 가로세로 모두 중앙 정렬 */
+  background-size: cover;
+  /* 요소를 꽉 채우도록 조정 */
+  background-blend-mode: darken;
+  /* 배경과 색상을 섞음 */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 어둡게 만들 색상 */
+  background-position: center center;
+  /* 가로세로 모두 중앙 정렬 */
 }
+
 /* 기본 스타일 */
 .align-center {
   font-family: "Noto Sans KR", sans-serif;
@@ -340,21 +365,28 @@ background-blend-mode: multiply;
   align-items: center;
   position: relative;
 }
+
 .progress-title {
   text-align: center;
   padding-top: 100px;
 }
-.progress-title h1{
+
+.progress-title h1 {
   font-family: 'Anton', sans-serif;
-  font-size: 5rem;         /* 글자 크기 크게 */
-  font-weight: 400;        /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
-  letter-spacing: 0em;     /* 글자 간격을 거의 붙여 좁아 보이게 */
-  line-height: 0.9;        /* 세로 간격도 축소 */
+  font-size: 5rem;
+  /* 글자 크기 크게 */
+  font-weight: 400;
+  /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
+  letter-spacing: 0em;
+  /* 글자 간격을 거의 붙여 좁아 보이게 */
+  line-height: 0.9;
+  /* 세로 간격도 축소 */
   color: #fff;
   text-transform: uppercase;
 }
+
 .progress-container {
-  margin-top:10px;
+  margin-top: 10px;
   width: 80%;
   max-width: 1000px;
   position: relative;
@@ -436,11 +468,11 @@ background-blend-mode: multiply;
 }
 
 .failure {
-  padding:150px 0;
+  padding: 150px 0;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
-  url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-background-blend-mode: multiply;
+    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-blend-mode: multiply;
 }
 
 @media (max-width: 768px) {
@@ -448,33 +480,40 @@ background-blend-mode: multiply;
     padding-top: 130px;
     padding-bottom: 50px;
   }
+
   .portfolio-image img {
     width: 220px;
     height: auto;
     object-fit: cover;
     display: block;
   }
+
   .portfolio-image h1 {
     font-size: 25px;
   }
+
   .story {
     margin: 100px auto;
-    width:95vw;
+    width: 95vw;
     padding-top: 0px;
     padding-bottom: 50px;
     text-align: center;
   }
+
   .story h2 {
     font-size: 20px;
-    color:#000;
+    color: #000;
   }
+
   .story p {
-    font-size:16px;
-    color:#000;
+    font-size: 16px;
+    color: #000;
   }
-  .progress-title h1{
+
+  .progress-title h1 {
     font-size: 3rem;
   }
+
   .flex-content {
     position: relative;
     display: flex;
@@ -487,8 +526,9 @@ background-blend-mode: multiply;
     overflow: hidden;
     width: 100%;
 
-    padding:50px 20px;
+    padding: 50px 20px;
   }
+
   .flex-left {
     width: 100%;
     max-width: 350px;
@@ -496,12 +536,17 @@ background-blend-mode: multiply;
     max-height: 330px;
     border-radius: 20px 20px 0 0;
   }
-  .slider-1 img, .slider-2 img, .slider-3 img, .slider-4 img {
-    width:100%;
-    height:100%;
+
+  .slider-1 img,
+  .slider-2 img,
+  .slider-3 img,
+  .slider-4 img {
+    width: 100%;
+    height: 100%;
   }
+
   .flex-right {
-    max-width:350px;
+    max-width: 350px;
     padding: 20px;
     margin-left: 0px;
     text-align: left;
@@ -519,10 +564,10 @@ background-blend-mode: multiply;
     text-align: center;
     overflow: hidden;
     width: 100%;
-    padding:50px 20px;
+    padding: 50px 20px;
   }
-  
-  
+
+
   .flex-another-right {
     width: 100%;
     max-width: 350px;
@@ -530,25 +575,26 @@ background-blend-mode: multiply;
     max-height: 330px;
     border-radius: 0 0 20px 20px;
   }
-  
+
   .flex-another-left {
     background-color: transparent;
     background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
-    url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-  background-blend-mode: multiply;
+      url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    background-blend-mode: multiply;
     border-radius: 20px 20px 0 0;
-    position: relative;
-    max-width:350px;
+    max-width: 350px;
     padding: 20px;
     margin-right: 0px;
     text-align: left;
   }
+
   .failure {
-    padding:150px 0;
-text-align: center;
+    padding: 150px 0;
+    text-align: center;
   }
-  .failure .reveal{
-    width:90vw;
+
+  .failure .reveal {
+    width: 90vw;
     font-size: 16px;
   }
 }
