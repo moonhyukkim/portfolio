@@ -130,32 +130,3 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    // 1) .reveal 클래스를 달아둔 모든 요소 수집
-    const revealElements = document.querySelectorAll('.reveal-content');
-  
-    // 2) IntersectionObserver 생성
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // 뷰포트 안에 들어오면
-            entry.target.classList.add('show');
-          } else {
-            // 뷰포트 밖으로 나가면
-            entry.target.classList.remove('show');
-          }
-        });
-      },
-      // 옵션: threshold나 rootMargin 등 필요에 맞게 조정
-      {
-        threshold: 0.3, rootMargin: "100px 0px 0px 0px"
-      }
-    );
-  
-    // 3) 각 reveal 요소를 관찰
-    revealElements.forEach((el) => {
-      observer.observe(el);
-    });
-  });

@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     // 옵션: threshold나 rootMargin 등 필요에 맞게 조정
     {
-      threshold: 0.3, rootMargin: "100px 0px 0px 0px"
+      threshold: 0.1, rootMargin: "200px 0px 0px 0px"
     }
   );
 
