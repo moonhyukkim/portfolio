@@ -301,7 +301,7 @@ background-blend-mode: multiply;
   background-image: url("../assets/images/quartzheather/products/detail11.jpg");
   background-size: cover; /* 요소를 꽉 채우도록 조정 */
   background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+  background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
   background-position: center center; /* 가로세로 모두 중앙 정렬 */
 }
 
@@ -316,14 +316,14 @@ background-blend-mode: multiply;
   background-image: url("../assets/images/quartzheather/products/detail15.jpg");
   background-size: cover; /* 요소를 꽉 채우도록 조정 */
   background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+  background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
   background-position: center center; /* 가로세로 모두 중앙 정렬 */
 }
 .photography-background {
-  background-image: url("../assets/images/quartzheather/products/detail16.jpg");
+  background-image: url("../assets/images/quartzheather/products/detail1.jpg");
   background-size: cover; /* 요소를 꽉 채우도록 조정 */
   background-blend-mode: darken; /* 배경과 색상을 섞음 */
-  background-color: rgba(0, 0, 0, 0.6); /* 어둡게 만들 색상 */
+  background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
   background-position: center center; /* 가로세로 모두 중앙 정렬 */
 }
 /* 기본 스타일 */
