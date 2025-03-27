@@ -1510,9 +1510,6 @@ ul.list2 {
 }
 .profile-left a[href^="tel"] {
   color: black !important;
-  text-decoration: none !important;
-  pointer-events: none;
-  cursor: default;
 }
 .profile-left-line {
   display: flex;
