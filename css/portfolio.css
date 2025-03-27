@@ -196,11 +196,18 @@
 }
 
 .flex-right {
-
+  position: relative;
+  max-width:700px;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
   url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 2;
+  margin-left: -50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .flex-another-content {
@@ -229,11 +236,18 @@
 }
 
 .flex-another-left {
+  position: relative;
+  max-width:700px;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
   url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
-background-blend-mode: multiply;
-
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 2;
+  margin-right: -50px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .slider-1, .slider-2, .slider-3, .slider-4 {
@@ -295,8 +309,6 @@ background-blend-mode: multiply;
   background-blend-mode: darken; /* 배경과 색상을 섞음 */
   background-color: rgba(0, 0, 0, 0.5); /* 어둡게 만들 색상 */
   background-position: center center; /* 가로세로 모두 중앙 정렬 */
-  position: relative; /* 추가 */
-  z-index: 1; /* 낮은 값 */
 }
 .production-background {
   background-image: url("../assets/images/quartzheather/products/detail15.jpg");
@@ -517,7 +529,14 @@ background-blend-mode: multiply;
     border-radius: 0 0 20px 20px;
   }
   
-
+  .flex-another-left {
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    max-width:350px;
+    padding: 20px;
+    margin-right: 0px;
+    text-align: left;
+  }
   .failure {
     padding:150px 0;
 text-align: center;
