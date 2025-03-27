@@ -243,7 +243,7 @@ background-blend-mode: multiply;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
   url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
 background-blend-mode: multiply;
-
+  border: 1px solid black;
   border-radius: 20px;
   padding: 20px;
   z-index: 2;
@@ -495,6 +495,8 @@ background-blend-mode: multiply;
     /* 이미지 크기 조정 */
     max-height: 330px;
     border-radius: 20px 20px 0 0;
+    border:none;
+    box-shadow: 0 0 0 1px black;
   }
   .slider-1 img, .slider-2 img, .slider-3 img, .slider-4 img {
     width:100%;
@@ -532,6 +534,8 @@ background-blend-mode: multiply;
   }
   
   .flex-another-left {
+    border:none;
+    box-shadow: 0 0 0 1px black;
     border-radius: 20px 20px 0 0;
     position: relative;
     max-width:350px;
