@@ -58,6 +58,20 @@ section {
 }
 
 /* (A) 초기 상태: 살짝 아래로 내려가 있고 불투명도 0 */
+.reveal-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* (B) show 클래스가 붙으면 완전 보이도록 */
+.reveal-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* (A) 초기 상태: 살짝 아래로 내려가 있고 불투명도 0 */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
