@@ -246,6 +246,7 @@ background-blend-mode: multiply;
 
   border-radius: 20px;
   padding: 20px;
+  z-index: 2;
   margin-right: -50px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
