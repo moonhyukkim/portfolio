@@ -495,8 +495,6 @@ background-blend-mode: multiply;
     /* 이미지 크기 조정 */
     max-height: 330px;
     border-radius: 20px 20px 0 0;
-    border:none;
-    box-shadow: 0 0 0 1px black;
   }
   .slider-1 img, .slider-2 img, .slider-3 img, .slider-4 img {
     width:100%;
@@ -508,6 +506,8 @@ background-blend-mode: multiply;
     margin-left: 0px;
     text-align: left;
     border-radius: 0 0 20px 20px;
+    border:none;
+    box-shadow: 0 0 0 1px black;
   }
 
   .flex-another-content {
