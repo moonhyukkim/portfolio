@@ -237,7 +237,8 @@ background-blend-mode: multiply;
 }
 
 .flex-another-left {
-
+  position: relative;
+  max-width:700px;
   background-color: #959d85;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
   url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
