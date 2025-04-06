@@ -67,11 +67,26 @@
 .detail-flex {
     display:flex;
     flex-direction: column;
+    gap:150px;
+    justify-content: center;
+}
+.web-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 이미지 간 간격 */
+    max-width:1300px;
+    margin:auto;
+}
+.web-image img{
+width:100%;
+height:auto;
 }
 .detail-first {
-    background-color: #000000;
+    background-color: #1f1f1f;
 background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+padding: 150px 0;
 }
 
 .flex-row {
@@ -79,7 +94,6 @@ background-image: url("https://www.transparenttextures.com/patterns/crissxcross.
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height:1000px;
     gap:50px;
 }
 
@@ -108,11 +122,24 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
     background-color: #00c2c9;
     background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-    height:1100px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.event-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 이미지 간 간격 */
+    max-width:1400px;
+    margin:auto;
+    margin-bottom: 150px;
+}
+.event-image img{
+width:100%;
+height:auto;
+filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 .detail-title {
     margin-top:150px;
@@ -141,7 +168,7 @@ font-size:18px;
     width: 100% !important; /* 부모 요소에 맞춰 자동 조정 */
     max-width: 1400px; /* 최대 너비 제한 */
     height: auto;
-    margin-bottom: 200px;
+    margin-bottom: 30px;
   }
   .swiper-slide {
     display: flex;
@@ -175,6 +202,7 @@ font-size:18px;
     background-color: #9000f0;
     background-image: url("https://www.transparenttextures.com/patterns/checkered-pattern.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    padding: 150px 0;
   }
   .align-center {
     align-items: center;
@@ -234,7 +262,7 @@ font-size:18px;
         text-transform: uppercase;
     }
     .detail-title {
-        margin-top:0px;
+        margin-top:80px;
         margin-bottom:70px;
     }
     .detail-title h1 {
@@ -252,7 +280,6 @@ font-size:18px;
         background-color: #00c2c9;
         background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
         /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        height:800px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -262,7 +289,10 @@ font-size:18px;
         width: 100% !important; /* 부모 요소에 맞춰 자동 조정 */
         max-width: 1400px; /* 최대 너비 제한 */
         height: auto;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
+      }
+      .event-image {
+margin-bottom: 90px;
       }
       .flex-row {
         display:flex;

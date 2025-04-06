@@ -370,7 +370,7 @@ section {
   width: 300px;
   height: 200px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -512,6 +512,7 @@ footer {
   position: relative;
   display: flex;
   flex-direction: row;
+  gap:100px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -543,7 +544,8 @@ footer {
 }
 
 .info-left img {
-  width: 300px;
+  width: 250px;
+  
   height: 100%;
   object-fit: cover;
   /* 가로세로 비율 맞춰 잘림 */
@@ -780,10 +782,81 @@ footer {
          - 처음엔 opacity 0 / 아래로 이동
            -> .show 붙으면  나타나는 애니메이션
     *************************************/
-/* 타임라인 항목 */
+/* 좌우 선만 그리는 상단 border */
+.timeline-flex {
+  display:flex;
+  flex-direction: column;
+  gap:70px;
+}
+.timeline-detail-left::before,
+.timeline-detail-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background: white;
+}
+
+.timeline-detail-left::before {
+  left: 0;
+  width: 20px; /* 왼쪽 선 */
+}
+
+.timeline-detail-left::after {
+  right: 0;
+  width: calc(100% - 190px); /* 오른쪽 선 */
+}
+
+
+
+.timeline-detail-right::before,
+.timeline-detail-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background: white;
+}
+
+.timeline-detail-right::before {
+  right: 0;
+  width: 20px; /* 왼쪽 선 */
+}
+
+.timeline-detail-right::after {
+  left: 0;
+  width: calc(100% - 190px); /* 오른쪽 선 */
+}
+
+
+
+.title-left {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  z-index: 1;
+}
+.title-right {
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  z-index: 1;
+}
+.content {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #fff;
+}
 .timeline-item {
   display: flex;
-  align-items: center;
+  align-items: end;
   width: 100%;
   margin: 20px 0;
   gap:30px;
@@ -803,7 +876,47 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
+.right-button {
+  position: absolute;
+  bottom:0;
+  font-size: 16px;
+  font-weight: 400;
+  right:0;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 0px;
+  border-top:1px solid white;
+  border-left: 1px solid white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.left-button {
+  position: absolute;
+  bottom:0;
+  font-size: 16px;
+  font-weight: 400;
+  left:0;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 0px;
+  border-top:1px solid white;
+  border-right: 1px solid white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.right-button:hover, .left-button:hover {
+  background-color: black;
+  color: white;
+}
+.timeline-column {
+  width:50%;
+  display: flex;
+  flex-direction: column;
+}
 /*************************************
       (D) 아이템 내용 박스
     *************************************/
@@ -816,14 +929,19 @@ footer {
   /* 살짝 반투명 흰색 */
   backdrop-filter: blur(5px);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   width: 50%;
   transition: background 0.3s;
   display: flex;
   flex-direction: column;
 }
+.timeline-content h1 {
+  font-size: 30px;
+  font-weight: 900;
+  color:#000;
 
+}
 .timeline-title-left {
   display: flex;
   justify-content: right;
@@ -871,7 +989,7 @@ footer {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: 'Anton', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   /* 글자 크기 크게 */
   font-weight: 400;
   /* Bebas Neue는 보통 한 가지 웨이트이므로 400~700 중 적절히 조정 */
@@ -896,10 +1014,15 @@ footer {
   text-align: left;
   color:#fff;
   font-size:20px;
-  width:50%;
   margin-left: 10%;
   line-height: 0.6;
   font-weight: 300;
+  position: relative;
+  padding: 60px 30px 50px 30px;
+  border: 1px solid white;
+  width:50%;
+  border-top: none; /* 상단은 따로 그림 */
+  border-radius: 0px;
 }
 .timeline-detail-right {
     text-align: right;
@@ -909,6 +1032,12 @@ footer {
     width:50%;
     line-height: 0.6;
     font-weight: 300;
+    position: relative;
+    padding: 60px 30px 50px 30px;
+    border: 1px solid white;
+    width:50%;
+    border-top: none; /* 상단은 따로 그림 */
+    border-radius: 0px;
   }
 /* 오른쪽 항목 (중앙선에 붙이기) */
 .timeline-item.right {
@@ -1057,7 +1186,15 @@ footer {
   align-items: center;
   overflow: hidden;
 }
-
+.contact-detail h4{
+  line-height: 0;
+}
+.contact-detail p{
+  margin:0;
+}
+.contact-detail {
+  padding-bottom: 30px;
+}
 .contact-imgcontainer img {
   border-radius: 5px;
   max-width: 500px;
@@ -1430,6 +1567,7 @@ ul.list2 {
   text-align: center;
   overflow: hidden;
   width: 100%;
+  gap:0px;
   padding: 0 20px;
 }
 
@@ -1461,6 +1599,7 @@ ul.list2 {
   width: 150px;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   /* 가로세로 비율 맞춰 잘림 */
   display: block;
 }
@@ -1611,6 +1750,9 @@ text-decoration: none;
     font-size:14px;
     width: 50%;
     line-height: 1.4;
+    border: 0px solid rgb(223, 223, 223);
+    padding:0px;
+    border-radius: 0px;
   }
   .timeline-detail-right {
     margin-right: 0%;
@@ -1619,6 +1761,9 @@ text-decoration: none;
       font-size:14px;
       width: 50%;
       line-height: 1.4;
+      border: 0px solid rgb(223, 223, 223);
+      padding:0px;
+      border-radius: 0px;
     }
     .timeline-item.left {
       justify-content: center;
@@ -1656,6 +1801,9 @@ text-decoration: none;
       padding-top: 50px;
       margin:0 auto;
     }
+    .contact-detail h4{
+line-height: 0.1;
+    }
     .contact-imgcontainer img {
       border-radius: 5px;
       width: 300px;
@@ -1677,7 +1825,58 @@ width:100%;
       width: 12px;
       height: 12px;
     }
+    .timeline-flex {
+      display:flex;
+      flex-direction: column;
+      gap:20px;
+    }
+    .timeline-detail-left::before,
+    .timeline-detail-left::after {
+      display:none;
+    }
     
+    .timeline-detail-left::before {
+      display:none;
+    }
+    
+    .timeline-detail-left::after {
+      display:none;
+    }
+    
+    
+    
+    .timeline-detail-right::before,
+    .timeline-detail-right::after {
+      display:none;
+    }
+    
+    .timeline-detail-right::before {
+      display:none;
+    }
+    
+    .timeline-detail-right::after {
+      display:none;
+    }
+    
+
+.title-left {
+display:none;
+}
+.title-right {
+  display:none;
+}
+.content {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #fff;
+}
+.right-button {
+  display:none;
+}
+.left-button {
+  display:none;
+}
 }
 
 @media (min-width: 769px) and (max-width: 1350px) {
