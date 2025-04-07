@@ -701,10 +701,11 @@ text-align: center;
     margin-top:100px;
     margin-bottom:100px;
   padding-bottom: 150px;
-  overflow-x: hidden; 
+  overflow: hidden; 
   }
   .graph-container {
     position: relative;
+    margin-top: 50px;
     width: 90%;
     height: 80vmin;
     border: 0px solid #333;
