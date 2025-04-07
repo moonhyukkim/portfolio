@@ -1805,7 +1805,7 @@ line-height: 0.1;
     }
     .contact-imgcontainer img {
       border-radius: 5px;
-      width: 300px;
+      width: 200px;
       height: auto;
       object-fit: cover;
       /* 가로세로 비율 맞춰 잘림 */
@@ -1875,6 +1875,9 @@ display:none;
 }
 .left-button {
   display:none;
+}
+.timeline-item {
+  align-items: center;
 }
 }
 

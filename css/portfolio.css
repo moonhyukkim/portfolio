@@ -243,7 +243,7 @@ animation: heartbeat 2.2s ease-in-out infinite;
   }
   .swot-list {
     list-style: disc;
-    margin-left: 20px;
+    margin-left: 0px;
   }
 
 
@@ -692,4 +692,45 @@ text-align: center;
     width:90vw;
     font-size: 16px;
   }
+  .graph-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:0px;
+    margin-top:100px;
+    margin-bottom:100px;
+  padding-bottom: 150px;
+  }
+  .brand-story {
+    display: flex;
+    flex-direction: column;
+    margin-left:0px;
+    max-width: 1800px;
+    width: 100%;
+    gap:20px;
+  }
+  .swot-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  .swot-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .swot-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  .swot-list {
+    list-style: disc;
+    margin-left: 0px;
+  }
+
 }
