@@ -712,6 +712,7 @@ text-align: center;
   }
   .swot-wrapper {
     display: grid;
+    width:100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 20px;
@@ -732,5 +733,24 @@ text-align: center;
     list-style: disc;
     margin-left: 0px;
   }
-
+  .medium-size {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  .big-size {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  .large-size {
+    width: 110px;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  .small-size {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s;
+  }
 }
