@@ -709,6 +709,7 @@ text-align: center;
     border: 0px solid #333;
     background: transparent;
     animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden;
   }
   .brand-story {
     display: flex;
