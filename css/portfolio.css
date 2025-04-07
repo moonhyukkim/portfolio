@@ -705,7 +705,7 @@ text-align: center;
   .graph-container {
     position: relative;
     width: 50%;
-    height: 100%;
+    height: 80vmin;
     border: 0px solid #333;
     background: transparent;
     animation: fadeIn 1s ease-in-out;
