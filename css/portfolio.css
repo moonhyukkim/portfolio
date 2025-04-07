@@ -704,7 +704,7 @@ text-align: center;
   }
   .graph-container {
     position: relative;
-    width: 50%;
+    width: 90%;
     height: 80vmin;
     border: 0px solid #333;
     background: transparent;
@@ -763,4 +763,17 @@ text-align: center;
     height: auto;
     transition: transform 0.3s;
   }
+  .label {
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0);
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+
+
+  .label.left   { left: -5px; top: 55%; transform: translateY(-50%); }
+  .label.right  { right: -5px; top: 55%; transform: translateY(-50%); }
+
 }
