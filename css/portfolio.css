@@ -709,13 +709,15 @@ text-align: center;
     max-width: 1800px;
     width: 100%;
     gap:20px;
+    overflow-x: hidden;
   }
   .swot-wrapper {
     display: grid;
-    width:100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     gap: 20px;
+    overflow-x: hidden;    
   }
   .swot-card {
     background: #fff;
