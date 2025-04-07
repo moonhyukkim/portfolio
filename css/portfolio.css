@@ -704,12 +704,11 @@ text-align: center;
   }
   .graph-container {
     position: relative;
-    width: 70%;
-    height: 80vmin;
+    width: 50%;
+    height: 100%;
     border: 0px solid #333;
     background: transparent;
     animation: fadeIn 1s ease-in-out;
-    overflow-x: hidden;
   }
   .brand-story {
     display: flex;
