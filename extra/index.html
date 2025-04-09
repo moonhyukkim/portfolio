@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BHC Layout with Tabs</title>
+  <!-- 외부 CSS 연동 -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
+    rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="top-banner">
+    <p>[NEW bhc APP] 매일매일 2,000원 추가할인!</p>
+  </div>
+  <div class="right-top">
+
+  </div>
+  <div class="wrap">
+    <!-- 왼쪽 사이드 영역 (기존과 동일) -->
+    <div class="left-area">
+      <div class="left-sticky">
+      <div class="logo-box">
+        <img src="https://www.bhc.co.kr/images/common/logo_sub.png" alt="bhc CHICKEN">
+      </div>
+      <div class="yellow-menu">
+        <ul class="side-nav">
+          <li>홈</li>
+          <li class="active">메뉴소개</li>
+          <li>매장소개</li>
+          <li>창업정보</li>
+          <li>BHC소식</li>
+          <li>브랜드소개</li>
+          <li style="border-bottom:none;">고객센터</li>
+        </ul>
+      </div>
+    </div>
+    </div><!-- /left-area -->
+
+    <div class="right-flex">
+      <!-- 오른쪽 메인 콘텐츠 영역 -->
+      <div class="right-area">
+        <div class="nav-area">
+          <p>홈 / 메뉴소개</p>
+        </div>
+        <!-- 탭 영역 (치킨 / 콜팝 / 사이드 / 피자 / 안주류) -->
+        <ul class="tab-list">
+          <!-- 처음에는 치킨 탭이 active -->
+          <li data-tab="chicken" class="active">치킨</li>
+          <li>|</li>
+          <li data-tab="kolpop">콜팝</li>
+          <li>|</li>
+          <li data-tab="side">사이드</li>
+          <li>|</li>
+          <li data-tab="pizza">피자</li>
+          <li>|</li>
+          <li data-tab="anju">안주류</li>
+        </ul>
+
+        <!-- 필터 버튼 영역 (전체보기 + 부위/타입/메뉴) -->
+        <div class="filter-container">
+
+
+          <!-- (1) 부위: 오리지날, 순살, 윙&봉, 콤보 -->
+          <ul class="filter-list" data-filter-group="area">
+            <li data-category="original">오리지날</li>
+            <li data-category="boneless">순살</li>
+            <li data-category="wing-bong">윙&봉</li>
+            <li data-category="combo">콤보</li>
+          </ul>
+
+          <!-- (2) 타입: 후라이드, 양념, 뿌링클, 킹시리즈, 핫시리즈, 제주한정 -->
+          <ul class="filter-list" data-filter-group="type">
+            <li data-category="fried">후라이드</li>
+            <li data-category="seasoned">양념</li>
+            <li data-category="bburingcle">뿌링클</li>
+            <li data-category="king">킹시리즈</li>
+            <li data-category="hot">핫시리즈</li>
+            <li data-category="jeju">제주한정</li>
+          </ul>
+
+          <!-- (3) 메뉴: 일반메뉴, 세트메뉴 -->
+          <ul class="filter-list" data-filter-group="menu">
+            <li data-category="normal">일반메뉴</li>
+            <li data-category="set">세트메뉴</li>
+          </ul>
+
+        </div><!-- /filter-container -->
+
+        <!-- 실제 메뉴 리스트 (data-tab, data-area, data-type, data-menu) -->
+        <div class="menu-list">
+
+          <!-- 예시 메뉴들 -->
+          <!-- 치킨 탭: 콰삭킹 한마리/콰삭킹 콤보... -->
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%BD%B0%EC%82%AD%ED%82%B9_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="콰삭킹 한마리">
+            <p class="menu-name">콰삭킹 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%BD%B0%EC%82%AD%ED%82%B9_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="콰삭킹 콤보">
+            <p class="menu-name">콰삭킹 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%BD%B0%EC%82%AD%ED%82%B9_%EC%9C%99_410x271.jpg"
+              alt="콰삭킹 윙">
+            <p class="menu-name">콰삭킹 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%BD%B0%EC%82%AD%ED%82%B9_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="콰삭킹 스틱">
+            <p class="menu-name">콰삭킹 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="후라이드 한마리">
+            <p class="menu-name">후라이드 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_%EC%9C%99_410x271.jpg"
+              alt="후라이드 윙">
+            <p class="menu-name">후라이드 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="후라이드 콤보">
+            <p class="menu-name">후라이드 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="후라이드 스틱">
+            <p class="menu-name">후라이드 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//HOT%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_%EC%9C%99_410x271.jpg"
+              alt="HOT후라이드 윙">
+            <p class="menu-name">HOT후라이드 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%8D%94%EB%B8%94%ED%8C%9D_%EC%88%9C%EC%82%B4%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%93%9C_410x271.jpg"
+              alt="더블팝 순살 후라이드">
+            <p class="menu-name">더블팝 순살 후라이드</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%B0%94%EC%82%AD%ED%81%B4_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="바삭클 한마리">
+            <p class="menu-name">바삭클 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="fried" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%B0%94%EC%82%AD%ED%81%B4_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="바삭클순살">
+            <p class="menu-name">바삭클순살</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%96%91%EB%85%90%EC%B9%98%ED%82%A8_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="양념치킨 한마리">
+            <p class="menu-name">양념치킨 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%96%91%EB%85%90%EC%B9%98%ED%82%A8_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="양념치킨 콤보">
+            <p class="menu-name">양념치킨 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%96%91%EB%85%90%EC%B9%98%ED%82%A8_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="양념치킨 스틱">
+            <p class="menu-name">양념치킨 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%96%91%EB%85%90%EC%B9%98%ED%82%A8_%EC%9C%99_410x271.jpg"
+              alt="양념치킨 윙">
+            <p class="menu-name">양념치킨 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%8F%98%EB%A7%88%EC%B9%98%EC%B9%98%ED%82%A8_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="쏘마치 한마리">
+            <p class="menu-name">쏘마치 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%8F%98%EB%A7%88%EC%B9%98%EC%B9%98%ED%82%A8_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="쏘마치 순살">
+            <p class="menu-name">쏘마치 순살</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%8F%98%EB%A7%88%EC%B9%98%EC%B9%98%ED%82%A8_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="쏘마치 콤보">
+            <p class="menu-name">쏘마치 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%8F%98%EB%A7%88%EC%B9%98_%EC%8A%A4%ED%8B%B1_410x271.png"
+              alt="쏘마치 스틱">
+            <p class="menu-name">쏘마치 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EC%8F%98%EB%A7%88%EC%B9%98%EC%B9%98%ED%82%A8_%EC%9C%99_410x271.jpg"
+              alt="쏘마치 윙">
+            <p class="menu-name">쏘마치 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%A0%88%EB%93%9C%ED%82%B9_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="레드킹 한마리">
+            <p class="menu-name">레드킹 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%A0%88%EB%93%9C%ED%82%B9_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="레드킹순살">
+            <p class="menu-name">레드킹순살</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%A0%88%EB%93%9C%ED%82%B9_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="레드킹 콤보">
+            <p class="menu-name">레드킹 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%A0%88%EB%93%9C%ED%82%B9_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="레드킹 스틱">
+            <p class="menu-name">레드킹 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%A0%88%EB%93%9C%ED%82%B9_%EC%9C%99_410x271.jpg"
+              alt="레드킹 윙">
+            <p class="menu-name">레드킹 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%82%B4%EC%8A%88%EB%B9%8C-%ED%90%88%EC%9D%B4%EC%96%B4%ED%82%B9_%EC%BD%A4%EB%B3%B4_410x271.jpg"
+              alt="내슈빌 퐈이어킹 콤보">
+            <p class="menu-name">내슈빌 퐈이어킹 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%82%B4%EC%8A%88%EB%B9%8C-%ED%90%88%EC%9D%B4%EC%96%B4%ED%82%B9_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="내슈빌 퐈이어킹 스틱">
+            <p class="menu-name">내슈빌 퐈이어킹 스틱</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%82%B4%EC%8A%88%EB%B9%8C-%ED%90%88%EC%9D%B4%EC%96%B4%ED%82%B9_%EC%9C%99_410x271.jpg"
+              alt="내슈빌 퐈이어킹 윙">
+            <p class="menu-name">내슈빌 퐈이어킹 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="seasoned" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%8D%94%EB%B8%94%ED%8C%9D_%EC%88%9C%EC%82%B4%EC%96%91%EB%85%90_410x271.jpg"
+              alt="더블팝 순살 양념">
+            <p class="menu-name">더블팝 순살 양념</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="뿌링클 한마리">
+            <p class="menu-name">뿌링클 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="뿌링클순살">
+            <p class="menu-name">뿌링클순살</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="뿌링클 콤보">
+            <p class="menu-name">뿌링클 콤보</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="combo" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4_%EC%8A%A4%ED%8B%B1_410x271.jpg"
+              alt="뿌링클 스틱">
+            <p class="menu-name">뿌링클 스틱/p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="wing-bong" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4_%EC%9C%99_410x271.jpg"
+              alt="뿌링클 윙">
+            <p class="menu-name">뿌링클 윙</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="original" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//HOT%EB%BF%8C%EB%A7%81%ED%81%B4_%ED%95%9C%EB%A7%88%EB%A6%AC_410x271.jpg"
+              alt="HOT뿌링클 한마리">
+            <p class="menu-name">HOT뿌링클 한마리</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <div class="menu-item" data-tab="chicken" data-area="boneless" data-type="bburingcle" data-menu="normal">
+            <img
+              src="https://www.bhc.co.kr//upload/bhc/menu//HOT%EB%BF%8C%EB%A7%81%ED%81%B4_%EC%88%9C%EC%82%B4_410x271.jpg"
+              alt="HOT뿌링클 순살">
+            <p class="menu-name">HOT뿌링클 순살</p>
+            <p class="menu-price">23,000원</p>
+          </div>
+          <!-- 콜팝 탭 -->
+          <div class="menu-item" data-tab="kolpop" data-area="boneless" data-type="seasoned" data-menu="normal">
+            <img src="https://www.bhc.co.kr//upload/bhc/menu//%EB%B9%85%EC%BD%9C%ED%8C%9D_420x271(1).png" alt="콜팝 예시">
+            <p class="menu-name">빅콜팝</p>
+            <p class="menu-price">12,500원</p>
+          </div>
+
+          <!-- 사이드 탭 -->
+          <div class="menu-item" data-tab="side" data-area="combo" data-type="fried" data-menu="set">
+            <img src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4%EB%82%98%EC%B5%B8_410x271(0).png" alt="사이드메뉴 예시">
+            <p class="menu-name">뿌링클나쵸</p>
+            <p class="menu-price">2,000원</p>
+          </div>
+
+          <!-- 피자 탭  -->
+          <div class="menu-item" data-tab="pizza" data-area="original" data-type="seasoned" data-menu="normal">
+            <img src="https://www.bhc.co.kr//upload/bhc/menu//%EC%BD%A4%EB%B9%84%EB%84%A4%EC%9D%B4%EC%85%98%ED%94%BC%EC%9E%90(0)(0).png" alt="피자 예시">
+            <p class="menu-name">콤비네이션 피자 L</p>
+            <p class="menu-price">15,000원</p>
+          </div>
+
+          <!-- 안주류 탭  -->
+          <div class="menu-item" data-tab="anju" data-area="wing-bong" data-type="hot" data-menu="normal">
+            <img src="https://www.bhc.co.kr//upload/bhc/menu//%EB%BF%8C%EB%A7%81%ED%81%B4%EB%82%98%EC%B5%B8%EB%8D%94%EB%B8%94_410x271.png" alt="안주류 예시">
+            <p class="menu-name">뿌링클나쵸 더블</p>
+            <p class="menu-price">6,500원</p>
+          </div>
+          <!-- 필요시 더 추가... -->
+
+        </div><!-- /menu-list -->
+      </div><!-- /right-area -->
+    </div>
+    <div class="banner-area">
+      <div class="banner-image">
+
+        <img src="https://www.bhc.co.kr/images/index/bg_main_side_banner_240521.jpg">
+
+        <div class="item orange" onclick="alert('SMS 창업상담으로 연결됩니다.')">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          <span>SMS 창업상담</span>
+        </div>
+        <div class="item gold" onclick="alert('온라인 창업상담으로 연결됩니다.')">
+          <ion-icon name="laptop-outline"></ion-icon>
+          <span>온라인 창업상담</span>
+        </div>
+        <div class="item brown" onclick="alert('창업비용 정보 페이지로 이동합니다.')">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          <span>창업비용</span>
+        </div>
+        <div class="item beige" onclick="alert('BHC mall로 이동합니다.')">
+          <ion-icon name="storefront-outline"></ion-icon>
+          <strong>bhc</strong> <span class="mall">mall</span>
+        </div>
+        <div class="top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          <ion-icon name="arrow-up-outline"></ion-icon>
+          <span>TOP</span>
+        </div>
+      </div>
+    </div>
+  </div><!-- /wrap -->
+
+  <!-- 검정색 푸터 영역 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>이용약관 | 개인정보 처리방침 | 위치기반서비스 이용약관 | 영상정보처리기기 운영방침 | 이메일무단수집거부</p>
+      <p>대표 : 송호섭 주소 : 서울시 송파구 올림픽로 300, 19층 (신천동)<br>
+        다이닝브랜즈그룹 주식회사 사업자등록번호 : 215-86-61559 통신판매업 : 제2014-서울송파-0593호<br>
+        문의전화 : 02-6204-3406 FAX : 02-6988-2199</p>
+      <p>본 사이트는 상업적 목적이 아닌 디자이너 김문혁의 개인 포트폴리오용으로 만들어진 사이트입니다</p>
+    </div>
+  </footer>
+
+  <!-- JS 파일 -->
+  <script src="script.js"></script>
+</body>
+
+</html>
