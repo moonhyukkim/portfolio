@@ -9,6 +9,28 @@
     font-family: "Noto Sans KR", sans-serif;
     background-color: #fff;
   }
+  .banner {
+    background-color: #F68336;
+    height: 40px;           /* 필요한 높이로 조절 */
+    overflow: hidden;       /* 영역 넘치는 부분 숨김 */
+    margin: 20px auto;      /* 가운데 정렬 */
+    box-sizing: border-box;
+    white-space: nowrap;    /* 텍스트 줄바꿈 방지 */
+  }
+
+  .banner-track {
+    display: inline-block;             /* 가로로 길게 이어붙이기 위해 inline-block */
+    animation: scroll-left 40s linear infinite; /* 10초 간격으로 무한 반복 */
+  }
+
+  .banner-item {
+    display: inline-block;
+    padding: 0 40vw; /* 문구 사이 간격 조절 (수정 가능) */
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px; /* 배너 높이에 맞춰 세로 가운데 정렬 느낌 */
+    color:#fff;
+  }
   .top-banner {
     background-color: #F68336;
     text-align: center;
@@ -17,6 +39,23 @@
     padding: 10px 0;
     font-weight: bold;
     color:#fff;
+  }
+  /* 배너에 마우스 오버 시 배너 내부 트랙의 애니메이션을 일시 정지 */
+.banner:hover .banner-track {
+  animation-play-state: paused;
+}
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* 적당한 위치까지 왼쪽으로 이동시킨 후,
+         처음 위치로 확 끊기지 않고 자연스럽게 이어지도록
+         banner-track 내부를 반복 배치해주면 끊김 없이 보여집니다.
+      */
+      transform: translateX(-50%);
+    }
   }
   /* 래퍼: 왼쪽과 오른쪽을 가로로 배치 */
   .wrap {
