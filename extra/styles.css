@@ -13,7 +13,6 @@
     background-color: #F68336;
     height: 40px;           /* 필요한 높이로 조절 */
     overflow: hidden;       /* 영역 넘치는 부분 숨김 */
-    margin: 20px auto;      /* 가운데 정렬 */
     box-sizing: border-box;
     white-space: nowrap;    /* 텍스트 줄바꿈 방지 */
   }
