@@ -288,9 +288,8 @@
         window.addEventListener('touchend', stopDrag);
 
 
-            currentTranslateY = 0;
             sheet.style.transition = 'transform 0.4s ease';
-            sheet.style.transform = `translateY(${currentTranslateY}px)`;
+            sheet.style.transform = `translateY(${startTranslateY}px)`;
             updateBackgroundButtonVisibility(); // 상태 업데이트
 
 
