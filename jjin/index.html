@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Bottom Sheet (speed snap)</title>
     <style>
         body {
@@ -12,6 +14,26 @@
             background: #f0f0f0;
             height: 100vh;
             overflow: hidden;
+            user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+        }
+
+        .container {
+            background-image: url('img/background.jpg');
+            /* 배경 이미지 경로 설정 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .logo {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -45%);
         }
 
         .bottom-sheet {
@@ -38,8 +60,8 @@
         }
 
         .handle {
-            width: 80px;
-            height: 8px;
+            width: 100px;
+            height: 5px;
             background: #bbb;
             border-radius: 4px;
             margin: 10px auto;
@@ -47,62 +69,118 @@
         }
 
         .content {
-            padding: 20px;
+            margin-top: 10px;
+            padding: 20px 10%;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .content button {
+        .content a {
+text-decoration: none;
+        }
+
+        .button-small {
+            float: right;
             display: block;
-            width: 90%;
-            margin: 10px auto;
-            padding: 15px;
-            font-size: 16px;
+            margin: 5px 0 15px 0;
+            width: 20%;
             background: black;
             color: white;
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+.button-large {
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+            margin: 5px auto;
+            padding: 15px 15px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            font-weight: 500;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-        }
-
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ← 이게 섀도우 */
+}
+.button-large ion-icon {
+  font-size: 25px;
+}
         .background-buttons {
             position: fixed;
-            bottom: 300px;
-            width: 100%;
+            bottom: 160px;
+            right: 0;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 0px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             pointer-events: none;
         }
 
+        .background-buttons a img {
+            max-width: 300px;
+            margin: -5px 0;
+        }
         .background-buttons.show {
             opacity: 1;
             transform: translateY(0);
             pointer-events: auto;
         }
 
-        .background-buttons button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+    </div>
     <div class="background-buttons" id="backgroundButtons">
-        <button>뒤 배경 버튼 1</button>
-        <button>뒤 배경 버튼 2</button>
+        <a href="https://cafe.naver.com/jjinhomme/49783"><img src="https://jjinhomme.co.kr/2024renew/img/june_m.png"></a>
+        <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about4"><img
+                src="http://jjinhomme.co.kr/2024renew/img/popup_3.png"></a>
+        <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about7"><img
+                src="https://jjinhomme.co.kr/2024renew/img/hadi_m.png"></a>
     </div>
 
     <div class="bottom-sheet" id="sheet">
         <div class="handle" id="handle"></div>
         <div class="content">
-            <button>방문예약</button>
-            <button>카카오톡</button>
-            <button>네이버 카페</button>
-            <button>홈페이지</button>
+            <a href="#"><div class="button-small">비즈니스 제안</div></a>
+            <a href="#">
+                <div class="button-large">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                  <span>방문예약</span>
+                </div>
+              </a>          
+              <a href="#">
+                <div class="button-large">
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                  <span>카카오톡</span>
+                </div>
+              </a>
+              
+              <a href="#">
+                <div class="button-large">
+                    <ion-icon name="people-outline"></ion-icon>
+                  <span>네이버 카페</span>
+                </div>
+              </a>
+              
+              <a href="#">
+                <div class="button-large">
+                    <ion-icon name="home-outline"></ion-icon>
+                  <span>홈페이지</span>
+                </div>
+              </a>
+                   
         </div>
     </div>
 
