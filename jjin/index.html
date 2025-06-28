@@ -130,8 +130,11 @@
 
       const isAtTop = content.scrollTop === 0;
 
-      // 수정: 아래로 드래그는 언제든 허용, 위로 드래그는 최상단일 때만 허용
-      if ((deltaY > 0) || (deltaY < 0 && isAtTop)) {
+      if (deltaY < 0 && !isAtTop) {
+        return; // 아래로 스크롤 중일 땐 시트 드래그 막음
+      }
+
+      if (deltaY > 0 && isAtTop) {
         e.preventDefault();
         dragging = true;
         scrollLock = true;
