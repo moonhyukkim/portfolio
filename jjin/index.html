@@ -28,6 +28,19 @@
             height: 100vh;
             color: white;
         }
+        .image {
+    position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+    background-image: url('img/background.jpg'); /* 배경 이미지 경로 설정 */
+    background-size: cover;
+  background-position: center;
+  height: 91vh;
+  width: 80vw;
+  max-width:800px;
+  filter: brightness(0.9); /* 0.0 ~ 1.0 사이값. 1이 원본 밝기 */
+}
 
         .logo {
             position: absolute;
@@ -137,6 +150,7 @@ text-decoration: none;
 
 <body>
     <div class="container">
+        <div class="image"></div> <!-- 상단 여백 -->
         <div class="logo">
             <img src="img/logo.png">
         </div>
