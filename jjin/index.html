@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bottom Sheet with Full Drag</title>
+  <title>Smooth GPU Bottom Sheet</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: sans-serif;
-      background: #f0f0f0;
-      height: 100vh;
+      height: 100%;
+      background: #f5f5f5;
       overflow: hidden;
     }
 
@@ -18,23 +19,20 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 200px;
+      height: 500px;
       background: white;
       border-radius: 20px 20px 0 0;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(0);
+      transition: transform 0.2s ease;
       touch-action: none;
-    }
-
-    .bottom-sheet.transition {
-      transition: height 0.2s ease;
     }
 
     .handle {
       width: 80px;
-      height: 8px;
-      background: #bbb;
-      border-radius: 4px;
+      height: 6px;
+      background: #ccc;
+      border-radius: 3px;
       margin: 10px auto;
       cursor: grab;
     }
@@ -45,7 +43,6 @@
     }
 
     .content button {
-      display: block;
       width: 90%;
       margin: 10px auto;
       padding: 15px;
@@ -73,53 +70,47 @@
   <script>
     const sheet = document.getElementById('sheet');
     let startY = 0;
-    let startHeight = 0;
+    let currentY = 0;
+    let translateY = 0;
     let dragging = false;
-    const minHeight = 150;
-    const maxHeight = window.innerHeight * 0.6;
 
-    function isContentButton(target) {
-      return target.closest('.content button');
-    }
+    const maxTranslate = 400; // 최대 이동 가능 거리 (시트 높이 - 최소 노출값)
 
-    function startDrag(y, target) {
-      if (isContentButton(target)) return; // 버튼 클릭은 무시
-      startY = y;
-      startHeight = sheet.offsetHeight;
+    function onStart(y) {
       dragging = true;
-      sheet.classList.remove('transition');
+      startY = y;
+      sheet.style.transition = 'none';
     }
 
-    function doDrag(y) {
+    function onMove(y) {
       if (!dragging) return;
-      const delta = startY - y;
-      let newHeight = startHeight + delta;
-      newHeight = Math.min(maxHeight, Math.max(minHeight, newHeight));
-      sheet.style.height = `${newHeight}px`;
+      const delta = y - startY;
+      translateY = Math.max(0, Math.min(maxTranslate, delta));
+      sheet.style.transform = `translateY(${translateY}px)`;
     }
 
-    function stopDrag() {
+    function onEnd() {
       if (!dragging) return;
       dragging = false;
-      sheet.classList.add('transition');
+      sheet.style.transition = 'transform 0.2s ease';
 
-      const currentHeight = sheet.offsetHeight;
-      if (currentHeight > window.innerHeight * 0.4) {
-        sheet.style.height = `${maxHeight}px`;
+      // 스냅: 절반 넘게 내렸으면 닫기, 아니면 복귀
+      if (translateY > maxTranslate / 2) {
+        sheet.style.transform = `translateY(${maxTranslate}px)`;
       } else {
-        sheet.style.height = `200px`;
+        sheet.style.transform = `translateY(0)`;
       }
     }
 
-    // 마우스
-    sheet.addEventListener('mousedown', (e) => startDrag(e.clientY, e.target));
-    window.addEventListener('mousemove', (e) => doDrag(e.clientY));
-    window.addEventListener('mouseup', stopDrag);
+    // Mouse
+    sheet.addEventListener('mousedown', e => onStart(e.clientY));
+    window.addEventListener('mousemove', e => onMove(e.clientY));
+    window.addEventListener('mouseup', onEnd);
 
-    // 터치
-    sheet.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientY, e.target));
-    window.addEventListener('touchmove', (e) => doDrag(e.touches[0].clientY));
-    window.addEventListener('touchend', stopDrag);
+    // Touch
+    sheet.addEventListener('touchstart', e => onStart(e.touches[0].clientY));
+    window.addEventListener('touchmove', e => onMove(e.touches[0].clientY));
+    window.addEventListener('touchend', onEnd);
   </script>
 
 </body>
