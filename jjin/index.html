@@ -32,6 +32,10 @@
             background-position: center;
             height: calc(var(--vh, 1vh) * 100);
             color: white;
+            /* 애니메이션용 초기 설정 */
+            transform: scale(1.1);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
         }
 
         .logo {
@@ -215,6 +219,7 @@
         let dragging = false;
         const backgroundButtons = document.getElementById('backgroundButtons');
         const showThreshold = 150; // 시트를 얼마나 내려야 버튼이 나타날지 기준
+        const container = document.querySelector('.container');
 
         function updateBackgroundButtonVisibility() {
             if (currentTranslateY > showThreshold) {
@@ -296,6 +301,10 @@
             updateBackgroundButtonVisibility(); // 상태 업데이트
         }, 500);
 
+        setTimeout(() => {
+            container.style.transform = 'scale(1)';
+            container.style.opacity = '1';
+        }, 100); // 약간 딜레이 줘야 트랜지션 발동 확실
     </script>
 
 </body>
