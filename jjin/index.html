@@ -287,14 +287,12 @@
         window.addEventListener('touchmove', e => doDrag(e.touches[0].clientY));
         window.addEventListener('touchend', stopDrag);
 
-        updateBackgroundButtonVisibility();
-        // 1초 뒤 자동으로 시트를 위로 올리기
-        setTimeout(() => {
+
             currentTranslateY = 0;
             sheet.style.transition = 'transform 0.4s ease';
             sheet.style.transform = `translateY(${currentTranslateY}px)`;
             updateBackgroundButtonVisibility(); // 상태 업데이트
-        }, 1000);
+
 
     </script>
 
