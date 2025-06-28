@@ -113,6 +113,14 @@
     const backgroundButtons = document.getElementById('backgroundButtons');
 const showThreshold = 150; // 시트를 얼마나 내려야 버튼이 나타날지 기준
 
+function updateBackgroundButtonVisibility() {
+  if (currentTranslateY > showThreshold) {
+    backgroundButtons.classList.add('show');
+  } else {
+    backgroundButtons.classList.remove('show');
+  }
+}
+
     function isButton(target) {
       return target.closest('.content button');
     }
