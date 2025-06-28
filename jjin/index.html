@@ -276,6 +276,8 @@ text-decoration: none;
         sheet.addEventListener('touchstart', e => startDrag(e.touches[0].clientY, e.target));
         window.addEventListener('touchmove', e => doDrag(e.touches[0].clientY));
         window.addEventListener('touchend', stopDrag);
+
+        updateBackgroundButtonVisibility();
     </script>
 
 </body>
