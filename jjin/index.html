@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bottom Sheet (transform 버전)</title>
+  <title>Bottom Sheet (speed snap)</title>
   <style>
     body {
       margin: 0;
@@ -18,11 +18,11 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 400px; /* 최대 높이 */
+      height: 400px;
       background: white;
       border-radius: 20px 20px 0 0;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(200px); /* 초기 노출 높이 */
+      transform: translateY(200px); /* 초기 상태 */
       transition: transform 0.25s ease;
       touch-action: none;
     }
@@ -64,7 +64,7 @@
   <div class="bottom-sheet" id="sheet">
     <div class="handle" id="handle"></div>
     <div class="content">
-      <button>방문예약2</button>
+      <button>방문예약</button>
       <button>카카오톡</button>
       <button>네이버 카페</button>
       <button>홈페이지</button>
@@ -74,10 +74,12 @@
   <script>
     const sheet = document.getElementById('sheet');
     let startY = 0;
+    let startTime = 0;
     let startTranslateY = 0;
-    let currentTranslateY = 0; // 초기 translateY(px)
-    const minTranslateY = 0;     // 최대로 올린 상태
-    const maxTranslateY = 250;   // 최대로 내린 상태
+    let currentTranslateY = 200;
+    const minTranslateY = 0;
+    const maxTranslateY = 200;
+    const velocityThreshold = 0.5; // px/ms
     let dragging = false;
 
     function isButton(target) {
@@ -88,6 +90,7 @@
       if (isButton(target)) return;
       dragging = true;
       startY = y;
+      startTime = Date.now();
       const matrix = window.getComputedStyle(sheet).transform;
       if (matrix !== 'none') {
         const match = matrix.match(/matrix.*\((.+)\)/);
@@ -115,11 +118,28 @@
       dragging = false;
       sheet.classList.remove('dragging');
 
-      // Snap logic
-      if (currentTranslateY > 100) {
-        currentTranslateY = maxTranslateY;
+      const endY = currentTranslateY;
+      const endTime = Date.now();
+      const distance = endY - startTranslateY;
+      const time = endTime - startTime;
+      const speed = distance / time; // px per ms
+
+      // console.log(`속도: ${speed.toFixed(2)} px/ms`);
+
+      // 속도 기반 스냅 우선
+      if (Math.abs(speed) > velocityThreshold) {
+        if (speed > 0) {
+          currentTranslateY = maxTranslateY;
+        } else {
+          currentTranslateY = minTranslateY;
+        }
       } else {
-        currentTranslateY = minTranslateY;
+        // 위치 기준 스냅 (기존 방식)
+        if (currentTranslateY > maxTranslateY / 2) {
+          currentTranslateY = maxTranslateY;
+        } else {
+          currentTranslateY = minTranslateY;
+        }
       }
 
       sheet.style.transition = 'transform 0.25s ease';
