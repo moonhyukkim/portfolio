@@ -64,7 +64,7 @@
   <div class="bottom-sheet" id="sheet">
     <div class="handle" id="handle"></div>
     <div class="content">
-      <button>방문예약1</button>
+      <button>방문예약2</button>
       <button>카카오톡</button>
       <button>네이버 카페</button>
       <button>홈페이지</button>
@@ -75,9 +75,9 @@
     const sheet = document.getElementById('sheet');
     let startY = 0;
     let startTranslateY = 0;
-    let currentTranslateY = 200; // 초기 translateY(px)
+    let currentTranslateY = 0; // 초기 translateY(px)
     const minTranslateY = 0;     // 최대로 올린 상태
-    const maxTranslateY = 200;   // 최대로 내린 상태
+    const maxTranslateY = 250;   // 최대로 내린 상태
     let dragging = false;
 
     function isButton(target) {
