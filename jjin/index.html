@@ -33,9 +33,8 @@
             height: calc(var(--vh, 1vh) * 100);
             color: white;
             /* 애니메이션용 초기 설정 */
-            transform: scale(1.1);
-            opacity: 0;
-            transition: transform 0.6s ease, opacity 0.6s ease;
+            transform: scale(1.3);
+            transition: transform 0.6s ease;
         }
 
         .logo {
@@ -303,7 +302,6 @@
 
         setTimeout(() => {
             container.style.transform = 'scale(1)';
-            container.style.opacity = '1';
         }, 100); // 약간 딜레이 줘야 트랜지션 발동 확실
     </script>
 
