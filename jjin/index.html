@@ -22,7 +22,7 @@
       background: white;
       border-radius: 20px 20px 0 0;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(0px); /* 초기 상태 */
+      transform: translateY(200px); /* 초기 상태 */
       transition: transform 0.25s ease;
       touch-action: none;
     }
@@ -40,11 +40,20 @@
       cursor: grab;
     }
 
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
+	.content {
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+    max-height: calc(100% - 40px); /* handle 높이 제외 */
+  }
+  .content::-webkit-scrollbar {
+    width: 6px;
+  }
 
+  .content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
     .content button {
       display: block;
       width: 90%;
@@ -63,12 +72,19 @@
 
   <div class="bottom-sheet" id="sheet">
     <div class="handle" id="handle"></div>
-    <div class="content">
-      <button>방문예약</button>
-      <button>카카오톡</button>
-      <button>네이버 카페</button>
-      <button>홈페이지</button>
-    </div>
+	<div class="content">
+		<button>방문예약</button>
+		<button>카카오톡</button>
+		<button>네이버 카페</button>
+		<button>홈페이지</button>
+		<button>블로그</button>
+		<button>인스타그램</button>
+		<button>유튜브</button>
+		<button>문의하기</button>
+		<button>제휴문의</button>
+		<button>이벤트</button>
+		<button>채용공고</button>
+	  </div>
   </div>
 
   <script>
@@ -76,9 +92,9 @@
     let startY = 0;
     let startTime = 0;
     let startTranslateY = 0;
-    let currentTranslateY = 0;
+    let currentTranslateY = 200;
     const minTranslateY = 0;
-    const maxTranslateY = 250;
+    const maxTranslateY = 200;
     const velocityThreshold = 0.5; // px/ms
     let dragging = false;
 
