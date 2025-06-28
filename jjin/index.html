@@ -57,10 +57,39 @@
       border-radius: 10px;
       cursor: pointer;
     }
+
+    .background-buttons {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.background-buttons.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.background-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
   </style>
 </head>
 <body>
-
+    <div class="background-buttons" id="backgroundButtons">
+        <button>뒤 배경 버튼 1</button>
+        <button>뒤 배경 버튼 2</button>
+      </div>
+      
   <div class="bottom-sheet" id="sheet">
     <div class="handle" id="handle"></div>
     <div class="content">
@@ -81,6 +110,8 @@
     const maxTranslateY = 250;
     const velocityThreshold = 0.5; // px/ms
     let dragging = false;
+    const backgroundButtons = document.getElementById('backgroundButtons');
+const showThreshold = 150; // 시트를 얼마나 내려야 버튼이 나타날지 기준
 
     function isButton(target) {
       return target.closest('.content button');
@@ -103,49 +134,38 @@
       }
       sheet.classList.add('dragging');
     }
+// doDrag과 stopDrag 안에서 호출
+function doDrag(y) {
+  if (!dragging) return;
+  const delta = y - startY;
+  let newY = startTranslateY + delta;
+  newY = Math.min(maxTranslateY, Math.max(minTranslateY, newY));
+  currentTranslateY = newY;
+  sheet.style.transform = `translateY(${newY}px)`;
+  updateBackgroundButtonVisibility(); // 버튼 상태 갱신
+}
 
-    function doDrag(y) {
-      if (!dragging) return;
-      const delta = y - startY;
-      let newY = startTranslateY + delta;
-      newY = Math.min(maxTranslateY, Math.max(minTranslateY, newY));
-      currentTranslateY = newY;
-      sheet.style.transform = `translateY(${newY}px)`;
-    }
+function stopDrag() {
+  if (!dragging) return;
+  dragging = false;
+  sheet.classList.remove('dragging');
 
-    function stopDrag() {
-      if (!dragging) return;
-      dragging = false;
-      sheet.classList.remove('dragging');
+  const endY = currentTranslateY;
+  const endTime = Date.now();
+  const distance = endY - startTranslateY;
+  const time = endTime - startTime;
+  const speed = distance / time;
 
-      const endY = currentTranslateY;
-      const endTime = Date.now();
-      const distance = endY - startTranslateY;
-      const time = endTime - startTime;
-      const speed = distance / time; // px per ms
+  if (Math.abs(speed) > velocityThreshold) {
+    currentTranslateY = speed > 0 ? maxTranslateY : minTranslateY;
+  } else {
+    currentTranslateY = currentTranslateY > maxTranslateY / 2 ? maxTranslateY : minTranslateY;
+  }
 
-      // console.log(`속도: ${speed.toFixed(2)} px/ms`);
-
-      // 속도 기반 스냅 우선
-      if (Math.abs(speed) > velocityThreshold) {
-        if (speed > 0) {
-          currentTranslateY = maxTranslateY;
-        } else {
-          currentTranslateY = minTranslateY;
-        }
-      } else {
-        // 위치 기준 스냅 (기존 방식)
-        if (currentTranslateY > maxTranslateY / 2) {
-          currentTranslateY = maxTranslateY;
-        } else {
-          currentTranslateY = minTranslateY;
-        }
-      }
-
-      sheet.style.transition = 'transform 0.25s ease';
-      sheet.style.transform = `translateY(${currentTranslateY}px)`;
-    }
-
+  sheet.style.transition = 'transform 0.25s ease';
+  sheet.style.transform = `translateY(${currentTranslateY}px)`;
+  updateBackgroundButtonVisibility(); // 최종 위치에서도 상태 갱신
+}
     // Mouse
     sheet.addEventListener('mousedown', e => startDrag(e.clientY, e.target));
     window.addEventListener('mousemove', e => doDrag(e.clientY));
