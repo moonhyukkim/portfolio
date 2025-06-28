@@ -1,189 +1,196 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bottom Sheet (speed snap)</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #f0f0f0;
-      height: 100vh;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom Sheet (speed snap)</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f0f0f0;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-    .bottom-sheet {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 400px;
-      background: white;
-      border-radius: 20px 20px 0 0;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(0px); /* 초기 상태 */
-      transition: transform 0.25s ease;
-      touch-action: none;
-    }
+        .bottom-sheet {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 400px;
+            background: rgba(179, 179, 179, 0.5);
+            backdrop-filter: blur(10px);
+            /* 배경 블러 처리 */
+            -webkit-backdrop-filter: blur(10px);
+            /* Safari 호환 */
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(0px);
+            /* 초기 상태 */
+            transition: transform 0.25s ease;
+            touch-action: none;
+        }
 
-    .bottom-sheet.dragging {
-      transition: none;
-    }
+        .bottom-sheet.dragging {
+            transition: none;
+        }
 
-    .handle {
-      width: 80px;
-      height: 8px;
-      background: #bbb;
-      border-radius: 4px;
-      margin: 10px auto;
-      cursor: grab;
-    }
+        .handle {
+            width: 80px;
+            height: 8px;
+            background: #bbb;
+            border-radius: 4px;
+            margin: 10px auto;
+            cursor: grab;
+        }
 
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
 
-    .content button {
-      display: block;
-      width: 90%;
-      margin: 10px auto;
-      padding: 15px;
-      font-size: 16px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+        .content button {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 16px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
 
-    .background-buttons {
-  position: fixed;
-  bottom: 300px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
+        .background-buttons {
+            position: fixed;
+            bottom: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
 
-.background-buttons.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+        .background-buttons.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
 
-.background-buttons button {
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-  </style>
+        .background-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="background-buttons" id="backgroundButtons">
         <button>뒤 배경 버튼 1</button>
         <button>뒤 배경 버튼 2</button>
-      </div>
-      
-  <div class="bottom-sheet" id="sheet">
-    <div class="handle" id="handle"></div>
-    <div class="content">
-      <button>방문예약</button>
-      <button>카카오톡</button>
-      <button>네이버 카페</button>
-      <button>홈페이지</button>
     </div>
-  </div>
 
-  <script>
-    const sheet = document.getElementById('sheet');
-    let startY = 0;
-    let startTime = 0;
-    let startTranslateY = 0;
-    let currentTranslateY = 0;
-    const minTranslateY = 0;
-    const maxTranslateY = 250;
-    const velocityThreshold = 0.5; // px/ms
-    let dragging = false;
-    const backgroundButtons = document.getElementById('backgroundButtons');
-const showThreshold = 150; // 시트를 얼마나 내려야 버튼이 나타날지 기준
+    <div class="bottom-sheet" id="sheet">
+        <div class="handle" id="handle"></div>
+        <div class="content">
+            <button>방문예약</button>
+            <button>카카오톡</button>
+            <button>네이버 카페</button>
+            <button>홈페이지</button>
+        </div>
+    </div>
 
-function updateBackgroundButtonVisibility() {
-  if (currentTranslateY > showThreshold) {
-    backgroundButtons.classList.add('show');
-  } else {
-    backgroundButtons.classList.remove('show');
-  }
-}
+    <script>
+        const sheet = document.getElementById('sheet');
+        let startY = 0;
+        let startTime = 0;
+        let startTranslateY = 0;
+        let currentTranslateY = 0;
+        const minTranslateY = 0;
+        const maxTranslateY = 250;
+        const velocityThreshold = 0.5; // px/ms
+        let dragging = false;
+        const backgroundButtons = document.getElementById('backgroundButtons');
+        const showThreshold = 150; // 시트를 얼마나 내려야 버튼이 나타날지 기준
 
-    function isButton(target) {
-      return target.closest('.content button');
-    }
-
-    function startDrag(y, target) {
-      if (isButton(target)) return;
-      dragging = true;
-      startY = y;
-      startTime = Date.now();
-      const matrix = window.getComputedStyle(sheet).transform;
-      if (matrix !== 'none') {
-        const match = matrix.match(/matrix.*\((.+)\)/);
-        if (match) {
-          const values = match[1].split(', ');
-          startTranslateY = parseFloat(values[5]);
+        function updateBackgroundButtonVisibility() {
+            if (currentTranslateY > showThreshold) {
+                backgroundButtons.classList.add('show');
+            } else {
+                backgroundButtons.classList.remove('show');
+            }
         }
-      } else {
-        startTranslateY = 0;
-      }
-      sheet.classList.add('dragging');
-    }
-// doDrag과 stopDrag 안에서 호출
-function doDrag(y) {
-  if (!dragging) return;
-  const delta = y - startY;
-  let newY = startTranslateY + delta;
-  newY = Math.min(maxTranslateY, Math.max(minTranslateY, newY));
-  currentTranslateY = newY;
-  sheet.style.transform = `translateY(${newY}px)`;
-  updateBackgroundButtonVisibility(); // 버튼 상태 갱신
-}
 
-function stopDrag() {
-  if (!dragging) return;
-  dragging = false;
-  sheet.classList.remove('dragging');
+        function isButton(target) {
+            return target.closest('.content button');
+        }
 
-  const endY = currentTranslateY;
-  const endTime = Date.now();
-  const distance = endY - startTranslateY;
-  const time = endTime - startTime;
-  const speed = distance / time;
+        function startDrag(y, target) {
+            if (isButton(target)) return;
+            dragging = true;
+            startY = y;
+            startTime = Date.now();
+            const matrix = window.getComputedStyle(sheet).transform;
+            if (matrix !== 'none') {
+                const match = matrix.match(/matrix.*\((.+)\)/);
+                if (match) {
+                    const values = match[1].split(', ');
+                    startTranslateY = parseFloat(values[5]);
+                }
+            } else {
+                startTranslateY = 0;
+            }
+            sheet.classList.add('dragging');
+        }
+        // doDrag과 stopDrag 안에서 호출
+        function doDrag(y) {
+            if (!dragging) return;
+            const delta = y - startY;
+            let newY = startTranslateY + delta;
+            newY = Math.min(maxTranslateY, Math.max(minTranslateY, newY));
+            currentTranslateY = newY;
+            sheet.style.transform = `translateY(${newY}px)`;
+            updateBackgroundButtonVisibility(); // 버튼 상태 갱신
+        }
 
-  if (Math.abs(speed) > velocityThreshold) {
-    currentTranslateY = speed > 0 ? maxTranslateY : minTranslateY;
-  } else {
-    currentTranslateY = currentTranslateY > maxTranslateY / 2 ? maxTranslateY : minTranslateY;
-  }
+        function stopDrag() {
+            if (!dragging) return;
+            dragging = false;
+            sheet.classList.remove('dragging');
 
-  sheet.style.transition = 'transform 0.25s ease';
-  sheet.style.transform = `translateY(${currentTranslateY}px)`;
-  updateBackgroundButtonVisibility(); // 최종 위치에서도 상태 갱신
-}
-    // Mouse
-    sheet.addEventListener('mousedown', e => startDrag(e.clientY, e.target));
-    window.addEventListener('mousemove', e => doDrag(e.clientY));
-    window.addEventListener('mouseup', stopDrag);
+            const endY = currentTranslateY;
+            const endTime = Date.now();
+            const distance = endY - startTranslateY;
+            const time = endTime - startTime;
+            const speed = distance / time;
 
-    // Touch
-    sheet.addEventListener('touchstart', e => startDrag(e.touches[0].clientY, e.target));
-    window.addEventListener('touchmove', e => doDrag(e.touches[0].clientY));
-    window.addEventListener('touchend', stopDrag);
-  </script>
+            if (Math.abs(speed) > velocityThreshold) {
+                currentTranslateY = speed > 0 ? maxTranslateY : minTranslateY;
+            } else {
+                currentTranslateY = currentTranslateY > maxTranslateY / 2 ? maxTranslateY : minTranslateY;
+            }
+
+            sheet.style.transition = 'transform 0.25s ease';
+            sheet.style.transform = `translateY(${currentTranslateY}px)`;
+            updateBackgroundButtonVisibility(); // 최종 위치에서도 상태 갱신
+        }
+        // Mouse
+        sheet.addEventListener('mousedown', e => startDrag(e.clientY, e.target));
+        window.addEventListener('mousemove', e => doDrag(e.clientY));
+        window.addEventListener('mouseup', stopDrag);
+
+        // Touch
+        sheet.addEventListener('touchstart', e => startDrag(e.touches[0].clientY, e.target));
+        window.addEventListener('touchmove', e => doDrag(e.touches[0].clientY));
+        window.addEventListener('touchend', stopDrag);
+    </script>
 
 </body>
+
 </html>
