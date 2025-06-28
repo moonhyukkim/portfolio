@@ -306,6 +306,25 @@ section {
   /* 호버 시 색상 변경 */
 }
 
+.business-link {
+  margin-top: -40px;
+  float: right;
+  text-decoration: underline;
+  color: #000;
+  /* 원하는 색상으로 변경 가능 */
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* 화살표와 텍스트 간격 */
+}
+
+.business-link:hover {
+  color: #555;
+  /* 호버 시 색상 변경 */
+}
+
 .absolute-image {
   position: absolute;
   /* 부모(.image-container)를 기준으로 위치 설정 */
@@ -1878,6 +1897,24 @@ display:none;
 }
 .timeline-item {
   align-items: center;
+}
+.business-link {
+  margin-top: -30px;
+  float: right;
+  text-decoration: underline;
+  color: #000;
+  /* 원하는 색상으로 변경 가능 */
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* 화살표와 텍스트 간격 */
+}
+
+.business-link:hover {
+  color: #555;
+  /* 호버 시 색상 변경 */
 }
 }
 

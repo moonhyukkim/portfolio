@@ -208,6 +208,28 @@ font-size:18px;
     align-items: center;
   }
 
+  .business {
+    width: 100%;
+  }
+  .business-image {
+    width: 100%;
+    margin:0;
+    padding:0;
+  }
+
+  .business-image img {
+    width: 100%;
+    height:auto;
+    margin:0;
+    padding:0;
+    display: block;
+  }
+
+  .business-padding {
+    background-color: #000;
+    height: 70px;
+  }
+
   @media (max-width: 768px) {
     .main-image {
         height:680px;

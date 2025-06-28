@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹디자인 | 김문혁 포트폴리오</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/webdesign.css" />
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/portfolio.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+<body class="light-theme">
+    <header class="hero">
+        <nav class="navbar-pc">
+            <ul class="primary-menu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="../index.html#section1">프로필</a></li>
+                <li class="has-subnav">
+                    <a href="#">포트폴리오</a>
+                    <ul class="subnav">
+                        <li><a href="portfolio/quartzheather.html" class="active">쿼츠헤더</a></li>
+                        <li><a href="portfolio/blendable.html">블렌더블</a></li>
+                        <li><a href="portfolio/urbanvape.html">어반베이프</a></li>
+                        <li><a href="portfolio/webdesign.html">웹디자인</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#section2">문의</a></li>
+                <!--<li><a href="business.html">제안서</a></li>-->
+            </ul>
+        </nav>
+        <nav class="mobile-navbar">
+            <!-- 햄버거 버튼 (왼쪽) -->
+            <button class="hamburger-button" id="hamburgerBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 6h16.5m-16.5 6h16.5" />
+                </svg>
+            </button>
+
+            <!-- 홈 버튼 (오른쪽) -->
+            <a class="mobile-home-button" href="../../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" width="24" height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.954c.58-.58 
+                     1.518-.58 2.098 0L22.25 12M4.5 
+                     10.5v9.75a.75.75 0 00.75.75h4.5a.75.75 
+                     0 00.75-.75v-6h3v6a.75.75 
+                     0 00.75.75h4.5a.75.75 
+                     0 00.75-.75V10.5" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="dim-overlay" id="dimOverlay"></div>
+
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <ul class="mobile-menu-list">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="../index.html#section1">프로필</a></li>
+                <li class="has-subnav">
+                    <a href="#" class="subnav-toggle">
+                        포트폴리오
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="mobile-subnav">
+                        <li><a href="portfolio/quartzheather.html">쿼츠헤더</a></li>
+                        <li><a href="portfolio/blendable.html">블렌더블</a></li>
+                        <li><a href="portfolio/urbanvape.html">어반베이프</a></li>
+                        <li><a href="portfolio/webdesign.html">웹디자인</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html#section2">문의</a></li>
+                <!--<li><a href="business.html">제안서</a></li>-->
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div class="business-padding"></div>
+        <div class="business">
+        <div class="business-image"><img src="../assets/images/business/e.png"></div>
+        <div class="business-image"><img src="../assets/images/business/w.png"></div>
+        <div class="business-image"><img src="../assets/images/business/q.png"></div>
+        <div class="business-image"><img src="../assets/images/business/r.png"></div>
+        <div class="business-image"><img src="../assets/images/business/t.png"></div>
+    </div>
+    </section>
+    <section class="fixed onlypc">
+        <div class="projects">
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="portfolio/quartzheather.html"><img src="../assets/images/quartzheather/main.png"
+                            alt="Project 1"></a>
+                    <div class="overlay">
+                        <h3>쿼츠헤더</h3>
+                    </div>
+                </div>
+                <a class="project-text" style="color:#fff;" href="portfolio/quartzheather.html">Quartz Heather</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="portfolio/blendable.html"><img src="../assets/images/blendable/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>블렌더블</h3>
+                    </div>
+                </div>
+                <a class="project-text" style="color:#fff;" href="portfolio/blendable.html">Blendable</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="portfolio/urbanvape.html"><img src="../assets/images/urbanvape/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>어반베이프</h3>
+                    </div>
+                </div>
+                <a class="project-text" style="color:#fff;" href="portfolio/urbanvape.html">Urbanvape</a>
+            </div>
+            <div class="projects-name">
+                <div class="portfolio-item">
+                    <a href="portfolio/webdesign.html"><img src="../assets/images/webdesign/main.png" alt="Project 2"></a>
+                    <div class="overlay">
+                        <h3>웹디자인</h3>
+                    </div>
+                </div>
+                <a class="project-text" style="color:#fff;" href="portfolio/webdesign.html">Web Design</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Designed by Moonhyuk Kim</p>
+    </footer>
+</body>
+
+</html>
