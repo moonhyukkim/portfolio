@@ -143,15 +143,29 @@ body {
     display: none;
     }
     .container-mo {
-        background-image: url('../img/background.jpg');
+       /* background-image: url('../img/background.jpg');*/
         /* 배경 이미지 경로 설정 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
         background-size: cover;
         background-position: center;
         height: calc(var(--vh, 1vh) * 100);
         color: white;
         /* 애니메이션용 초기 설정 */
         transform: scale(1.3);
-        transition: transform 0.6s ease;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .container-mo1 {
+      background-image: url('../img/background.jpg');
+      opacity: 1;
+    }
+    
+    .container-mo2 {
+      background-image: url('../img/background3.png');
+      opacity: 0;
     }
     
     .logo {
@@ -194,22 +208,15 @@ body {
     }
     
     .content {
-        margin-top: 55px;
-        padding: 20px 10%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        margin-top: 20px;
+        padding: 20px 0%;
     }
     
-    .content a {
+    .swiper-slide a {
         text-decoration: none;
     }
     
     .button-small {
-        position: absolute;
-        top: 50px;
-        right: 10%;
         background: black;
         color: white;
         font-size: 12px;
@@ -263,6 +270,7 @@ body {
         pointer-events: auto;
     }
     .swiper {
+      overflow: visible; /* ← 여기 추가 */
       width: 100%;
       height: 100%;
     }
@@ -273,5 +281,19 @@ body {
       justify-content: center;
       align-items: center;
     }
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+    }
     
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+    .swiper-pagination {
+      bottom: -25px !important;
+      text-align: center;
+    }
+    .swiper-wrapper {
+      height:100%;
+    }
 }

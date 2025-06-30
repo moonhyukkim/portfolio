@@ -50,19 +50,21 @@
     </div> <!--pc버전 끝-->
 
     <div class="hidden-pc"><!--모바일버전-->
-        <div class="container-mo">
+        <div class="container-mo container-mo1">
+            <div class="logo">
+                <img src="img/logo.png">
+            </div>
+            <div class="background-buttons" id="backgroundButtons">
+                <a href="https://cafe.naver.com/jjinhomme/49783"><img
+                        src="https://jjinhomme.co.kr/2024renew/img/june_m.png"></a>
+                <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about4"><img
+                        src="http://jjinhomme.co.kr/2024renew/img/popup_3.png"></a>
+                <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about7"><img
+                        src="https://jjinhomme.co.kr/2024renew/img/hadi_m.png"></a>
+            </div>
         </div>
-        <div class="logo">
-            <img src="img/logo.png">
-        </div>
-        <div class="background-buttons" id="backgroundButtons">
-            <a href="https://cafe.naver.com/jjinhomme/49783"><img
-                    src="https://jjinhomme.co.kr/2024renew/img/june_m.png"></a>
-            <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about4"><img
-                    src="http://jjinhomme.co.kr/2024renew/img/popup_3.png"></a>
-            <a href="https://www.jjinhomme.co.kr/2024renew/index-pc.html#about7"><img
-                    src="https://jjinhomme.co.kr/2024renew/img/hadi_m.png"></a>
-        </div>
+        <div class="container-mo container-mo2"></div>
+
 
         <div class="bottom-sheet" id="sheet">
             <div class="handle" id="handle"></div>
@@ -70,84 +72,89 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"> <!-- Slide 1 -->
-                            <a href="#" class="button-small">
-                                비즈니스 제안
-                            </a>
-                            <a href="#">
-                                <div class="button-large">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                    <span>방문예약</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="button-large"><!--배경색:f9e000-->
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                    <span>카카오톡</span>
-                                </div>
-                            </a>
+                            <div style="display: flex; justify-content: flex-end; width:80vw;">
+                                <a href="#" class="button-small">
+                                    비즈니스 제안
+                                </a>
+                            </div>
+                            <div style="display: flex; flex-direction:column; width:80vw;">
+                                <a href="#">
+                                    <div class="button-large">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <span>방문예약</span>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="button-large"><!--배경색:f9e000-->
+                                        <ion-icon name="chatbubble-outline"></ion-icon>
+                                        <span>카카오톡</span>
+                                    </div>
+                                </a>
 
-                            <a href="#">
-                                <div class="button-large"> <!--배경색:22ba4f-->
-                                    <ion-icon name="people-outline"></ion-icon>
-                                    <span>네이버 카페</span>
-                                </div>
-                            </a>
+                                <a href="#">
+                                    <div class="button-large"> <!--배경색:22ba4f-->
+                                        <ion-icon name="people-outline"></ion-icon>
+                                        <span>네이버 카페</span>
+                                    </div>
+                                </a>
 
-                            <a href="#">
-                                <div class="button-large">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                    <span>홈페이지</span>
-                                </div>
-                            </a>
+                                <a href="#">
+                                    <div class="button-large">
+                                        <ion-icon name="home-outline"></ion-icon>
+                                        <span>홈페이지</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="swiper-slide"> <!-- Slide 2 -->
-                            <a href="#" class="button-small">
-                                비즈니스 제안
-                            </a>
-                            <a href="#">
-                                <div class="button-large">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                    <span>방문예약</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="button-large"><!--배경색:f9e000-->
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                    <span>카카오톡</span>
-                                </div>
-                            </a>
-
-                            <a href="#">
-                                <div class="button-large"> <!--배경색:22ba4f-->
-                                    <ion-icon name="people-outline"></ion-icon>
-                                    <span>네이버 카페</span>
-                                </div>
-                            </a>
-
-                            <a href="#">
-                                <div class="button-large">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                    <span>홈페이지</span>
-                                </div>
-                            </a>
+                            <div style="display: flex; justify-content: flex-end; width:80vw;">
+                                <a href="#" class="button-small">
+                                    추가 컨텐츠
+                                </a>
+                            </div>
+                            <div style="display: flex; flex-direction:column; width:80vw;">
+                                <a href="#">
+                                    <div class="button-large">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <span>추가 페이지</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
     </div><!--모바일버전 끝-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const container1 = document.querySelector('.container-mo1');
+            const container2 = document.querySelector('.container-mo2');
+
             const swiper = new Swiper('.swiper', {
                 direction: 'horizontal',
                 loop: false,
-                resistanceRatio: 0, // 바깥으로 튕기지 않게
-                touchStartPreventDefault: false, // 시트 드래그 방해 방지
-                threshold: 10, // 너무 민감하게 반응하지 않게
+                resistanceRatio: 0,
+                touchStartPreventDefault: false,
+                threshold: 10,
+                pagination: {
+    el: '.swiper-pagination',
+    clickable: true, // 도트 클릭 가능
+  },
                 on: {
                     touchStart: (swiper, e) => {
-                        e.stopPropagation(); // 시트 드래그 방지
+                        e.stopPropagation();
                     },
+                    slideChange: () => {
+                        if (swiper.activeIndex === 0) {
+                            container1.style.opacity = '1';
+                            container2.style.opacity = '0';
+                        } else if (swiper.activeIndex === 1) {
+                            container1.style.opacity = '0';
+                            container2.style.opacity = '1';
+                        }
+                    }
                 }
             });
         });
