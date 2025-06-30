@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #f0f0f0;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+}
+
+.hidden-pc {
+    display:none;
+}
+
+.hidden-phone {
+    display:block;
+}
+.container-pc {
+    background-image: url('../img/background2.png'); /* 배경 이미지 경로 설정 */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+  }
+  
+  .image {
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+      background-image: url('../img/background.jpg'); /* 배경 이미지 경로 설정 */
+      background-size: cover;
+    background-position: center;
+    height: 91vh;
+    width: 80vw;
+    max-width:800px;
+    filter: brightness(0.9); /* 0.0 ~ 1.0 사이값. 1이 원본 밝기 */
+  }
+  
+  .branding {
+      position:absolute;
+      width:100vw;
+      top: 40%;
+    background: rgba(78, 78, 78, 0.5);
+    text-align: center;
+    padding: 30px;
+    backdrop-filter: blur(10px); /* 배경 블러 처리 */
+  -webkit-backdrop-filter: blur(10px); /* Safari 호환 */
+  }
+  
+  .branding h1 {
+      line-height: 0.8;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .branding p {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px 30px;
+    width:100vw;
+      position: fixed;
+      bottom:0;
+      
+  }
+  
+  .buttons::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: white;
+  }
+  
+  .buttons::before {
+    top: 0;
+  }
+  
+  .button-padding {
+    text-align: center;
+    border-right: 1px solid white;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .buttons a {
+    padding:15px 0;
+    flex: 1;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  }
+  
+  .buttons a:hover {
+      background: rgba(179, 179, 179, 0.5);
+      backdrop-filter: blur(10px); /* 배경 블러 처리 */
+  -webkit-backdrop-filter: blur(10px); /* Safari 호환 */
+  }
+  
+  .buttons a:last-child {
+    border-right: none;
+  }
+  
+  
+  
+  .buttons a::before {
+    top: 0;
+  }
+  
+  .buttons a::after {
+    bottom: 0;
+  }
+  
+  .buttons a:last-child::before,
+  .buttons a:last-child::after {
+    display: none;
+  }
+
+@media (max-width: 768px) {
+    .hidden-pc {
+        display: block;
+    }
+    .hidden-phone {
+    display: none;
+    }
+    .container-mo {
+        background-image: url('../img/background.jpg');
+        /* 배경 이미지 경로 설정 */
+        background-size: cover;
+        background-position: center;
+        height: calc(var(--vh, 1vh) * 100);
+        color: white;
+        /* 애니메이션용 초기 설정 */
+        transform: scale(1.3);
+        transition: transform 0.6s ease;
+    }
+    
+    .logo {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    
+    .bottom-sheet {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+        background: rgba(179, 179, 179, 0.5);
+        backdrop-filter: blur(10px);
+        /* 배경 블러 처리 */
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari 호환 */
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(250px);
+        /* 초기 상태 */
+        transition: transform 0.25s ease;
+        touch-action: none;
+    }
+    
+    .bottom-sheet.dragging {
+        transition: none;
+    }
+    
+    .handle {
+        width: 100px;
+        height: 5px;
+        background: #bbb;
+        border-radius: 4px;
+        margin: 10px auto;
+        cursor: grab;
+    }
+    
+    .content {
+        margin-top: 55px;
+        padding: 20px 10%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .content a {
+        text-decoration: none;
+    }
+    
+    .button-small {
+        position: absolute;
+        top: 50px;
+        right: 10%;
+        background: black;
+        color: white;
+        font-size: 12px;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    
+    .button-large {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5px auto;
+        padding: 15px 15px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        color: black;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        /* ← 이게 섀도우 */
+    }
+    
+    .button-large ion-icon {
+        font-size: 25px;
+    }
+    
+    .background-buttons {
+        position: fixed;
+        bottom: 160px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .background-buttons a img {
+        max-width: 300px;
+        margin: -5px 0;
+    }
+    
+    .background-buttons.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+}
