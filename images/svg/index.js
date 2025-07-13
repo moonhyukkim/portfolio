@@ -14,28 +14,28 @@ const group = [
     //     end: 489
     // },
     {
-        label: '卡通水果',
-        value: 'fruits',
-        start: 386,
-        end: 409
-    },
-    {
-        label: '体育',
-        value: 'sports',
-        start: 410,
-        end: 459
-    },
-    {
-        label: '秋天',
-        value: 'seasons',
-        start: 40,
+        label: '자켓',
+        value: 'jackets',
+        start: 0,
         end: 49
     },
     {
-        label: '计算机',
-        value: 'eletronics',
+        label: '바지',
+        value: 'pants',
         start: 50,
-        end: 75
+        end: 99
+    },
+    {
+        label: '셔츠',
+        value: 'seasons',
+        start: 100,
+        end: 149
+    },
+    {
+        label: '코트',
+        value: 'eletronics',
+        start: 150,
+        end: 199
     },
     // {
     //     label: '水果',
@@ -50,77 +50,30 @@ const group = [
     //     end: 136
     // },
     {
-        label: '旗帜',
+        label: '학고(하꼬)',
         value: 'flags',
-        start: 137,
-        end: 151
+        start: 200,
+        end: 249
     },
     {
-        label: '树木',
+        label: '주머니',
         value: 'threes',
-        start: 152,
-        end: 181
+        start: 250,
+        end: 299
     },
     {
-        label: '食物',
+        label: '부자재',
         value: 'food',
-        start: 182,
-        end: 201
+        start: 300,
+        end: 349
     },
     {
-        label: '服饰',
+        label: '트임',
         value: 'clothes',
-        start: 202,
-        end: 222
+        start: 350,
+        end: 399
     },
-    {
-        label: '奖牌',
-        value: 'medals',
-        start: 223,
-        end: 252
-    },
-    {
-        label: '商务',
-        value: 'business',
-        start: 253,
-        end: 261
-    },
-    {
-        label: '活动',
-        value: 'activity',
-        start: 262,
-        end: 270
-    },
-    // {
-    //     label: '卡通水果',
-    //     value: '',
-    //     start: 271,
-    //     end: 300
-    // },
-    {
-        label: '复古',
-        value: 'vintage',
-        start: 301,
-        end: 350
-    },
-    {
-        label: '卡通',
-        value: '',
-        start: 351,
-        end: 385
-    },
-    {
-        label: '动物',
-        value: 'animals',
-        start: 490,
-        end: 519
-    },
-    {
-        label: '手绘',
-        value: 'hand_painted',
-        start: 0,
-        end: 39
-    }
+    
 ]
 
 
@@ -147,5 +100,5 @@ fs.writeFile('type.json', JSON.stringify(JSONData), function (err) {
     if (err) {
         return console.error(err);
     }
-    console.log('写入成功')
+    console.log('저장 성공')
 });
